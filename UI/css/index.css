@@ -23,6 +23,14 @@ a{
     padding: 1rem;
 }
 
+/*navbar */
+
+nav{
+    background: rgba(0, 0, 53, 0.87);
+    height: 60px;
+    padding: 0.5rem;
+    border-bottom: 2px solid rgb(200, 21, 4);
+}
 
 /*landing page */
 .header{
