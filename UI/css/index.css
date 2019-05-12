@@ -1,13 +1,14 @@
 body{
     padding: 0;
     margin: 0;
-    overflow-x: hidden;
     font-family: 'Quicksand', sans-serif;
+    height: 100%;
 }
 
 .wrapper{
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 /*global*/
@@ -26,9 +27,10 @@ a{
 /*landing page */
 .header{
     background-size:cover;
-    background: linear-gradient(to right, rgba(1, 1, 66, 0.479), rgba(1, 1, 54, 0.534), rgba(0, 0, 68, 0.554)), url('/UI//images/Background.jpg') no-repeat;
-    min-height: 100vh;
-    position: relative
+    background-position: center;
+    background: linear-gradient(to right, rgba(1, 1, 66, 0.479), rgba(1, 1, 54, 0.534), rgba(0, 0, 68, 0.554)), url('/UI/images/auto-auto-racing-automobile-235222.jpg') no-repeat;
+    height: 100vh;
+    padding: 1rem;
 }
 .logo{
     font-size: 2rem;
@@ -66,3 +68,30 @@ a{
     color: rgb(255, 30, 0);
 }
 
+
+@media (max-width: 760px){
+    .header{
+        background-size:cover;
+        background-position: center;
+        background: linear-gradient(to right, rgba(1, 1, 66, 0.479), rgba(1, 1, 54, 0.534), rgba(0, 0, 68, 0.554)), url('/UI/images/asphalt-auto-automobile-164634\ \(1\).jpg') no-repeat;
+        height: 100vh;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 360px){
+    .big-text{
+        height: 50vh;
+    }
+    .big-text h1{
+        font-size: 20px;
+        color: #ddd;
+    }
+    .big-text .btn-secondary{
+        font-size: 20px;
+        margin: 10px;
+        padding: 1rem;
+        border-radius: 5px;
+        transition: all 2s;
+    }
+}
