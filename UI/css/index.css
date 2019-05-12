@@ -1,0 +1,18 @@
+body{
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    background-size:cover;
+    background: linear-gradient(to right, rgba(1, 1, 66, 0.479), rgba(1, 1, 54, 0.534), rgba(0, 0, 68, 0.554)), url('/UI//images/Background.jpg') no-repeat;
+    min-height: 100vh;
+
+}
