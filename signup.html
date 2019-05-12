@@ -17,36 +17,37 @@
     </header>
 
     <div class="wrapper">
-      <form action="" class="signup">
+      <form action="" class="account">
+        <legend>Register</legend>
+        <hr>
         <div class="input-labels">
-          <label for="firstname">Firstname</label>
-          <input type="text" name="" id="first-name" required>
+          <input type="text" name="" id="first-name" placeholder="Firstname" required>
         </div>
         <div class="input-labels">
-            <label for="lastname">Lastname</label>
-            <input type="text" name="" id="last-name"required>
+            <input type="text" name="" id="last-name" placeholder="Lastname" required>
           </div>
           <div class="input-labels">
-              <label for="Email">Email</label>
-              <input type="text" name="" id="email" required>
+              <input type="email" name="" id="email" placeholder="Email" required>
             </div>
             <div class="input-labels">
-                <label for="Address">House Address</label>
-                <input type="text" name="" id="address" required>
+                
+                <input type="text" name="" id="address" placeholder="House Address" required>
               </div>
               <div class="input-labels">
-                  <label for="Password">Password</label>
-                  <input type="password" name="" id="password" required>
+                  <input type="password" name="" id="password" placeholder="Password" required>
                 </div>
                 <div class="input-labels">
-                    <label for="ConfirmPassword">Confirm Password</label>
-                    <input type="text" name="" id="password2" required>
+                    <input type="password" name="" id="password2" placeholder="Confirm Password" required>
                   </div>
                   <div class="input-labels">
-                      <label for="admin-secret">admin-secret</label>
-                      <input type="text" name="" id="admin-secret">
+                      <input type="password" name=""  placeholder="Admin Secret" id="admin-secret">
                     </div>
-                    <button type="submit">Register</button>
+                    <div class="input-labels">
+                        <button type="submit" class="btn-primary">Register</button>
+                    </div>
+                    <div class="others">
+                      <p>Already Have an account?? <a href="">Login Here</a> </p>
+                    </div>
       </form>
     </div>
 </body>
