@@ -1,0 +1,68 @@
+body{
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+/*global*/
+
+a{
+    text-decoration: none
+}
+
+.btn-secondary{
+    color: #ddd;
+    border: 2px solid rgb(194, 191, 191);
+    padding: 1rem;
+}
+
+
+/*landing page */
+.header{
+    background-size:cover;
+    background: linear-gradient(to right, rgba(1, 1, 66, 0.479), rgba(1, 1, 54, 0.534), rgba(0, 0, 68, 0.554)), url('/UI//images/Background.jpg') no-repeat;
+    min-height: 100vh;
+    position: relative
+}
+.logo{
+    font-size: 2rem;
+    margin: 20px;
+    color: #ddd;
+}
+.icon{
+    color: rgb(255, 30, 0);
+}
+
+/*Big-text*/
+
+.big-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 80vh;
+}
+.big-text h1{
+    font-size: 50px;
+    color: #ddd;
+}
+
+.big-text .btn-secondary{
+    font-size: 30px;
+    margin: 30px;
+    padding: 1.3rem;
+    border-radius: 5px;
+    transition: all 2s;
+}
+.big-text .btn-secondary:hover{
+    border: 3px solid rgb(255, 30, 0);
+    color: rgb(255, 30, 0);
+}
+
