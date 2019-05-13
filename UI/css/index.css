@@ -1,13 +1,20 @@
+*{
+    box-sizing: border-box;
+}
+
 body{
     padding: 0;
     margin: 0;
-    overflow-x: hidden;
     font-family: 'Quicksand', sans-serif;
+    height: 100%;
+    overflow: hidden;
 }
 
 .wrapper{
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
 }
 
 /*global*/
@@ -16,27 +23,46 @@ a{
     text-decoration: none
 }
 
+/*buttons */
+
 .btn-secondary{
     color: #ddd;
     border: 2px solid rgb(194, 191, 191);
     padding: 1rem;
 }
 
+.btn-primary{
+    border: none;
+    background: rgba(0, 0, 22, 0.87);
+    padding: 1rem;
+    color: #ddd;
+    cursor: pointer;
+}
+
+/*navbar */
+
+nav{
+    background: rgba(0, 0, 22, 0.87);
+    height: 70px;
+    padding: 0.5rem;
+}
 
 /*landing page */
 .header{
     background-size:cover;
-    background: linear-gradient(to right, rgba(1, 1, 66, 0.479), rgba(1, 1, 54, 0.534), rgba(0, 0, 68, 0.554)), url('/UI//images/Background.jpg') no-repeat;
-    min-height: 100vh;
-    position: relative
+    background-position: center;
+    background: linear-gradient(to right, rgba(1, 1, 66, 0.479), rgba(1, 1, 54, 0.534), rgba(0, 0, 68, 0.554)), url('/UI/images/auto-auto-racing-automobile-235222.jpg') no-repeat;
+    height: 100vh;
+    padding: 1rem;
 }
 .logo{
     font-size: 2rem;
     margin: 20px;
     color: #ddd;
+    
 }
 .icon{
-    color: rgb(255, 30, 0);
+    color: dodgerblue;
 }
 
 /*Big-text*/
@@ -62,7 +88,107 @@ a{
     transition: all 2s;
 }
 .big-text .btn-secondary:hover{
-    border: 3px solid rgb(255, 30, 0);
-    color: rgb(255, 30, 0);
+    border: 3px solid dodgerblue;
+    color: dodgerblue
 }
+
+/*account form */
+.account{
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px #333;
+    padding: 2.5rem;
+    height: auto;
+    width: 400px;
+    font-size: 15px;
+}
+.input-labels{
+    display:flex;
+    flex-direction: column;
+    margin: 5px;
+    
+}
+.others a {
+    color: rgba(0, 0, 22, 0.87);
+}
+legend{
+    font-size: 25px;
+}
+hr{
+    width: 100%;
+    color: rgba(0, 0, 22, 0.87);
+}
+
+.input-labels input {
+    margin: 8px;
+    font-size: 1rem;
+    padding: 0.2rem;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid rgba(0, 0, 22, 0.87);
+}
+
+
+@media (max-width: 760px){
+    .header{
+        background-size:cover;
+        background-position: center;
+        background: linear-gradient(to right, rgba(1, 1, 66, 0.479), rgba(1, 1, 54, 0.534), rgba(0, 0, 68, 0.554)), url('/UI/images/asphalt-auto-automobile-164634\ \(1\).jpg') no-repeat;
+        height: 100vh;
+        padding: 1rem;
+    }
+
+    .account{
+        width: auto
+    }
+}
+
+@media (max-width: 360px){
+    .big-text{
+        height: 50vh;
+    }
+    .big-text h1{
+        font-size: 20px;
+        color: #ddd;
+    }
+    .big-text .btn-secondary{
+        font-size: 20px;
+        margin: 10px;
+        padding: 1rem;
+        border-radius: 5px;
+        transition: all 2s;
+    }
+    .account{
+        margin: 30px auto;
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        box-shadow: 0px 0px 3px #333;
+        padding: 1.5rem;
+        height: auto;
+        width: auto;
+        font-size: 10px;
+    }
+
+    legend{
+        font-size: 12px;
+    }
+    .input-labels input {
+        margin: 2px;
+        font-size: 0.3rem;
+        padding: 0.2rem;
+        border: none;
+        outline: none;
+        border-bottom: 2px solid rgba(0, 0, 22, 0.87);
+    }
+
+    .input-labels .btn-primary{
+        padding: 7px;
+    }
+    
+    
+}
+
 
