@@ -7,7 +7,7 @@ body{
     margin: 0;
     font-family: 'Quicksand', sans-serif;
     height: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .wrapper{
@@ -21,6 +21,14 @@ body{
 
 a{
     text-decoration: none
+}
+input[type="file"]::-webkit-file-upload-button{
+    border: none;
+    cursor: pointer;
+    border: 2px solid dodgerblue;
+    padding: 0.8rem;
+    background: transparent;
+    color: #fff
 }
 
 /*buttons */
@@ -39,12 +47,18 @@ a{
     cursor: pointer;
 }
 
+.btn-default{
+    color: rgba(0, 0, 22, 0.87);
+    border: 2px solid dodgerblue;
+}
+
 /*navbar */
 
 nav{
     background: rgba(0, 0, 22, 0.87);
     height: 70px;
     padding: 0.5rem;
+    width: 100%;
 }
 
 /*landing page */
@@ -115,6 +129,7 @@ nav{
 }
 legend{
     font-size: 25px;
+    font-weight: bold;
 }
 hr{
     width: 100%;
@@ -129,47 +144,71 @@ hr{
     outline: none;
     border-bottom: 2px solid rgba(0, 0, 22, 0.87);
 }
-
-.car-ad{
+.post-ad{
+    box-shadow: 0px 2px 3px black;
+    width: 60%;
+    height: auto;
+    margin: 50px auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 500px;
-    padding: 2rem;
-    margin: 1rem auto;
-    box-shadow: 0px 1px 3px black;
-}
-.car-details{
-    display: flex;
-    flex-direction: row;
     padding: 1rem;
-    width: 100%;
-
-    
-    
-}
-.detail-1, .detail-2{
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
-
+    border-radius: 5px;
+    background: rgba(0, 0, 22, 0.87);
+    color: #ddd;
 }
 
-select, .detail-2 input {
-    width: 200px;
+
+select {
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid rgb(14, 64, 114);
+    cursor: pointer;
     background: dodgerblue;
-    color: #fff;
-    border: none;
+    width: 200px;
+    font-size: 1rem;
+}
+
+select option {
+    padding: 1rem auto;
+    border: 1px solid #ccc;;
+    cursor: pointer;
+    margin: 0.5rem;
+}
+.input-detail{
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+}
+.input-detail label {
+    margin: 8px;
+}
+.input-detail select , .input-detail input {
+    width: 500px;
+}
+.input-detail input[type="text"]{
     padding: 0.7rem;
-    margin: 1rem;
+    background: transparent;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    color: #ddd;
+    font-size: 1.2rem;
 }
-.detail-2 input::placeholder{
-    color: #fff;
+.input-detail button{
+    border: none;
+    padding: 1rem;
+    background: transparent;
+    cursor: pointer ;
+    color: #ddd;
+    border: 2px solid #fff;
+    width: 250px;
+    margin: 50px auto;
+    font-size: 1rem;
+    font-weight: bolder;
 }
+
 
 
 @media (max-width: 760px){
@@ -184,6 +223,11 @@ select, .detail-2 input {
     .account{
         width: auto
     }
+   
+    .input-detail select , .input-detail input {
+        width: auto
+    }
+   
 }
 
 @media (max-width: 360px){
@@ -214,7 +258,7 @@ select, .detail-2 input {
     }
 
     legend{
-        font-size: 12px;
+        font-size: 18px;
     }
     .input-labels input {
         margin: 2px;
@@ -228,7 +272,13 @@ select, .detail-2 input {
     .input-labels .btn-primary{
         padding: 7px;
     }
-    
+    .input-detail select , .input-detail input{
+        width: 150px;
+    }
+
+    .input-detail button{
+        width: auto;
+    }
     
 }
 
