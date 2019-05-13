@@ -130,6 +130,47 @@ hr{
     border-bottom: 2px solid rgba(0, 0, 22, 0.87);
 }
 
+.car-ad{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 500px;
+    padding: 2rem;
+    margin: 1rem auto;
+    box-shadow: 0px 1px 3px black;
+}
+.car-details{
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    width: 100%;
+
+    
+    
+}
+.detail-1, .detail-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+
+}
+
+select, .detail-2 input {
+    width: 200px;
+    background: dodgerblue;
+    color: #fff;
+    border: none;
+    padding: 0.7rem;
+    margin: 1rem;
+}
+.detail-2 input::placeholder{
+    color: #fff;
+}
+
 
 @media (max-width: 760px){
     .header{
