@@ -130,6 +130,7 @@ nav{
 legend{
     font-size: 25px;
     font-weight: bold;
+    padding: 0.8rem auto
 }
 hr{
     width: 100%;
