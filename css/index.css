@@ -339,6 +339,9 @@ select option {
 .products p {
     font-weight: bolder;
 }
+.products .btn-primary, .products .btn-default{
+    text-align: center;
+}
 
 
 
