@@ -151,7 +151,7 @@ hr{
 }
 .post-ad, .showcase{
     box-shadow: 0px 2px 3px black;
-    width: 60%;
+    width: auto;
     height: auto;
     margin: 50px auto;
     display: flex;
