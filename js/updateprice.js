@@ -9,7 +9,7 @@ const update=(e)=>{
  const newPrice = Number(regNewprice);
  
  const newStatus = document.getElementById('status').value;
- price.innerHTML = `<strong> PRICE: ${newPrice.toFixed(2)}</strong`;
+ price.innerHTML = `<strong> PRICE: </strong> NGN  ${newPrice.toFixed(2)}`;
  if(newStatus !== '0'){
   status.innerHTML = `<strong> Status: ${newStatus}</strong>`;
  }else{
