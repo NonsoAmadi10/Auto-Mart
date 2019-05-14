@@ -50,6 +50,9 @@ input[type="file"]::-webkit-file-upload-button{
 .btn-default{
     color: rgba(0, 0, 22, 0.87);
     border: 2px solid dodgerblue;
+    background: transparent;
+    cursor: pointer;
+    padding: 0.7rem;
 }
 
 /*navbar */
@@ -57,9 +60,10 @@ input[type="file"]::-webkit-file-upload-button{
 nav{
     background: rgba(0, 0, 22, 0.87);
     height: 70px;
-    padding: 0.5rem;
+    padding: 0.4rem;
     width: 100%;
 }
+
 
 /*landing page */
 .header{
@@ -71,7 +75,7 @@ nav{
 }
 .logo{
     font-size: 2rem;
-    margin: 20px;
+    margin: 0 0 8px 8px;
     color: #ddd;
     
 }
@@ -145,7 +149,7 @@ hr{
     outline: none;
     border-bottom: 2px solid rgba(0, 0, 22, 0.87);
 }
-.post-ad{
+.post-ad, .showcase{
     box-shadow: 0px 2px 3px black;
     width: 60%;
     height: auto;
@@ -210,6 +214,35 @@ select option {
     font-weight: bolder;
 }
 
+/*Showcase */
+.showcase{
+    min-height: 100vh;
+    justify-content: flex-start;
+    margin: 20px auto;
+    width: 90%;
+    background: #fff;
+    color: rgba(0, 0, 22, 0.87);
+    box-shadow: none;
+    
+}
+.showcase .big-img {
+    margin: 0 auto;
+}
+.ads{
+    margin: 80px  auto;
+    width: auto;
+    border: 1px solid red;
+    padding: 2.6rem;
+}
+.btn-div{
+    display: flex;
+    flex-direction: row;
+}
+/*images */
+.big-img{
+    width: 100%;
+    
+}
 
 
 @media (max-width: 760px){
@@ -280,7 +313,9 @@ select option {
     .input-detail button{
         width: auto;
     }
-    
+    .big-img{
+        width: 100%;
+    }
 }
 
 
