@@ -54,6 +54,14 @@ input[type="file"]::-webkit-file-upload-button{
     cursor: pointer;
     padding: 0.7rem;
 }
+.btn-danger{
+    background: red;
+    padding: 1rem;
+    color:#ddd;
+    cursor:pointer;
+    border:none;
+    margin: 5px;
+}
 
 /*navbar */
 
@@ -341,6 +349,11 @@ select option {
 }
 .products .btn-primary, .products .btn-default{
     text-align: center;
+}
+
+#report{
+    width: 100px;
+    margin-left: 0;
 }
 
 
