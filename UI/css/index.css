@@ -79,10 +79,6 @@ nav{
     color: #ddd;
     
 }
-.icon{
-    color: dodgerblue;
-}
-
 /*Big-text*/
 
 .big-text{
@@ -128,7 +124,7 @@ nav{
     margin: 5px;
     
 }
-.others a {
+.others a, .icon {
     color: dodgerblue;
 }
 legend{
@@ -171,6 +167,7 @@ select {
     border: 1px solid rgb(14, 64, 114);
     cursor: pointer;
     background: dodgerblue;
+    height:auto
     width: 200px;
     font-size: 1rem;
 }
@@ -231,7 +228,8 @@ select option {
 .ads{
     margin: 80px  auto;
     width: auto;
-    border: 1px solid red;
+    box-shadow: 0px 0px 4px rgba(0, 0, 22, 0.87);
+    border-radius: 6px;
     padding: 2.6rem;
 }
 .btn-div{
@@ -242,6 +240,10 @@ select option {
 .big-img{
     width: 100%;
     
+}
+.small-img {
+    width: 300px;
+    margin: 0px auto;
 }
 
 /* All modal*/
@@ -257,6 +259,7 @@ select option {
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    transition: all ease-in 3s;
 }
 .modal .post-ad{
     width: 50%;
@@ -275,6 +278,71 @@ select option {
   text-decoration: none;
   cursor: pointer;
 }
+
+/*filter bar*/
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.7rem;
+    flex-direction: row;
+    justify-content:center;
+    background: rgb(1, 1, 49);
+    height: auto;
+    width: 100%;
+    color: #ddd
+}
+.filter-options{
+    background:rgb(1, 1, 49);
+    border: none;
+    border-bottom: 1px solid dodgerblue;
+    outline: none;
+    padding: 0;
+}
+.option input{
+    padding: 0.7rem;
+    background: inherit;
+    color: #ddd;
+    border: 1px solid #ddd;
+    outline: none
+}
+
+.row .btn-default{
+    color: #fff;
+    width: 70px;
+}
+
+.row *{
+    margin: 0.5rem 0.3rem;
+}
+
+/* MarketPlace */
+
+.marketplace{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem;
+    padding: 0.3rem;
+}
+.products {
+    width: 400px;
+    margin: 0.3rem;
+    padding: 1rem;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-shadow: 1px 1px 3px #333;
+}
+.products p {
+    font-weight: bolder;
+}
+.products .btn-primary, .products .btn-default{
+    text-align: center;
+}
+
 
 
 @media (max-width: 760px){
@@ -347,6 +415,9 @@ select option {
     }
     .big-img{
         width: 100%;
+    }
+    .row{
+        justify-content: left;
     }
 }
 
