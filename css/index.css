@@ -241,6 +241,10 @@ select option {
     width: 100%;
     
 }
+.small-img {
+    width: 300px;
+    margin: 0px auto;
+}
 
 /* All modal*/
 
@@ -255,6 +259,7 @@ select option {
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    transition: all ease-in 3s;
 }
 .modal .post-ad{
     width: 50%;
@@ -310,6 +315,30 @@ select option {
     margin: 0.5rem 0.3rem;
 }
 
+/* MarketPlace */
+
+.marketplace{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem;
+    padding: 0.3rem;
+}
+.products {
+    width: 400px;
+    margin: 0.3rem;
+    padding: 1rem;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-shadow: 1px 1px 3px #333;
+}
+.products p {
+    font-weight: bolder;
+}
 
 
 

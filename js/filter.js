@@ -1,4 +1,5 @@
-const filterOptions = document.getElementById('filter-options')
+const filterOptions = document.getElementById('filter-options');
+const filter = document.getElementById('filter')
 const option = document.querySelector('.option');
 
 
@@ -36,4 +37,17 @@ const changeOption =()=>{
  }
 }
 
+
+
+
+
 filterOptions.addEventListener('change', changeOption)
+
+
+const filterSearch =(e)=>{
+e.preventDefault();
+modalControl();
+
+
+}
+filter.addEventListener('submit', filterSearch)

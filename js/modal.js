@@ -13,3 +13,5 @@ btn.addEventListener('click', ()=>{
 close.addEventListener('click', ()=>{
  modal.style.display= "none";
 })
+
+
