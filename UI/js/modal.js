@@ -2,7 +2,7 @@
 const modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
-const btn = document.getElementById("update-price");
+const btn = document.getElementById("open-modal");
 
 // Get the <span> element that closes the modal
 const close = document.getElementsByClassName("close")[0];

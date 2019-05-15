@@ -18,11 +18,11 @@
   <div class="wrapper">
    <div class="showcase">
     <div class="ads">
-     <img src="images/automobile-automotive-car-116675.jpg" alt="picture of vehicle" class="big-img">
-     <h3 class="car-title">LandRover Autobiography</h3>
+     <img src="images/action-asphalt-auto-977003.jpg" alt="picture of vehicle" class="big-img">
+     <h3 class="car-title">Ferrari</h3>
      <p class="dealer"> <strong>Dealer: </strong> NonnyPy International  </p>
      <p class="posted-on">Posted Yesterday 11pm</p>
-     <button class="btn-primary" id="purchase">
+     <button class="btn-primary" id="open-modal">
       Make Order
      </button>
      <button class="btn-danger" id="report">
@@ -32,8 +32,8 @@
      <div class="specification">
       <h4>Performance and Specifications</h4>
       <p><strong>Condition:</strong>  Used</p>
-      <p><strong>Make:</strong>  LandRover</p>
-      <p><strong>Model:</strong>  Autobiography</p>
+      <p><strong>Make:</strong> Ferarri</p>
+      <p><strong>Model:</strong>GT 2980</p>
       <p><strong>Year:</strong>  2015</p>
       <p id="update-status"><strong>Status:</strong>Available</p>
      </div>
@@ -43,7 +43,31 @@
     </div>
    </div>
 
+
+   <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <form action="" class="post-ad" id="purchase-form">
+       <h3>Make Order</h3>
+       <hr>
+       <div class="input-detail">
+        <label for="price"> How Much Are You Offering??</label>
+        <input type="text" name="" id="purchase-order" placeholder="NGN" required>
+       </div>
+       
+
+       <div class="input-detail">
+        <button type="submit" class="btn-default">Make Purchase</button>
+      </div>
+      </form>
+    </div>
+  
+  </div>
    
   </div>
+  <script src="js/modal.js"></script>
+  <script src="js/purchase.js"></script>
 </body>
 </html>
