@@ -218,6 +218,10 @@ select option {
     font-size: 1rem;
     font-weight: bolder;
 }
+.input-detail .btn-danger{
+    border: 2px solid red;
+    
+}
 
 /*Showcase */
 .showcase{
@@ -354,6 +358,10 @@ select option {
 #report{
     width: 100px;
     margin-left: 0;
+}
+.flag{
+    background: dodgerblue;
+    color: rgba(0, 0, 22, 0.87);
 }
 
 
