@@ -47,7 +47,9 @@ filterOptions.addEventListener('change', changeOption)
 const filterSearch =(e)=>{
 e.preventDefault();
 modalControl();
-
+setTimeout(()=>{
+ window.location = 'admin.html'
+}, 1800)
 
 }
 filter.addEventListener('submit', filterSearch)
