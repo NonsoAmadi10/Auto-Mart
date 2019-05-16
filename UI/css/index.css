@@ -175,7 +175,7 @@ select {
     border: 1px solid rgb(14, 64, 114);
     cursor: pointer;
     background: dodgerblue;
-    height:auto
+    height:auto;
     width: 200px;
     font-size: 1rem;
 }
@@ -274,7 +274,7 @@ select option {
     transition: all ease-in 3s;
 }
 .modal .post-ad{
-    width: 50%;
+    width: 600px;
 }
 /* Close button */
 .close {
@@ -364,6 +364,9 @@ select option {
     color: rgba(0, 0, 22, 0.87);
 }
 
+.orders{
+    height: auto;
+}
 
 
 @media (max-width: 760px){
@@ -382,7 +385,9 @@ select option {
     .input-detail select , .input-detail input {
         width: auto
     }
-   
+    .modal .post-ad{
+        width: auto
+    }
 }
 
 @media (max-width: 360px){
