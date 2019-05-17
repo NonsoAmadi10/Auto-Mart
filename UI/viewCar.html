@@ -10,11 +10,24 @@
  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 </head>
 <body>
- <header>
-  <nav>
-      <h1 class="logo">Auto-Mart <span class="icon"><i class="fas fa-car"></i></span></h1>
-  </nav>
-  </header>
+    <header>
+  
+
+        <div class="sidebar" id="sidebar">
+          <a href="#" class="closebtn">&times;</a>
+          
+          <a href="marketplace.html" ><i class="fas fa-shopping-cart"></i> MarketPlace</a>
+          <a href="myads.html"><i class="fas fa-ad"></i>  My Adverts</a>
+          <a href="post.html"><i class="fas fa-plus-circle"></i>  Post an Ad</a>
+          <a href="login.html"><i class="fas fa-sign-out-alt"></i>  Logout</a>
+        </div>
+        <div id="main">
+            <h1 class="logo">Auto-Mart <span class="icon"><i class="fas fa-car"></i></span></h1>
+          <button class="openmenu">&#9776; Menu</button> 
+          
+        </div>
+        
+    </header>
   <div class="wrapper">
    <div class="showcase">
     <div class="ads">
@@ -88,6 +101,7 @@
   </div>
    
   </div>
+  <script src="js/menubar.js"></script>
   <script src="js/modal.js"></script>
   <script src="js/purchase.js"></script>
   <script src="js/flag.js"></script>

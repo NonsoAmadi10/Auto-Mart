@@ -64,12 +64,79 @@ input[type="file"]::-webkit-file-upload-button{
 }
 
 /*navbar */
-
-nav{
+header{
     background: rgba(0, 0, 22, 0.87);
-    height: 70px;
-    padding: 0.4rem;
-    width: 100%;
+}
+.sidebar {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 22);
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.4s all ease-in-out; /* 0.5 second transition effect to slide in the sidebar */
+  }
+  
+  /* The sidebar links */
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 1rem;
+    color: #ddd;
+    display: block;
+     transition: 0.3s all ease-in;
+     border-top: 1px solid #fff;
+     border-bottom: 1px solid #fff;
+     margin: 2.5rem 0rem 2.5rem 0rem;
+    
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+  
+  
+  /* Position and style the close button (top right corner) */
+  .sidebar .closebtn {
+    position: absolute;
+    top:0;
+    right: 20px;
+    font-size: 3rem;
+    margin-left: 30px;
+    border: none;
+  }
+  
+  /* The button used to open the sidebar */
+  .openmenu {
+    font-size: 1.4rem;
+    cursor: pointer;
+    background-color: inherit;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+  }
+  
+  .openmenu:hover {
+    background-color: #444;
+  }
+  
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+  #main {
+    transition: margin-left .5s; /* If you want a transition effect */
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+.sidebar .active{
+    border-top: 1px solid dodgerblue;
+    border-bottom: 1px solid dodgerblue;
 }
 
 
