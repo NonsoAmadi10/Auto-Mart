@@ -144,7 +144,7 @@ header{
 .header{
     background-size:cover;
     background-position: center;
-    background: linear-gradient(to right, rgba(1, 1, 66, 0.479), rgba(1, 1, 54, 0.534), rgba(0, 0, 68, 0.554)), url('/images/auto-auto-racing-automobile-235222.jpg') no-repeat;
+    background: linear-gradient(to right, rgba(1, 1, 66, 0.479), rgba(1, 1, 54, 0.534), rgba(0, 0, 68, 0.554)), url('images/auto-auto-racing-automobile-235222.jpg') no-repeat;
     height: 100vh;
     padding: 1rem;
 }
