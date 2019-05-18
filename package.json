@@ -1,0 +1,24 @@
+{
+  "name": "auto-mart",
+  "version": "1.0.0",
+  "description": "Auto Mart is an online marketplace for automobiles of diverse makes, model or body type. With",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NonsoAmadi10/Auto-Mart.git"
+  },
+  "keywords": [
+    "Car",
+    "sales",
+    "purchase"
+  ],
+  "author": "Nonso Amadi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NonsoAmadi10/Auto-Mart/issues"
+  },
+  "homepage": "https://github.com/NonsoAmadi10/Auto-Mart#readme"
+}
