@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/NonsoAmadi10/Auto-Mart/issues"
   },
-  "homepage": "https://github.com/NonsoAmadi10/Auto-Mart#readme"
+  "homepage": "https://github.com/NonsoAmadi10/Auto-Mart#readme",
+  "dependencies": {
+    "express": "^4.17.0"
+  }
 }
