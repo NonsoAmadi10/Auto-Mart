@@ -4,7 +4,10 @@
   "description": "Auto Mart is an online marketplace for automobiles of diverse makes, model or body type. With",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev-start": "nodemon --exec babel-node api/index.js",
+    "build": "babel api --out-dir build",
+    "start": "node build/index.js"
   },
   "repository": {
     "type": "git",
@@ -25,8 +28,13 @@
     "express": "^4.17.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.4",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.17.2"
+    "eslint-plugin-import": "^2.17.2",
+    "nodemon": "^1.19.0"
   }
 }
