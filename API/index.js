@@ -5,6 +5,7 @@ app.get('/',(req, res)=>{
   message: "Welcome to Automart"
  })
 })
+
 app.listen(3000, ()=>{
  console.log('App is running...')
 })
