@@ -6,10 +6,10 @@
   "scripts": {
     "test": " nyc _mocha test/*.test.js --recursive --require @babel/register --timeout 10000 --exit",
     "dev-start": "nodemon --exec babel-node api/index.js",
-   "generate-lcov": "nyc report — reporter=text-lcov > lcov.info", 
-   "coveralls-coverage": "coveralls < lcov.info",
-   "coverage": "nyc npm test && npm run generate-lcov && npm run coveralls-coverage ",
-   "codeclimate-coverage": "codeclimate-test-reporter < lcov.info",
+    "generate-lcov": "nyc report — reporter=text-lcov > lcov.info",
+    "coveralls-coverage": "coveralls < lcov.info",
+    "coverage": "nyc npm test && npm run generate-lcov && npm run coveralls-coverage ",
+    "codeclimate-coverage": "codeclimate-test-reporter < lcov.info",
     "build": "babel api --out-dir build",
     "start": "node build/index.js"
   },
@@ -29,7 +29,9 @@
   },
   "homepage": "https://github.com/NonsoAmadi10/Auto-Mart#readme",
   "dependencies": {
-    "express": "^4.17.0"
+    "dotenv": "^6.2.0",
+    "express": "^4.17.0",
+    "jsonwebtoken": "^8.5.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
