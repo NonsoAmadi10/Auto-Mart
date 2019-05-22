@@ -4,7 +4,7 @@
   "description": "Auto Mart is an online marketplace for automobiles of diverse makes, model or body type. With",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": " nyc _mocha test/*.test.js --recursive --require @babel/register --timeout 10000 --exit",
     "dev-start": "nodemon --exec babel-node api/index.js",
     "build": "babel api --out-dir build",
     "start": "node build/index.js"
