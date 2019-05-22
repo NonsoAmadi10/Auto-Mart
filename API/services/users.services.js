@@ -3,9 +3,8 @@ import Usermodel from '../model/user.model';
 
 
 class UserAction {
-
   static signup(userdata) {
-   if(users.find(email=>email == userdata.email) return false)
+    if (users.find((email) => email == userdata.email)) return false;
     const newUser = new Usermodel();
     newUser.firstName = userdata.firstname;
     newUser.email = userdata.email;
@@ -18,13 +17,12 @@ class UserAction {
       firstname: newUser.firstName,
       email: newUser.email,
       lastname: newUser.lastName,
-      password: newUser.password,
       is_admin: newUser.is_admin,
     };
 
     users.push(newUserEntry);
     return newUserEntry;
-
-
   }
 }
+
+export default UserAction;
