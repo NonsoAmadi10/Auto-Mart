@@ -9,6 +9,7 @@
    "generate-lcov": "nyc report — reporter=text-lcov > lcov.info", 
    "coveralls-coverage": "coveralls < lcov.info",
    "coverage": "nyc npm test && npm run generate-lcov && npm run coveralls-coverage ",
+   "codeclimate-coverage": "codeclimate-test-reporter < lcov.info",
     "build": "babel api --out-dir build",
     "start": "node build/index.js"
   },
