@@ -14,7 +14,7 @@ class UserControllers {
         error: 'email already exist',
       });
     }
-
+    
     return jwt.sign({ user }, process.env.JWT_SECRET, (err, token) => {
       res.status(201).send({
         status: 'success',
