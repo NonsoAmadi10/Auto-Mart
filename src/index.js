@@ -15,4 +15,11 @@ app.get('/', (req, res) => {
   });
 });
 
-export default app;
+
+app.listen(3000, ()=>{
+  console.log('App is running...')
+ })
+ 
+ export default app;
+
+
