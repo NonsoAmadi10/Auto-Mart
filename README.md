@@ -1,6 +1,8 @@
 # Auto-Mart
 Auto Mart is an online marketplace for automobiles of diverse makes, model or body type. With Auto Mart, users can sell their cars or buy from trusted dealerships or private sellers.
 
+[![Build Status](https://travis-ci.org/NonsoAmadi10/Auto-Mart.svg?branch=develop)](https://travis-ci.org/NonsoAmadi10/Auto-Mart)
+[![Coverage Status](https://coveralls.io/repos/github/NonsoAmadi10/Auto-Mart/badge.svg?branch=develop)](https://coveralls.io/github/NonsoAmadi10/Auto-Mart?branch=develop)
 
 ### Required Features
 1. User can sign up.
