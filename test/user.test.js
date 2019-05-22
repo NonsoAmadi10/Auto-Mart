@@ -11,7 +11,7 @@ describe('User Should be able to signup', () => {
     chai.request(app)
       .post('/api/v1/auth/signup')
       .send({
-        firstname: 'Sam loco',
+        firstname: 'Samloco',
         lastname: 'Efe',
         password: 123456,
         email: 'amadijustice@gmail.com',
@@ -24,65 +24,128 @@ describe('User Should be able to signup', () => {
       });
   });
 
-  it('should not allow a user signup on empty firstname input', (done) => {
+  it('should not allow a user signup on empty firstname body', (done) => {
     chai.request(app)
-      .post('api/v1/auth/signup')
+      .post('/api/v1/auth/signup')
       .send({
         firstname: '',
-        lastname: 'Efe',
-        password: 123456,
+        lastname: 'John',
+        password: '123456hsfgsh',
         email: 'amadijustice@gmail.com',
-        is_admin: true,
       })
       .end((err, res) => {
-        expect(res.status).to.equal(401);
+        expect(res.status).to.equal(400);
         expect(res.body.error).to.equal('firstname cannot be empty');
         done();
       });
   });
-  it('should not allow a user signup on empty lastname input', (done) => {
-   chai.request(app)
-     .post('api/v1/auth/signup')
-     .send({
-       firstname: 'Sam loco',
-       lastname: '',
-       password: 123456,
-       email: 'amadijustice@gmail.com',
-     })
-     .end((err, res) => {
-       expect(res.status).to.equal(401);
-       expect(res.body.error).to.equal('lasttname cannot be empty');
-       done();
-     });
- });
- it('should not allow a user signup on empty password input', (done) => {
-  chai.request(app)
-    .post('api/v1/auth/signup')
-    .send({
-      firstname: 'Sam loco',
-      lastname: 'Efe',
-      password: '',
-      email: 'amadijustice@gmail.com',
-    })
-    .end((err, res) => {
-      expect(res.status).to.equal(401);
-      expect(res.body.error).to.equal('password cannot be empty');
-      done();
-    });
-});
-it('should not allow a user signup on empty email input', (done) => {
- chai.request(app)
-   .post('api/v1/auth/signup')
-   .send({
-     firstname: 'Sam loco',
-     lastname: 'Efe',
-     password: 123456,
-     email: '',
-   })
-   .end((err, res) => {
-     expect(res.status).to.equal(401);
-     expect(res.body.error).to.equal('email cannot be empty');
-     done();
-   });
-});
+
+  it('should not allow a user signup on empty lastname body', (done) => {
+    chai.request(app)
+      .post('/api/v1/auth/signup')
+      .send({
+        firstname: 'juan',
+        lastname: '',
+        password: '123456hsfgsh',
+        email: 'amadijustice@gmail.com',
+      })
+      .end((err, res) => {
+        expect(res.status).to.equal(400);
+        expect(res.body.error).to.equal('lastname cannot be empty');
+        done();
+      });
+  });
+
+  it('should not allow a user signup on empty password  body', (done) => {
+    chai.request(app)
+      .post('/api/v1/auth/signup')
+      .send({
+        firstname: 'Jerry',
+        lastname: 'John',
+        password: '',
+        email: 'amadijustice@gmail.com',
+      })
+      .end((err, res) => {
+        expect(res.status).to.equal(400);
+        expect(res.body.error).to.equal('password cannot be empty');
+        done();
+      });
+  });
+
+  it('should not allow a user signup on empty email body', (done) => {
+    chai.request(app)
+      .post('/api/v1/auth/signup')
+      .send({
+        firstname: 'Charles',
+        lastname: 'John',
+        password: '123456hsfgsh',
+        email: '',
+      })
+      .end((err, res) => {
+        expect(res.status).to.equal(400);
+        expect(res.body.error).to.equal('email cannot be empty');
+        done();
+      });
+  });
+  
+  it('should not allow a user signup with an invalid email', (done) => {
+    chai.request(app)
+      .post('/api/v1/auth/signup')
+      .send({
+        firstname: 'Charles',
+        lastname: 'John',
+        password: '123456hsfgsh',
+        email: 'amadi.12@gmailcom',
+      })
+      .end((err, res) => {
+        expect(res.status).to.equal(400);
+        expect(res.body.error).to.equal('invalid email');
+        done();
+      });
+  });
+  it('should not allow a user signup with a firstname less than two characters', (done) => {
+    chai.request(app)
+      .post('/api/v1/auth/signup')
+      .send({
+        firstname: 'C',
+        lastname: 'John',
+        password: '123456hsfgsh',
+        email: 'amadi@gmail.com',
+      })
+      .end((err, res) => {
+        expect(res.status).to.equal(400);
+        expect(res.body.error).to.equal('firstname must be atleast two characters long');
+        done();
+      });
+  });
+  it('should not allow a user signup with a lastname less than two characters', (done) => {
+    chai.request(app)
+      .post('/api/v1/auth/signup')
+      .send({
+        firstname: 'Charles',
+        lastname: 'J',
+        password: '123456hsfgsh',
+        email: 'amadi@gmail.com',
+      })
+      .end((err, res) => {
+        expect(res.status).to.equal(400);
+        expect(res.body.error).to.equal('lastname must be atleast two characters long');
+        done();
+      });
+  });
+  it('should not allow a user signup with a password less than five characters', (done) => {
+    chai.request(app)
+      .post('/api/v1/auth/signup')
+      .send({
+        firstname: 'Charles',
+        lastname: 'Jude',
+        password: '123',
+        email: 'amadi@gmail.com',
+      })
+      .end((err, res) => {
+        expect(res.status).to.equal(400);
+        expect(res.body.error).to.equal('password must be greater than five characters');
+        done();
+      });
+  });
 });

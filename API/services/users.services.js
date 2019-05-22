@@ -4,7 +4,7 @@ import Usermodel from '../model/user.model';
 
 class UserAction {
   static signup(userdata) {
-    if (users.find((item) => item.email === userdata.email)) return false;
+    if (users.find(item => item.email === userdata.email)) return false;
     const newUser = new Usermodel();
     newUser.firstname = userdata.firstname;
     newUser.email = userdata.email;
@@ -17,11 +17,18 @@ class UserAction {
       firstname: newUser.firstname,
       email: newUser.email,
       lastname: newUser.lastname,
+      password: newUser.password,
       is_admin: newUser.is_admin,
     };
 
     users.push(newUserEntry);
-    return newUserEntry;
+    const userdetails = {
+      id: newUserEntry.id,
+      firstname: newUserEntry.firstname,
+      email: newUserEntry.email,
+      lastname: newUserEntry.lastname,
+    };
+    return userdetails;
   }
 }
 
