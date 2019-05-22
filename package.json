@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": " nyc _mocha test/*.test.js --recursive --require @babel/register --timeout 10000 --exit",
-    "dev-start": "nodemon --exec babel-node api/index.js",
+    "dev-start": "nodemon --exec babel-node src/index.js",
     "generate-lcov": "nyc report — reporter=text-lcov > lcov.info",
     "coveralls-coverage": "coveralls < lcov.info",
     "coverage": "nyc npm test && npm run generate-lcov && npm run coveralls-coverage ",
     "codeclimate-coverage": "codeclimate-test-reporter < lcov.info",
-    "build": "babel api --out-dir build",
+    "build": "babel src --out-dir build",
     "start": "node build/index.js"
   },
   "repository": {
