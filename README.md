@@ -3,6 +3,9 @@ Auto Mart is an online marketplace for automobiles of diverse makes, model or bo
 
 [![Build Status](https://travis-ci.org/NonsoAmadi10/Auto-Mart.svg?branch=develop)](https://travis-ci.org/NonsoAmadi10/Auto-Mart)
 [![Coverage Status](https://coveralls.io/repos/github/NonsoAmadi10/Auto-Mart/badge.svg?branch=develop)](https://coveralls.io/github/NonsoAmadi10/Auto-Mart?branch=develop)
+[![Maintainability](https://api.codeclimate.com/v1/badges/7cd8c9394ca4e3c2039c/maintainability)](https://codeclimate.com/github/NonsoAmadi10/Auto-Mart/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/7cd8c9394ca4e3c2039c/test_coverage)](https://codeclimate.com/github/NonsoAmadi10/Auto-Mart/test_coverage)
+
 
 ### Required Features
 1. User can sign up.
