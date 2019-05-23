@@ -160,7 +160,7 @@ describe('User should be able to signin', () => {
       })
       .end((err, res) => {
         expect(res.status).to.equal(200);
-        expect(res.body.data).to.have.all.keys(['id', 'firstname', 'lastname', 'email', 'token']);
+        expect(res.body.data).to.have.all.keys(['id', 'firstname', 'lastname', 'email', 'token','is_admin']);
         done();
       });
   });

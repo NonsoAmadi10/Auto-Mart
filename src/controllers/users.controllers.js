@@ -14,7 +14,7 @@ class UserControllers {
         error: 'email already exist',
       });
     }
-    
+
     return jwt.sign({ user }, process.env.JWT_SECRET, (err, token) => {
       res.status(201).send({
         status: 'success',
@@ -24,6 +24,27 @@ class UserControllers {
         },
 
 
+      });
+    });
+  }
+
+  static signinUser(req, res) {
+    const user = req.body;
+    const signin = userservices.signin(user);
+    if (!signin) {
+      res.status(400).send({
+        status: 'error',
+        error: 'invalid credentials! No user exists!',
+      });
+    }
+
+    return jwt.sign({ user }, process.env.JWT_SECRET, (err, token) => {
+      res.status(200).send({
+        status: 'success',
+        data: {
+          token,
+          ...signin,
+        },
       });
     });
   }
