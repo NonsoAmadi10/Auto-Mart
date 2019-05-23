@@ -7,5 +7,6 @@ import Sanitize from '../middlewares/Sanitize';
 const router = Router();
 
 router.post('/auth/signup', Sanitize.signupSanitizer, UserControllers.signupUser);
+router.post('/auth/signin', Sanitize.signinSanitizer, UserControllers.signinUser);
 
 export default router;

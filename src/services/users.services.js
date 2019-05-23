@@ -30,6 +30,20 @@ class UserAction {
     };
     return userdetails;
   }
+
+  static signin(userdata) {
+    const findUser = users.find((user => user.email === userdata.email && user.password === userdata.password));
+    if (!findUser) return false;
+    const userExist = {
+      id: findUser.id,
+      email: findUser.email,
+      firstname: findUser.firstname,
+      lastname: findUser.lastname,
+      is_admin: findUser.lastname,
+    };
+
+    return userExist;
+  }
 }
 
 export default UserAction;
