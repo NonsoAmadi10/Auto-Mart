@@ -87,7 +87,7 @@ describe('User Should be able to signup', () => {
         done();
       });
   });
-  
+
   it('should not allow a user signup with an invalid email', (done) => {
     chai.request(app)
       .post('/api/v1/auth/signup')
@@ -145,6 +145,36 @@ describe('User Should be able to signup', () => {
       .end((err, res) => {
         expect(res.status).to.equal(400);
         expect(res.body.error).to.equal('password must be greater than five characters');
+        done();
+      });
+  });
+});
+
+describe('User should be able to signin', () => {
+  it('should sign in a registered User', (done) => {
+    chai.request(app)
+      .post('/api/v1/auth/signin')
+      .send({
+        email: 'Padola@aol.com',
+        password: '1234567',
+      })
+      .end((err, res) => {
+        expect(res.status).to.equal(200);
+        expect(res.body.data).to.have.all.keys(['id', 'firstname', 'lastname', 'email', 'token']);
+        done();
+      });
+  });
+
+  it('should not allow an unregistered user signin', (done) => {
+    chai.request(app)
+      .post('/api/v1/auth/signin')
+      .send({
+        email: 'jonbellion@human.com',
+        password: 'nothinghaschanged',
+      })
+      .end((err, res) => {
+        expect(res.status).to.equal(400);
+        expect(res.body.error).to.equal('invalid credentials! No user exists!');
         done();
       });
   });
