@@ -32,7 +32,7 @@ class UserControllers {
     const user = req.body;
     const signin = userservices.signin(user);
     if (!signin) {
-      res.status(400).send({
+      res.status(404).send({
         status: 'error',
         error: 'invalid credentials! No user exists!',
       });
