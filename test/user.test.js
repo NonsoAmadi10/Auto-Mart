@@ -98,7 +98,7 @@ describe('User Should be able to signup', () => {
         email: 'amadi.12@gmailcom',
       })
       .end((err, res) => {
-        expect(res.status).to.equal(400);
+        expect(res.status).to.equal(422);
         expect(res.body.error).to.equal('invalid email');
         done();
       });
@@ -113,7 +113,7 @@ describe('User Should be able to signup', () => {
         email: 'amadi@gmail.com',
       })
       .end((err, res) => {
-        expect(res.status).to.equal(400);
+        expect(res.status).to.equal(422);
         expect(res.body.error).to.equal('firstname must be atleast two characters long');
         done();
       });
@@ -128,7 +128,7 @@ describe('User Should be able to signup', () => {
         email: 'amadi@gmail.com',
       })
       .end((err, res) => {
-        expect(res.status).to.equal(400);
+        expect(res.status).to.equal(422);
         expect(res.body.error).to.equal('lastname must be atleast two characters long');
         done();
       });
@@ -143,7 +143,7 @@ describe('User Should be able to signup', () => {
         email: 'amadi@gmail.com',
       })
       .end((err, res) => {
-        expect(res.status).to.equal(400);
+        expect(res.status).to.equal(422);
         expect(res.body.error).to.equal('password must be greater than five characters');
         done();
       });
@@ -173,7 +173,7 @@ describe('User should be able to signin', () => {
         password: 'nothinghaschanged',
       })
       .end((err, res) => {
-        expect(res.status).to.equal(400);
+        expect(res.status).to.equal(404);
         expect(res.body.error).to.equal('invalid credentials! No user exists!');
         done();
       });
