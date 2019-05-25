@@ -10,11 +10,25 @@
  <title>My Orders</title>
 </head>
 <body>
- <header>
-  <nav>
-      <h2 class="logo">Auto-Mart <span class="icon"><i class="fas fa-car"></i></span></h2>
-  </nav>
-  </header>
+  <header>
+  
+
+    <div class="sidebar" id="sidebar">
+      <a href="#" class="closebtn">&times;</a>
+      
+      <a href="marketplace.html"><i class="fas fa-shopping-cart"></i> MarketPlace</a>
+      <a href="myads.html"><i class="fas fa-ad"></i>  My Adverts</a>
+      <a href="post.html"><i class="fas fa-plus-circle"></i>  Post an Ad</a>
+      <a href="orders.html" class="active"><i class="far fa-calendar"></i>  My Orders</a>
+      <a href="login.html"><i class="fas fa-sign-out-alt"></i>  Logout</a>
+    </div>
+    <div id="main">
+        <h1 class="logo">Auto-Mart <span class="icon"><i class="fas fa-car"></i></span></h1>
+      <button class="openmenu">&#9776; Menu</button> 
+      
+    </div>
+    
+</header>
   <div class="marketplace">
    <div class="products orders">
     <p class="manufacturer">Aston Martin</p>
@@ -75,4 +89,5 @@
   </div>
 </body>
 <script src="js/edit-purchase.js"></script>
+<script src="js/menubar.js"></script>
 </html>
