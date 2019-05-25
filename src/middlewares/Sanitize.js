@@ -37,10 +37,10 @@ class Sanitize {
 
   static advertSanitizer(req, res, next) {
     const {
-      model, manufacturer, bodyType, price, state
+      model, manufacturer, bodyType, price, state,
     } = req.body;
-   
-    
+
+
     const response = (error, code) => res.status(code).send({ status: 'error', error });
     if (Validator.checkEmpty(model)) return response('Please enter car model', 422);
     if (Validator.checkEmpty(manufacturer)) return response('Please enter car manufacturer', 422);
@@ -48,6 +48,16 @@ class Sanitize {
     if (Validator.checkEmpty(price)) return response('Please enter price', 422);
     if (Validator.checkEmpty(state)) return response('Please enter car state! e.g used or new', 422);
     if (!Validator.validImage(req.files[0].originalname)) return response('Only image files are allowed', 422);
+    return next();
+  }
+
+  static OrderSanitizer(req, res, next) {
+    const { carId, offer } = req.body;
+    const response = (error, code) => res.status(code).send({ status: 'error', error });
+    if (Validator.checkEmpty(carId)) return response('Please enter car id', 422);
+    if (Validator.checkEmpty(offer)) return response('Please enter an offer', 422);
+    if (!Validator.isNotNumber(offer)) return response('Please enter a valid offer', 422);
+
     return next();
   }
 }
