@@ -6,7 +6,7 @@ class Validate {
    */
   static isEmail(email) {
     const re = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/ig;
-    return re.test(email.trim().toLowerCase());
+    return re.test(email.toLowerCase());
   }
 
   static isValidParamsLength(param, length) {
@@ -25,6 +25,11 @@ class Validate {
     const re = /[0-9]/g;
     const testName = re.test(name.trim().toLowerCase());
     return testName;
+  }
+
+  static validImage(image){
+    const re = /(.jpg|.jpeg|.png|.gif)$/g;
+    return image.match(re);
   }
 }
 

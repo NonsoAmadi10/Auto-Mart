@@ -34,6 +34,22 @@ class Sanitize {
 
     return next();
   }
+
+  static advertSanitizer(req, res, next) {
+    const {
+      model, manufacturer, bodyType, price, state
+    } = req.body;
+   
+    
+    const response = (error, code) => res.status(code).send({ status: 'error', error });
+    if (Validator.checkEmpty(model)) return response('Please enter car model', 422);
+    if (Validator.checkEmpty(manufacturer)) return response('Please enter car manufacturer', 422);
+    if (Validator.checkEmpty(bodyType)) return response('Please enter a body type', 422);
+    if (Validator.checkEmpty(price)) return response('Please enter price', 422);
+    if (Validator.checkEmpty(state)) return response('Please enter car state! e.g used or new', 422);
+    if (!Validator.validImage(req.files[0].originalname)) return response('Only image files are allowed', 422);
+    return next();
+  }
 }
 
 export default Sanitize;
