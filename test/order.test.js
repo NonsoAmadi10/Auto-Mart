@@ -23,19 +23,71 @@ before((done) => {
     });
 });
 
-describe('Orders', () => {
-  it('should make allow a user make a purchase order ', (done) => {
+it('should send a 201 status to post an order', (done) => {
+  chai.request(app)
+    .post('/api/v1/order')
+    .set('Authorization', myToken)
+    .send({
+      carId: 2,
+      offer: 3000000,
+    })
+    .end((error, res) => {
+      if (error) done(error);
+      expect(res).to.be.an('object');
+      expect(res).to.have.status(201);
+      expect(res.body).to.have.keys('status', 'data');
+      expect(res.body.status).to.deep.equal('success');
+      expect(res.body.data).to.have.keys('id', 'carId', 'status', 'price', 'offer', 'buyerId', 'createdOn');
+      done();
+    });
+  it('should not purchase a Car if it does not exist', (done) => {
     chai.request(app)
-      .post('api/v1/order')
-      .set('authorization', myToken)
+      .post('/api/v1/order')
+      .set('Authorization', myToken)
       .send({
-        carId: 2,
-        yourOffer: 4000000,
+        carId: 70,
+        offer: 3000000,
       })
-      .end((err, res) => {
-        expect(res.status).to.equal(201);
-        expect(res.body.data).to.have.all.keys(['id', 'carId', 'createdOn','status', 'price','offer']);
+      .end((error, res) => {
+        if (error) done(error);
+        expect(res).to.be.an('object');
+        expect(res).to.have.status(404);
+
+        expect(res.body.error).to.equal('Car does not exist');
         done();
       });
   });
+
+  it('should not purchase a Car if the offer is not a number', (done) => {
+    chai.request(app)
+      .post('/api/v1/order')
+      .set('Authorization', myToken)
+      .send({
+        carId: 7,
+        offer: '3000000',
+      })
+      .end((error, res) => {
+        if (error) done(error);
+        expect(res).to.be.an('object');
+        expect(res).to.have.status(422);
+        expect(res.body.error).to.equal('Please enter a valid offer');
+        done();
+      });
+  });
+
+  it('should not accept empty input bodies',(done) =>{
+    chai.request(app)
+    .post('/api/v1/order')
+    .set('Authorization',myToken)
+    .send({
+      carId: '',
+      offer: '',
+    })
+    .end((error, res) => {
+      if(error) done(error);
+      expect(res.status).to.equal(422);
+      done();
+    })
+  })
+
 });

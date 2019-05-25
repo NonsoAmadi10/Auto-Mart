@@ -23,7 +23,7 @@ class Validate {
 
   static isNotNumber(name) {
     const re = /[0-9]/g;
-    const testName = re.test(name.trim().toLowerCase());
+    const testName = re.test(name);
     return testName;
   }
 
