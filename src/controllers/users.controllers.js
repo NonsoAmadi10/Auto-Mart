@@ -15,7 +15,7 @@ class UserControllers {
       });
     }
 
-    return jwt.sign({ user }, process.env.JWT_SECRET, (err, token) => {
+    return jwt.sign(signup, process.env.JWT_SECRET, (err, token) => {
       res.status(201).send({
         status: 'success',
         data: {
@@ -38,7 +38,7 @@ class UserControllers {
       });
     }
 
-    return jwt.sign({ user }, process.env.JWT_SECRET, (err, token) => {
+    return jwt.sign(signin, process.env.JWT_SECRET, (err, token) => {
       res.status(200).send({
         status: 'success',
         data: {
