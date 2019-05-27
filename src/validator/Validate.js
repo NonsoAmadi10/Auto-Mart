@@ -31,6 +31,8 @@ class Validate {
     const re = /(.jpg|.jpeg|.png|.gif)$/g;
     return image.match(re);
   }
+
+  
 }
 
 export default Validate;
