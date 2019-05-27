@@ -23,6 +23,16 @@ class VehicleAction {
     return findCar;
 
   }
+
+  static patchPrice(userEmail, carId, price) {
+    const findCar = vehicles.cars.find((car => car.email == userEmail && car.id == carId));
+    if (!findCar) return false;
+    const carIndex = vehicles.cars.indexOf(findCar);
+    findCar.price = price;
+    vehicles.cars.splice(carIndex, 1, findCar);
+    return findCar;
+
+  }
 }
 
 export default VehicleAction;

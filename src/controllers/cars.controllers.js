@@ -44,6 +44,22 @@ const CarController = {
       data: updateStatus,
     });
   },
+
+  updateCarPrice(req, res) {
+    const { email } = req.user;
+    const { price } = req.body;
+    const { id } = req.params;
+   
+    const updatePrice = vehicleServices.patchPrice(email, parseInt(id,10), price);
+
+    if (!updatePrice) return res.status(404).send({ status: 'error', error: 'Car not found' });
+
+    return res.status(200).send({
+      status: 'success',
+      data: updatePrice,
+    });
+  },
+
 };
 
 export default CarController;
