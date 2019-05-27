@@ -61,17 +61,33 @@ class Sanitize {
     return next();
   }
 
-  static updateOrderSanitizer(req, res , next) {
+  static updateOrderSanitizer(req, res, next) {
     const { newOffer } = req.body;
     const { id } = req.params;
     const response = (error, code) => res.status(code).send({ status: 'error', error });
     if (Validator.checkEmpty(newOffer)) return response('Please enter a new Offer', 422);
     if (isNaN(newOffer)) return response('Please enter a valid Offer', 422);
     if (isNaN(id)) return response('Invalid Request', 400);
-    
-   return next();
+
+    return next();
+  }
+
+  /**
+  @params - Check for an invalid request params;
+  @requestBody- Check  for empty input
+  * */
+
+  static updateStatusSanitizer(req, res, next) {
+    const { status } = req.body;
+    const { id } = req.params;
+    const response = (error, code) => res.status(code).send({ status: 'error', error });
+    if (Validator.checkEmpty(status)) return response('Please enter a valid status. e.g "new" or "used', 422);
+    // eslint-disable-next-line no-restricted-globals
+    if (isNaN(id)) return response('Invalid URL parameter', 400);
+    if (Validator.isNotNumber(status)) return response('status cannot contain number', 422);
+
+    return next();
   }
 }
 
 export default Sanitize;
-

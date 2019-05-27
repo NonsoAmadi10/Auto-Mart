@@ -1,5 +1,6 @@
-import chai from 'chai';
+import  chai from 'chai';
 import { expect } from 'chai';
+
 
 import fs from 'fs';
 import chaihttp from 'chai-http';
@@ -67,6 +68,47 @@ describe('Cars', () => {
       .end((err, res) => {
         expect(res.status).to.equal(422);
         expect(res.body.error).to.equal('Only image files are allowed');
+        done();
+      });
+  });
+
+  it('should update the status of a Car sale advert', (done) => {
+    chai.request(app)
+      .patch('/api/v1/car/1/status')
+      .set('Authorization', myToken)
+      .send({
+        status: 'sold',
+      })
+      .end((err, res) => {
+        expect(res.status).to.equal(200);
+        expect(res.body.data.status).to.equal('sold');
+        done();
+      });
+  });
+
+  it('should not update the status of an advert if it does not belong to a user', (done) => {
+    chai.request(app)
+      .patch('/api/v1/car/3/status')
+      .set('Authorization', myToken)
+      .send({
+        status: 'sold'
+      })
+      .end((err, res) => {
+        expect(res.status).to.equal(404);
+        expect(res.body.error).to.equal('Car not found');
+        done();
+      })
+  });
+  it('should only the status of a sold car', (done) => {
+    chai.request(app)
+      .patch('/api/v1/car/1/status')
+      .set('Authorization', myToken)
+      .send({
+        status: 'hello'
+      })
+      .end((err, res) => {
+        expect(res.status).to.equal(400);
+        expect(res.body.error).to.equal('You Can only update a sold car')
         done();
       });
   });
