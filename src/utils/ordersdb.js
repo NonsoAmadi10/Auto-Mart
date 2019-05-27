@@ -9,11 +9,11 @@ const ordersDb = [
   },
   {
     id: 2,
-    buyerId: 2,
+    buyerId: 1,
     carId: 2,
     price: 14000000,
     offer: 6500000,
-    status: 'accepted',
+    status: 'pending',
   },
   {
     id: 3,

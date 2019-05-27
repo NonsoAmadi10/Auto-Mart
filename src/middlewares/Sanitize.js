@@ -56,9 +56,20 @@ class Sanitize {
     const response = (error, code) => res.status(code).send({ status: 'error', error });
     if (Validator.checkEmpty(carId)) return response('Please enter car id', 422);
     if (Validator.checkEmpty(offer)) return response('Please enter an offer', 422);
-    if (!Validator.isNotNumber(offer)) return response('Please enter a valid offer', 422);
+    if (isNaN(offer)) return response('Please enter a valid offer', 422);
 
     return next();
+  }
+
+  static updateOrderSanitizer(req, res , next) {
+    const { newOffer } = req.body;
+    const { id } = req.params;
+    const response = (error, code) => res.status(code).send({ status: 'error', error });
+    if (Validator.checkEmpty(newOffer)) return response('Please enter a new Offer', 422);
+    if (isNaN(newOffer)) return response('Please enter a valid Offer', 422);
+    if (isNaN(id)) return response('Invalid Request', 400);
+    
+   return next();
   }
 }
 
