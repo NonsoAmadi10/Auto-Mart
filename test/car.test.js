@@ -91,24 +91,64 @@ describe('Cars', () => {
       .patch('/api/v1/car/3/status')
       .set('Authorization', myToken)
       .send({
-        status: 'sold'
+        status: 'sold',
       })
       .end((err, res) => {
         expect(res.status).to.equal(404);
         expect(res.body.error).to.equal('Car not found');
         done();
-      })
+      });
   });
   it('should only the status of a sold car', (done) => {
     chai.request(app)
       .patch('/api/v1/car/1/status')
       .set('Authorization', myToken)
       .send({
-        status: 'hello'
+        status: 'hello',
       })
       .end((err, res) => {
         expect(res.status).to.equal(400);
-        expect(res.body.error).to.equal('You Can only update a sold car')
+        expect(res.body.error).to.equal('You Can only update a sold car');
+        done();
+      });
+  });
+
+  it('should not update the price of an advert if it does not belong to a user', (done) => {
+    chai.request(app)
+      .patch('/api/v1/car/3/price')
+      .set('Authorization', myToken)
+      .send({
+        price: 12345,
+      })
+      .end((err, res) => {
+        expect(res.status).to.equal(404);
+        expect(res.body.error).to.equal('Car not found');
+        done();
+      });
+  });
+  it('should update the price of an advert if it d belongs to a user', (done) => {
+    chai.request(app)
+      .patch('/api/v1/car/1/price')
+      .set('Authorization', myToken)
+      .send({
+        price: 123456,
+      })
+      .end((err, res) => {
+        expect(res.status).to.equal(200);
+        expect(res.body.data.price).to.equal(123456);
+        done();
+      });
+  });
+  it('should not update the price of an advert if the request body is not a number', (done) => {
+    chai.request(app)
+      .patch('/api/v1/car/1/price')
+      .set('Authorization', myToken)
+      .send({
+        price: 'sold',
+      })
+      .end((err, res) => {
+        expect(res.status).to.equal(422);
+        expect(res.body.error).to.equal('Enter a valid price number');
         done();
       });
   });
