@@ -35,7 +35,7 @@ const CarController = {
     const { status } = req.body;
     const { id } = req.params;
     if (status !== 'sold') return res.status(400).send({ status: 'error', error: 'You Can only update a sold car' });
-    const updateStatus = vehicleServices.patchStatus(email, parseInt(id,10), status);
+    const updateStatus = vehicleServices.patchStatus(email, parseInt(id, 10), status);
 
     if (!updateStatus) return res.status(404).send({ status: 'error', error: 'Car not found' });
 
@@ -49,8 +49,8 @@ const CarController = {
     const { email } = req.user;
     const { price } = req.body;
     const { id } = req.params;
-   
-    const updatePrice = vehicleServices.patchPrice(email, parseInt(id,10), price);
+
+    const updatePrice = vehicleServices.patchPrice(email, parseInt(id, 10), price);
 
     if (!updatePrice) return res.status(404).send({ status: 'error', error: 'Car not found' });
 
@@ -60,6 +60,20 @@ const CarController = {
     });
   },
 
+  getSpecificCar(req, res) {
+    const { email } = req.user;
+    const { id } = req.params;
+
+    const findCar = vehicleServices.getSpecificCar(id, email);
+    if (!findCar) return res.status(404).send({ status: 'error', error: 'Car not found' });
+
+    return res.status(200).send({
+      status: 'success',
+      data: findCar,
+    });
+  },
+
+  
 };
 
 export default CarController;

@@ -152,4 +152,24 @@ describe('Cars', () => {
         done();
       });
   });
+  it('should not get an advert  that does not belong to a user', (done) => {
+    chai.request(app)
+      .get('/api/v1/car/4/')
+      .set('Authorization', myToken)
+      .end((err, res) => {
+        expect(res.status).to.equal(404);
+        expect(res.body.error).to.equal('Car not found');
+        done();
+      });
+  });
+  it('should get an advert that belongs to a user', (done) => {
+    chai.request(app)
+      .get('/api/v1/car/1/')
+      .set('Authorization', myToken)
+      .end((err, res) => {
+        expect(res.status).to.equal(200);
+        expect(res.body.data).to.have.all.keys(['id', 'email', 'createdOn','price', 'state', 'status','bodyType','manufacturer', 'model','imageUrl']);
+        done();
+      });
+  });
 });
