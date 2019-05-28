@@ -60,11 +60,11 @@ const CarController = {
     });
   },
 
-  getSpecificCar(req, res) {
+  async getSpecificCar(req, res) {
     const { email } = req.user;
     const { id } = req.params;
 
-    const findCar = vehicleServices.getSpecificCar(id, email);
+    const findCar = await vehicleServices.getSpecificCar(id, email);
     if (!findCar) return res.status(404).send({ status: 'error', error: 'Car not found' });
 
     return res.status(200).send({
@@ -73,7 +73,7 @@ const CarController = {
     });
   },
 
-  
+
 };
 
 export default CarController;

@@ -34,11 +34,11 @@ class VehicleAction {
 
   }
 
-  static getSpecificCar(carId, userEmail) {
-  const specificCar = vehicles.cars.find((car => car.id == carId && car.email == userEmail));
-  if (!specificCar) return false;
-  
-  return specificCar;
+  static async getSpecificCar(carId, userEmail) {
+    const specificCar = await vehicles.cars.find((car => car.id == carId && car.email == userEmail));
+    if (!specificCar) return false;
+
+    return specificCar;
   }
 }
 

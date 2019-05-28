@@ -11,6 +11,6 @@ const router = Router();
 router.post('/car', authorize, upload.array('photo', 2), Sanitize.advertSanitizer, cloudinaryUploader, CarsControllers.postAd );
 router.patch('/car/:id/status', authorize, Sanitize.updateStatusSanitizer, CarsControllers.updateCarStatus );
 router.patch('/car/:id/price', authorize, Sanitize.updatePriceSanitizer, CarsControllers.updateCarPrice);
-router.get('/car/:id',authorize, CarsControllers.getSpecificCar);
+router.get('/car/:id', authorize, Sanitize.getSpecificCar, CarsControllers.getSpecificCar);
 
 export default router;

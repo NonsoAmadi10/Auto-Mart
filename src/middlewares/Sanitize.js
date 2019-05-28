@@ -100,6 +100,12 @@ class Sanitize {
 
     return next();
   }
+
+  static getSpecificCar(req, res, next) {
+    const { id } = req.params;
+    const response = (error, code) => res.status(code).send({ status: 'error', error });
+    if (isNaN(id)) return response('Invalid URL parameter', 400);
+  }
 }
 
 export default Sanitize;
