@@ -73,6 +73,17 @@ const CarController = {
     });
   },
 
+  async getUnsoldCar(req, res) {
+
+    const { status } = req.query;
+  
+    const allUnsoldCars = await vehicleServices.getUnsoldCars(status);
+
+    return res.status(200).send({
+      status: 'success',
+      data: allUnsoldCars,
+    });
+  },
 
 };
 

@@ -40,6 +40,14 @@ class VehicleAction {
 
     return specificCar;
   }
+
+  static async getUnsoldCars(available) {
+    const availableCars = await vehicles.cars.filter((car => car.status === available));
+    console.log(availableCars);
+    if (!availableCars) return false;
+
+    return availableCars;
+  }
 }
 
 export default VehicleAction;
