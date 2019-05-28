@@ -152,4 +152,31 @@ describe('Cars', () => {
         done();
       });
   });
+
+  it('should  get an advert on valid params id', (done) => {
+    chai.request(app)
+      .get('/api/v1/car/1')
+      .set('Authorization', myToken)
+      .end((err, res) => {
+        expect(res.status).to.equal(200);
+        expect(res.body.data).to.be.an('object');
+        done();
+
+      });
+    done();
+  });
+
+
+  it('should not get an advert on invalid params id', (done) => {
+    chai.request(app)
+      .get('/api/v1/car/b')
+      .set('Authorization', myToken)
+      .end((err, res) => {
+        expect(res.status).to.equal(400);
+        expect(res.body.error).to.equal('Invalid URL parameter');
+        done();
+      });
+  });
+
+
 });
