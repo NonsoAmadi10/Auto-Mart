@@ -1,10 +1,10 @@
 import  chai from 'chai';
-import { expect } from 'chai';
-
 
 import fs from 'fs';
 import chaihttp from 'chai-http';
 import app from '../src/index';
+
+const { expect } = chai;
 
 chai.use(chaihttp);
 
@@ -178,5 +178,16 @@ describe('Cars', () => {
       });
   });
 
-
+  it('should get all unsold cars', (done) => {
+    chai.request(app)
+      .get('/api/v1/car?status=available')
+      .send('Authorization', myToken)
+      .end((err, res) => {
+        expect(res.status).to.equal(200);
+        expect(res.body.data).to.be.an('array');
+        expect(res.body.data[0].status).to.equal('available');
+        done();
+      });
+    done();
+  });
 });
