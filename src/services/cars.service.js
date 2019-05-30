@@ -41,9 +41,15 @@ class VehicleAction {
     return specificCar;
   }
 
-  static async getUnsoldCars(available) {
-    const availableCars = await vehicles.cars.filter((car => car.status === available));
-    console.log(availableCars);
+  static async getAvailableCars(queries) {
+
+    // Get queries from controllers, set default value for the price range
+    // so that if not specified in the queries, it would still return a valid response
+    const {
+      min_price: minPrice = 0,    
+      max_price: maxPrice = Infinity,
+    } = queries;
+    const availableCars = await vehicles.cars.filter((car => car.status === 'available' && car.price >= minPrice && car.price <= maxPrice));
     if (!availableCars) return false;
 
     return availableCars;

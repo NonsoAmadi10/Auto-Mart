@@ -213,4 +213,15 @@ describe('Cars', () => {
         done();
       });
   });
+
+  it('should return a 404 if there was no car found within the price range', (done) => {
+    chai.request(app)
+      .get('/api/v1/car')
+      .query({ status: 'available', min_price: 10000000000000, max_price: 2000000000000000 })
+      .end((err, res) => {
+        expect(res.status).to.equal(404);
+        expect(res.body.error).to.equal('No match found');
+        done();
+      });
+  });
 });
