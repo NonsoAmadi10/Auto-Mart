@@ -1,4 +1,4 @@
-import  chai from 'chai';
+import chai from 'chai';
 
 import fs from 'fs';
 import chaihttp from 'chai-http';
@@ -180,7 +180,8 @@ describe('Cars', () => {
 
   it('should get all unsold cars', (done) => {
     chai.request(app)
-      .get('/api/v1/car?status=available')
+      .get('/api/v1/car')
+      .query({ status: 'available' })
       .set('Authorization', myToken)
       .end((err, res) => {
         expect(res.status).to.equal(200);
@@ -188,6 +189,28 @@ describe('Cars', () => {
         expect(res.body.data[0].status).to.equal('available');
         done();
       });
-    
+
+  });
+
+  it('should get all unsold cars even without logging a user in', (done) => {
+    chai.request(app)
+      .get('/api/v1/car')
+      .query({ status: 'available' })
+      .end((err, res) => {
+        expect(res.status).to.equal(200);
+        expect(res.body.data).to.be.an('array');
+        done();
+      });
+  });
+
+  it('should get all unsold cars within a specified price range', (done) => {
+    chai.request(app)
+      .get('/api/v1/car')
+      .query({ status: 'available', min_price: 100000, max_price: 120000000 })
+      .end((err, res) => {
+        expect(res.status).to.equal(200);
+        expect(res.body.data).to.be.an('array');
+        done();
+      });
   });
 });
