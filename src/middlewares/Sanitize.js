@@ -105,6 +105,17 @@ class Sanitize {
     const { id } = req.params;
     const response = (error, code) => res.status(code).send({ status: 'error', error });
     if (isNaN(id)) return response('Invalid URL parameter', 400);
+
+    return next();
+  }
+
+  static querySanitizer(req, res, next) {
+    const { max_price, min_price } = req.query;
+    const response = (error, code) => res.status(code).send({ status: 'error', error });
+    if (max_price !== undefined && isNaN(max_price)) return response('max_price entered is not a valid entry', 422);
+    if (min_price !== undefined && isNaN(min_price)) return response('min_price entered is not a valid entry', 422);
+
+    return next();
   }
 }
 

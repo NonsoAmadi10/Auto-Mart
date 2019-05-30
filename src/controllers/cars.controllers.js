@@ -73,15 +73,15 @@ const CarController = {
     });
   },
 
-  async getUnsoldCar(req, res) {
+  async getAvailable(req, res) {
 
-    const { status } = req.query;
-  
-    const allUnsoldCars = await vehicleServices.getUnsoldCars(status);
+
+    const filterSearch = await vehicleServices.getAvailableCars(req.query);
+    if (filterSearch.length < 1) return res.status(404).send({ status: 'error', error: 'No match found' });
 
     return res.status(200).send({
       status: 'success',
-      data: allUnsoldCars,
+      data: filterSearch,
     });
   },
 
