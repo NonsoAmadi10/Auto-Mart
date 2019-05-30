@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 });
 
 
-app.listen(500, ()=>{
+app.listen(100, ()=>{
   console.log('App is running...')
  })
  

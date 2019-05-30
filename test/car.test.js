@@ -161,9 +161,8 @@ describe('Cars', () => {
         expect(res.status).to.equal(200);
         expect(res.body.data).to.be.an('object');
         done();
-
       });
-    done();
+
   });
 
 
@@ -221,6 +220,29 @@ describe('Cars', () => {
       .end((err, res) => {
         expect(res.status).to.equal(404);
         expect(res.body.error).to.equal('No match found');
+        done();
+      });
+  });
+
+  it('should return a 422 if the minimum price is not a number', (done) => {
+    chai.request(app)
+      .get('/api/v1/car')
+      .query({ status: 'available', min_price: 'chimdi', max_price: 20000000 })
+      .end((err, res) => {
+        expect(res.status).to.equal(422);
+        expect(res.body.error).to.equal('min_price entered is not a valid entry');
+        done();
+      });
+  });
+
+
+  it('should return a 422 if the maximum price is not a number', (done) => {
+    chai.request(app)
+      .get('/api/v1/car')
+      .query({ status: 'available', min_price: 4000000, max_price: 'charlies' })
+      .end((err, res) => {
+        expect(res.status).to.equal(422);
+        expect(res.body.error).to.equal('max_price entered is not a valid entry');
         done();
       });
   });
