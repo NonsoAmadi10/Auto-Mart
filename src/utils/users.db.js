@@ -6,7 +6,7 @@ const users = [
     firstname: 'amadi',
     lastname: 'justice',
     password: '1234567',
-    is_admin: false,
+    is_admin: 'f',
   },
   {
     id: 2,
@@ -14,7 +14,7 @@ const users = [
     firstname: 'Busola',
     lastname: 'Soetan',
     password: 'Thunder',
-    is_admin: true,
+    is_admin: 't',
   },
   {
     id: 3,
@@ -22,7 +22,7 @@ const users = [
     firstname: 'Keziah',
     lastname: 'Bond',
     password: '1234567',
-    is_admin: false,
+    is_admin: 'f',
   },
 
 ];

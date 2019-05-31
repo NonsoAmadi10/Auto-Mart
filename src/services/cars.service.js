@@ -54,6 +54,10 @@ class VehicleAction {
 
     return availableCars;
   }
+
+  static getAllCars() {
+    return vehicles.cars ;
+  }
 }
 
 export default VehicleAction;

@@ -39,7 +39,7 @@ class UserAction {
       email: findUser.email,
       firstname: findUser.firstname,
       lastname: findUser.lastname,
-      is_admin: findUser.lastname,
+      is_admin: findUser.is_admin,
     };
 
     return userExist;

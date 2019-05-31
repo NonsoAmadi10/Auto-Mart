@@ -1,4 +1,5 @@
 import vehicleServices from '../services/cars.service';
+import GetHelpers from '../middlewares/helpers';
 
 const CarController = {
 
@@ -73,16 +74,11 @@ const CarController = {
     });
   },
 
-  async getAvailable(req, res) {
 
-
-    const filterSearch = await vehicleServices.getAvailableCars(req.query);
-    if (filterSearch.length < 1) return res.status(404).send({ status: 'error', error: 'No match found' });
-
-    return res.status(200).send({
-      status: 'success',
-      data: filterSearch,
-    });
+ async getAll(req, res) {
+    const { is_admin } = req.user;
+    // eslint-disable-next-line no-return-await
+    return is_admin == 't' ? await GetHelpers.getAllCars(res) : await GetHelpers.getAvailable(req,res);
   },
 
 };
