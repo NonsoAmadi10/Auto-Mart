@@ -26,6 +26,20 @@ before((done) => {
     });
 });
 
+before((done) => {
+  chai.request(app)
+    .post('/api/v1/auth/signin')
+    .send({
+      email: 'busola@gmail.com',
+      password: 'Thunder',
+    })
+    .end((err, res) => {
+      if (err) done(err);
+      adminToken = res.body.data.token;
+      done();
+    });
+});
+
 describe('Cars', () => {
 
   it('should post a car advert', (done) => {
@@ -191,9 +205,10 @@ describe('Cars', () => {
 
   });
 
-  it('should get all unsold cars even without logging a user in', (done) => {
+  it('should get all unsold cars', (done) => {
     chai.request(app)
       .get('/api/v1/car')
+      .set('Authorization', myToken)
       .query({ status: 'available' })
       .end((err, res) => {
         expect(res.status).to.equal(200);
@@ -205,6 +220,7 @@ describe('Cars', () => {
   it('should get all unsold cars within a specified price range', (done) => {
     chai.request(app)
       .get('/api/v1/car')
+      .set('Authorization', myToken)
       .query({ status: 'available', min_price: 100000, max_price: 120000000 })
       .end((err, res) => {
         expect(res.status).to.equal(200);
@@ -216,6 +232,7 @@ describe('Cars', () => {
   it('should return a 404 if there was no car found within the price range', (done) => {
     chai.request(app)
       .get('/api/v1/car')
+      .set('Authorization', myToken)
       .query({ status: 'available', min_price: 10000000000000, max_price: 2000000000000000 })
       .end((err, res) => {
         expect(res.status).to.equal(404);
@@ -227,6 +244,7 @@ describe('Cars', () => {
   it('should return a 422 if the minimum price is not a number', (done) => {
     chai.request(app)
       .get('/api/v1/car')
+      .set('Authorization', myToken)
       .query({ status: 'available', min_price: 'chimdi', max_price: 20000000 })
       .end((err, res) => {
         expect(res.status).to.equal(422);
@@ -239,11 +257,36 @@ describe('Cars', () => {
   it('should return a 422 if the maximum price is not a number', (done) => {
     chai.request(app)
       .get('/api/v1/car')
+      .set('Authorization', myToken)
       .query({ status: 'available', min_price: 4000000, max_price: 'charlies' })
       .end((err, res) => {
         expect(res.status).to.equal(422);
         expect(res.body.error).to.equal('max_price entered is not a valid entry');
         done();
       });
+  });
+
+  it('should get all cars', (done) => {
+    chai.request(app)
+    .get('/api/v1/car')
+    .set('Authorization', adminToken)
+    .end((err, res) => {
+      expect(res.status).to.equal(200);
+      expect(res.body.data).to.be.an('array');
+      done();
+    });
+    
+  });
+
+  it('should not allow a user who is not an admin access this route', (done) =>{
+    chai.request(app)
+    .get('/api/v1/car')
+    .set('Authorization', myToken)
+    .end((err, res) => {
+      expect(res.status).to.equal(403);
+      expect(res.body.error).to.equal('only admins can access this route');
+      done();
+
+    });
   });
 });
