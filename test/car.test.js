@@ -268,25 +268,69 @@ describe('Cars', () => {
 
   it('should get all cars', (done) => {
     chai.request(app)
-    .get('/api/v1/car')
-    .set('Authorization', adminToken)
-    .end((err, res) => {
-      expect(res.status).to.equal(200);
-      expect(res.body.data).to.be.an('array');
-      done();
-    });
-    
+      .get('/api/v1/car')
+      .set('Authorization', adminToken)
+      .end((err, res) => {
+        expect(res.status).to.equal(200);
+        expect(res.body.data).to.be.an('array');
+        done();
+      });
+
   });
 
-  it('should not allow a user who is not an admin access this route', (done) =>{
+  it('should not allow a user who is not an admin access this route', (done) => {
     chai.request(app)
-    .get('/api/v1/car')
-    .set('Authorization', myToken)
-    .end((err, res) => {
-      expect(res.status).to.equal(403);
-      expect(res.body.error).to.equal('only admins can access this route');
-      done();
+      .get('/api/v1/car')
+      .set('Authorization', myToken)
+      .end((err, res) => {
+        expect(res.status).to.equal(403);
+        expect(res.body.error).to.equal('only admins can access this route');
+        done();
 
-    });
+      });
+  });
+
+  it('should delete a car advert', (done) => {
+    chai.request(app)
+      .delete('/api/v1/car/7')
+      .set('Authorization', adminToken)
+      .end((err, res) => {
+        expect(res.status).to.equal(200);
+        expect(res.body.data).to.equal('Car Ad was successfully deleted');
+        done();
+      });
+  });
+
+  it('should not allow a user who is not admin delete a car advert', (done) => {
+    chai.request(app)
+      .delete('/api/v1/car/7')
+      .set('Authorization', myToken)
+      .end((err, res) => {
+        expect(res.status).to.equal(403);
+        expect(res.body.error).to.equal('you are not authorized to do this');
+        done();
+      });
+  });
+
+  it('should send a 404 if the id is not available', (done) => {
+    chai.request(app)
+      .delete('/api/v1/car/5000')
+      .set('Authorization', adminToken)
+      .end((err, res) => {
+        expect(res.status).to.equal(404);
+        expect(res.body.error).to.equal('Advert not found');
+        done();
+      });
+  });
+
+  it('should throw an error on invalid params', (done) => {
+    chai.request(app)
+      .delete('/api/v1/car/g')
+      .set('Authorization', adminToken)
+      .end((err, res) => {
+        expect(res.status).to.equal(400);
+        expect(res.body.error).to.equal('Invalid URL parameter');
+        done();
+      });
   });
 });

@@ -1,3 +1,4 @@
+/* eslint-disable space-before-blocks */
 import vehicles from '../utils/cars.db';
 
 class VehicleAction {
@@ -46,7 +47,7 @@ class VehicleAction {
     // Get queries from controllers, set default value for the price range
     // so that if not specified in the queries, it would still return a valid response
     const {
-      min_price: minPrice = 0,    
+      min_price: minPrice = 0,
       max_price: maxPrice = Infinity,
     } = queries;
     const availableCars = await vehicles.cars.filter((car => car.status === 'available' && car.price >= minPrice && car.price <= maxPrice));
@@ -56,7 +57,15 @@ class VehicleAction {
   }
 
   static getAllCars() {
-    return vehicles.cars ;
+    return vehicles.cars;
+  }
+
+  static deleteCarAd(id){
+    const findCar = vehicles.cars.findIndex((car => car.id == id));
+
+    if(findCar === -1) return false;
+
+    return vehicles.cars.splice(findCar, 1);
   }
 }
 
