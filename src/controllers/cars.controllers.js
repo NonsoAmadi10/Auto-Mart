@@ -75,12 +75,28 @@ const CarController = {
   },
 
 
- async getAll(req, res) {
+  async getAll(req, res) {
     const { is_admin } = req.user;
     // eslint-disable-next-line no-return-await
-    return is_admin == 't' ? await GetHelpers.getAllCars(res) : await GetHelpers.getAvailable(req,res);
+    return is_admin == 't' ? await GetHelpers.getAllCars(res) : await GetHelpers.getAvailable(req, res);
   },
 
+  async deleteCarAd(req, res) {
+    const { id } = req.params;
+    const {is_admin} = req.user;
+    if (is_admin !== 't') return res.status(403).send({ status: 'error', error: 'you are not authorized to do this'})
+    const deleteCar = await vehicleServices.deleteCarAd(id);
+
+    if (deleteCar == -1 || !deleteCar) {return res.status(404).send({
+      status: 'error',
+      error: 'Advert not found',
+    })};
+
+    return res.status(200).send({
+      status: 'success',
+      data: 'Car Ad was successfully deleted',
+    })
+  },
 };
 
 export default CarController;

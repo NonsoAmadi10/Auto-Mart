@@ -13,5 +13,5 @@ router.patch('/car/:id/status', authorize, Sanitize.updateStatusSanitizer, CarsC
 router.patch('/car/:id/price', authorize, Sanitize.updatePriceSanitizer, CarsControllers.updateCarPrice);
 router.get('/car/:id', authorize, Sanitize.getSpecificCar, CarsControllers.getSpecificCar);
 router.get('/car', authorize, Sanitize.querySanitizer, CarsControllers.getAll);
-
+router.delete('/car/:id', authorize,Sanitize.getSpecificCar, CarsControllers.deleteCarAd);
 export default router;
