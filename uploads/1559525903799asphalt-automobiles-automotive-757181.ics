@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//VONQ//Qandidate//EN
+X-WR-RELCALID:qandidate-1d9b3eef7a5a70000e5e6e989293a5a3
+METHOD:REQUEST
+BEGIN:VEVENT
+UID:qandidate-1d9b3eef7a5a70000e5e6e989293a5a3
+DTSTAMP:20181205T100000Z
+DTSTART:20181205T100000Z
+DTEND:20181205T130000Z
+LOCATION:http://www.bit.ly/pythondeveloperfirsttest
+SUMMARY:Interview: Justice Amadi with Professional Services Bincom
+DESCRIPTION:This appointment is managed by Qandidate.com, you cannot make changes\n\nInvitees:\nProfessional Services Bincom (proservices@bincom.net)\nJustice Amadi (amadijustice2@gmail.com)\n
+ORGANIZER;CN="Professional Services Bincom":mailto:proservices@bincom.net
+ATTENDEE;CN="Justice Amadi";CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;X-NUM-GUESTS=0:amadijustice2@gmail.com
+END:VEVENT
+END:VCALENDAR
