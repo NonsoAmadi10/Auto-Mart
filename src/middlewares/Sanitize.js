@@ -117,6 +117,19 @@ class Sanitize {
 
     return next();
   }
+
+  static flagSanitizer(req, res, next) {
+    const { carId, reason, description } = req.body;
+    const response = (error, code) => res.status(code).send({ status: 'error', error });
+    if (!carId) return response('Car id was not specified', 422);
+    if (!reason) return response('your reason was not specified', 422);
+    if (!description) return response('Your report description was not specified', 422);
+    if (isNaN(carId)) return response('Car id must be an integer', 422);
+    if (Validator.itsaNumber(reason)) return response('Reason cannot be an integer',422);
+    if (Validator.itsaNumber(description)) return response('Description cannot be an integer',422);
+
+    return next();
+  }
 }
 
 export default Sanitize;

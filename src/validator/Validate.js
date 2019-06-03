@@ -14,7 +14,7 @@ class Validate {
   }
 
 
-  
+
   static checkEmpty(input) {
     const re = /^$/;
     const testBody = re.test(input);
@@ -27,12 +27,16 @@ class Validate {
     return testName;
   }
 
-  static validImage(image){
+  static validImage(image) {
     const re = /(.jpg|.jpeg|.png|.gif)$/g;
     return image.match(re);
   }
 
-  
+  static itsaNumber(item) {
+    const re = /^[-+]?\d*$/;
+    return re.test(item);
+  }
+
 }
 
 export default Validate;
