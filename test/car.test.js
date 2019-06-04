@@ -333,4 +333,19 @@ describe('Cars', () => {
         done();
       });
   });
+
+  it('should get all unsold brand new cars', (done) => {
+    chai.request(app)
+      .get('/api/v1/car')
+      .set('Authorization', myToken)
+    // eslint-disable-next-line no-dupe-keys
+      .query({ status: 'available', status: 'new' })
+      .end((err, res) => {
+        expect(res.status).to.equal(200);
+        expect(res.body.data).to.be.an('array');
+        expect(res.body.data[0].state).to.equal('new');
+        done();
+      });
+  });
+
 });
