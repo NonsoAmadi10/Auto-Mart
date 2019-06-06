@@ -1,3 +1,4 @@
+import '@babel/polyfill';
 /* eslint-disable space-before-blocks */
 import vehicles from '../utils/cars.db';
 
@@ -35,14 +36,14 @@ class VehicleAction {
 
   }
 
-  static async getSpecificCar(carId, userEmail) {
-    const specificCar = await vehicles.cars.find((car => car.id == carId && car.email == userEmail));
+  static getSpecificCar(carId, userEmail) {
+    const specificCar = vehicles.cars.find((car => car.id == carId && car.email == userEmail));
     if (!specificCar) return false;
 
     return specificCar;
   }
 
-  static async getAvailableCars(queries) {
+  static getAvailableCars(queries) {
 
     // Get queries from controllers, set default value for the price range
     // so that if not specified in the queries, it would still return a valid response
@@ -50,7 +51,7 @@ class VehicleAction {
       min_price: minPrice = 0,
       max_price: maxPrice = Infinity,
     } = queries;
-    const availableCars = await vehicles.cars.filter((car => car.status === 'available' && car.price >= minPrice && car.price <= maxPrice));
+    const availableCars = vehicles.cars.filter((car => car.status === 'available' && car.price >= minPrice && car.price <= maxPrice));
     if (!availableCars) return false;
 
     return availableCars;
@@ -63,7 +64,7 @@ class VehicleAction {
   static deleteCarAd(id){
     const findCar = vehicles.cars.findIndex((car => car.id == id));
 
-    if(findCar === -1) return false;
+    if (findCar === -1) return false;
 
     return vehicles.cars.splice(findCar, 1);
   }
