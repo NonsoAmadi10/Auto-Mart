@@ -1,4 +1,5 @@
 import express from 'express';
+import '@babel/polyfill';
 import userRoutes from './routes/user.route';
 import carRoutes from './routes/cars.route';
 import orderRoutes from './routes/orders.route';

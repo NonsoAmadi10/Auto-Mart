@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/NonsoAmadi10/Auto-Mart#readme",
   "dependencies": {
+    "@babel/polyfill": "^7.4.4",
     "cloudinary": "^1.14.0",
     "dotenv": "^6.2.0",
     "express": "^4.17.0",
