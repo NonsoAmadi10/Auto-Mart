@@ -1,3 +1,4 @@
+import '@babel/polyfill';
 /* eslint-disable space-before-blocks */
 import vehicles from '../utils/cars.db';
 
