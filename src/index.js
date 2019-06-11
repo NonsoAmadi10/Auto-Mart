@@ -1,11 +1,15 @@
 import express from 'express';
 import '@babel/polyfill';
+import swaggerUi from 'swagger-ui-express';
 import userRoutes from './routes/user.route';
 import carRoutes from './routes/cars.route';
 import orderRoutes from './routes/orders.route';
 import flagRoutes from './routes/flag.route';
+import swaggerDocs from '../swagger.json';
 
 const app = express();
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
