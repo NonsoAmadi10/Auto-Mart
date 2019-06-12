@@ -4,11 +4,11 @@
   "description": "Auto Mart is an online marketplace for automobiles of diverse makes, model or body type. With",
   "main": "index.js",
   "scripts": {
-    "test": " nyc _mocha test/*.test.js --recursive --require @babel/register --timeout 20000 --exit",
+    "test": " NODE_ENV=test nyc _mocha test/*.test.js --recursive --require @babel/register --timeout 20000 --exit",
     "dev-start": "nodemon --exec babel-node src/index.js",
     "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
     "generate-lcov": "nyc report --reporter=text-lcov >lcov.info",
-    "coveralls-coverage": "coveralls < lcov.info",
+    "coveralls-coverage": "NODE_ENV=test coveralls < lcov.info",
     "codeclimate-coverage": "codeclimate-test-reporter < lcov.info",
     "coverage": "nyc npm test && npm run generate-lcov && npm run coveralls-coverage && npm run codeclimate-coverage",
     "build": "babel src --out-dir build",
@@ -32,6 +32,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
     "cloudinary": "^1.14.0",
+    "crossenv": "0.0.2-security",
     "dotenv": "^6.2.0",
     "express": "^4.17.0",
     "jsonwebtoken": "^8.5.0",
