@@ -1,11 +1,18 @@
 import chai, { expect } from 'chai';
-
+import dotenv from 'dotenv';
 import chaiHttp from 'chai-http';
-
+import createTables from './assets/seed';
 import app from '../src/index';
+
+dotenv.config();
+process.env.NODE_ENV = 'test';
 
 chai.use(chaiHttp);
 
+before((done) => {
+  createTables();
+  done();
+});
 describe('User Should be able to signup', () => {
   it('should allow a user signup ', (done) => {
     chai.request(app)
@@ -20,6 +27,24 @@ describe('User Should be able to signup', () => {
         expect(res.body).to.be.a('object');
         expect(res.status).to.equal(201);
         expect(res.body.data).to.have.all.keys(['token', 'id', 'firstname', 'lastname', 'email']);
+        done();
+      });
+  });
+
+  it('should not allow an existing user to signup', (done) => {
+    chai.request(app)
+      .post('/api/v1/auth/signup')
+      .send({
+        firstname: 'Chinonso',
+        lastname: 'Amadi',
+        email: 'amadi@gmail.com',
+        password: 'biggie',
+        adminSecret: 'andela',
+        address: '239, Epic towers, ikorodu road',
+      })
+      .end((err, res) => {
+        expect(res.status).to.equal(409);
+        expect(res.body.error).to.equal('User exist already');
         done();
       });
   });
@@ -160,7 +185,7 @@ describe('User should be able to signin', () => {
       })
       .end((err, res) => {
         expect(res.status).to.equal(200);
-        expect(res.body.data).to.have.all.keys(['id', 'firstname', 'lastname', 'email', 'token','is_admin']);
+        expect(res.body.data).to.have.all.keys(['id', 'firstname', 'lastname', 'email', 'token', 'is_admin']);
         done();
       });
   });
