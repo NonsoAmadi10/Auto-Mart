@@ -1,6 +1,6 @@
 import chai from 'chai';
 import chaihttp from 'chai-http';
-//import app from '../src/index';
+/*import app from '../src/index';
 
 const { expect } = chai;
 
@@ -163,3 +163,4 @@ describe('Flags', () => {
       });
   });
 });
+*/
