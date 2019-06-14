@@ -21,7 +21,7 @@ describe('User Should be able to signup', () => {
         confirmPassword: '234576',
         email: 'amadijustice@gmail.com',
         adminSecret: 'johnny',
-        address: '70, 1korodu, lagos'
+        address: '70, 1korodu, lagos',
       })
       .end((err, res) => {
 
@@ -185,18 +185,19 @@ describe('User Should be able to signup', () => {
       });
   });
 });
-/*
+
 describe('User should be able to signin', () => {
   it('should sign in a registered User', (done) => {
     chai.request(app)
       .post('/api/v1/auth/signin')
       .send({
-        email: 'Padola@aol.com',
-        password: '1234567',
+        email: 'amadi@gmail.com',
+        password: 'biggie',
       })
       .end((err, res) => {
+        
         expect(res.status).to.equal(200);
-        expect(res.body.data).to.have.all.keys(['id', 'firstname', 'lastname', 'email', 'token', 'is_admin']);
+        expect(res.body.data).to.have.all.keys(['id', 'firstname', 'lastname', 'email', 'token', 'adminStatus']);
         done();
       });
   });
@@ -214,5 +215,18 @@ describe('User should be able to signin', () => {
         done();
       });
   });
+
+  it('should not signin a user on incorrect password', (done) => {
+    chai.request(app)
+      .post('/api/v1/auth/signin')
+      .send({
+        email: 'amadi@gmail.com',
+        password: 'iphone',
+      })
+      .end((err, res) => {
+        expect(res.status).to.equal(400);
+        expect(res.body.error).to.equal('incorrect password!');
+        done();
+      });
+  });
 });
-*/
