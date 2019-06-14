@@ -4,14 +4,18 @@ class Sanitize {
 
   static signupSanitizer(req, res, next) {
     const {
-      firstname, lastname, password, email,
+      firstname, lastname, password, email, address, adminSecret, confirmPassword,
     } = req.body;
     const response = (error, code) => res.status(code).send({ status: 'error', error });
 
     if (Validator.checkEmpty(email)) return response('email cannot be empty', 400);
     if (Validator.checkEmpty(lastname)) return response('lastname cannot be empty', 400);
     if (Validator.checkEmpty(password)) return response('password cannot be empty', 400);
+    if (Validator.checkEmpty(confirmPassword)) return response('confirm password cannot be empty', 400);
     if (Validator.checkEmpty(firstname)) return response('firstname cannot be empty', 400);
+    if (Validator.checkEmpty(address)) return response('address cannot be empty', 400);
+    if (Validator.checkEmpty(adminSecret)) return response('adminSecret cannot be empty', 400);
+    if (!Validator.isMatchingPassword(password, confirmPassword)) return response('Passwords do not match', 400)
     if (!Validator.isEmail(email)) return response('invalid email', 422);
     if (Validator.isValidParamsLength(firstname, 2)) return response('firstname must be atleast two characters long', 422);
     if (Validator.isValidParamsLength(lastname, 2)) return response('lastname must be atleast two characters long', 422);

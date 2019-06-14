@@ -1,8 +1,8 @@
-import chai from 'chai';
+ /* import chai from 'chai';
 
 import fs from 'fs';
 import chaihttp from 'chai-http';
-//import app from '../src/index';
+import app from '../src/index';
 
 const { expect } = chai;
 
@@ -334,3 +334,4 @@ describe('Cars', () => {
       });
   });
 });
+*/

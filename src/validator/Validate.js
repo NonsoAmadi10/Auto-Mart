@@ -31,7 +31,10 @@ class Validate {
     const re = /(.jpg|.jpeg|.png|.gif)$/g;
     return image.match(re);
   }
-
+  
+  static isMatchingPassword(password, confirmPassword) {
+    return password === confirmPassword;
+  }
   static itsaNumber(item) {
     const re = /^[-+]?\d*$/;
     return re.test(item);
