@@ -12,8 +12,8 @@ class AuthController {
 
   static async signupController(req, res) {
     const {
- firstname, lastname, email, password, address, adminSecret 
-} = req.body;
+      firstname, lastname, email, password, address, adminSecret,
+    } = req.body;
     const isAdmin = adminSecret === process.env.ADMIN_SECRET ? 't' : 'f';
 
     try {
@@ -43,7 +43,7 @@ class AuthController {
             lastname: registerUser.rows[0].lastname,
             email: registerUser.rows[0].email,
             address: registerUser.rows[0].address,
-          }
+          },
         });
       });
 
@@ -51,6 +51,51 @@ class AuthController {
       return res.status(400).send({ error: error.message });
     }
 
+  }
+
+  /**
+   * @controller - handles the loggin in of registered user
+   * It will not log an unregistered user in
+   * It will not login on wrong password credentials
+   */
+
+  static async signinController(req, res) {
+    const { email, password } = req.body;
+
+    try {
+      const userExist = await pool.query('SELECT * FROM users WHERE email=$1;', [email]);
+      if (userExist.rowCount <= 0) {
+        return res.status(404).send({
+          status: 'error',
+          error: 'invalid credentials! No user exists!',
+        });
+      }
+
+      const comparePasswords = bcrypt.compareSync(password, userExist.rows[0].password);
+      if (!comparePasswords) {
+        return res.status(400).send({
+          status: 'error',
+          error: 'incorrect password!',
+        });
+      }
+
+      return jwt.sign(userExist.rows[0], process.env.JWT_SECRET, (err, token) => {
+        if (err) console.log(err);
+        res.status(200).send({
+          status: 'success',
+          data: {
+            token,
+            id: userExist.rows[0].id,
+            email: userExist.rows[0].email,
+            lastname: userExist.rows[0].lastname,
+            firstname: userExist.rows[0].firstname,
+            adminStatus: userExist.rows[0].is_admin,
+          },
+        });
+      });
+    } catch (error) {
+    return res.status(500).send({ error: error.message });
+    }
   }
 
 }
