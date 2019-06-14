@@ -5,7 +5,8 @@ const createUsers =
    lastname VARCHAR(50) NOT NULL,
    email VARCHAR(50) NOT NULL,
    password VARCHAR(255) NOT NULL,
-   address VARCHAR(255) NOT NULL
+   address VARCHAR(255) NOT NULL,
+   is_admin VARCHAR(20) NOT NULL
 );
 `;
 

@@ -4,7 +4,7 @@
   "description": "Auto Mart is an online marketplace for automobiles of diverse makes, model or body type. With",
   "main": "index.js",
   "scripts": {
-    "test": " nyc _mocha test/*.test.js --recursive --require @babel/polyfill  --require @babel/register --no-timeout --exit",
+    "test": " nyc _mocha test/*.test.js --recursive --require @babel/polyfill --require @babel/register --no-timeout  --exit",
     "dev-start": "nodemon --exec babel-node src/index.js",
     "db-migrations": "babel-node ./src/database/db-setup.js",
     "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
@@ -32,6 +32,7 @@
   "homepage": "https://github.com/NonsoAmadi10/Auto-Mart#readme",
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
+    "bcryptjs": "^2.4.3",
     "cloudinary": "^1.14.0",
     "crossenv": "0.0.2-security",
     "dotenv": "^6.2.0",
