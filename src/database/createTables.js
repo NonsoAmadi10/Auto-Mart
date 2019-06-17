@@ -21,6 +21,7 @@ const createCars =
     manufacturer VARCHAR(155) NOT NULL,
     model VARCHAR(50) NOT NULL,
     body_type VARCHAR(50) NOT NULL,
+    image_url VARCHAR(255) NOT NULL,
     flagged BOOLEAN 
 );
 `;
