@@ -22,10 +22,10 @@ const users = {
   },
   validUser: {
     id: 2,
-    firstname: 'James',
-    lastname: 'lockwood',
+    firstname: 'nonso',
+    lastname: 'Amadi',
     address: '234567, gdfcvcsyh',
-    email: 'amadi@james.com',
+    email: 'amadi@aol.com',
     password: 'pixel2user',
     confirmPassword: 'pixel2user',
     adminSecret: 'june',

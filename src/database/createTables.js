@@ -32,7 +32,7 @@ const createOrders =
  id SERIAL PRIMARY KEY,
  car_id INTEGER REFERENCES cars(id),
  buyer_id INTEGER REFERENCES users(id),
- amount NUMERIC,
+ amountOffered DECIMAL,
  status CHAR(50)
 );
 `;

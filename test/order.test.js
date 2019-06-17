@@ -22,14 +22,14 @@ before((done) => {
 
 
 describe('Orders', () => {
-  const { admin, validUser } = users;
+  const { validUser } = users;
   myToken = generateValidToken({ validUser })
   it('should send a 201 status to post an order', (done) => {
     chai.request(app)
       .post('/api/v1/order')
       .set('Authorization', myToken)
       .send({
-        carId: 2,
+        carId: 1,
         offer: 3000000,
       })
       .end((error, res) => {
@@ -65,7 +65,7 @@ describe('Orders', () => {
       .post('/api/v1/order')
       .set('Authorization', myToken)
       .send({
-        carId: 3,
+        carId: 1,
         offer: '334ssddfrdf',
       })
       .end((error, res) => {
