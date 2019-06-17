@@ -8,6 +8,7 @@ const authorize = (req, res, next) => {
   if (!token) res.status(401).send({ status: 'error', error: 'You must be logged in to use this route' });
   const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
+  
   req.user = decoded;
 
   return next();

@@ -21,7 +21,7 @@ before((done) => {
 
 describe('Orders', () => {
   const { validUser } = users;
-  myToken = generateValidToken({ validUser })
+  myToken = generateValidToken(validUser)
   it('should send a 201 status to post an order', (done) => {
     chai.request(app)
       .post('/api/v1/order')

@@ -23,8 +23,8 @@ before((done) => {
 
 describe('Cars', () => {
   const { admin, validUser } = users;
-  myToken = generateValidToken({ validUser })
-  adminToken = generateValidToken({ admin });
+  myToken = generateValidToken(validUser)
+  adminToken = generateValidToken(admin);
   
   it('should post a car advert', (done) => {
     const filePath = `${__dirname}/assets/asphalt-automobiles-automotive-757181.jpg`;
