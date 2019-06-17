@@ -1,6 +1,4 @@
 import chai from 'chai';
-
-import fs from 'fs';
 import chaihttp from 'chai-http';
 import app from '../src/index';
 import createTables from './assets/seed';
@@ -30,15 +28,16 @@ describe('Orders', () => {
       .set('Authorization', myToken)
       .send({
         carId: 1,
-        offer: 3000000,
+        priceOffered: 3000000,
       })
       .end((error, res) => {
         if (error) done(error);
         expect(res).to.be.an('object');
+        console.log(res)
         expect(res).to.have.status(201);
         expect(res.body).to.have.keys('status', 'data');
         expect(res.body.status).to.deep.equal('success');
-        expect(res.body.data).to.have.keys('id', 'carId', 'status', 'price', 'offer', 'buyerId', 'createdOn');
+        expect(res.body.data).to.have.keys('id', 'carId', 'status', 'price', 'priceOffered', 'buyerId', 'createdOn');
         done();
       });
   });
@@ -48,7 +47,7 @@ describe('Orders', () => {
       .set('Authorization', myToken)
       .send({
         carId: 70,
-        offer: 3000000,
+        priceOffered: 3000000,
       })
       .end((error, res) => {
         if (error) done(error);
@@ -66,7 +65,7 @@ describe('Orders', () => {
       .set('Authorization', myToken)
       .send({
         carId: 1,
-        offer: '334ssddfrdf',
+        priceOffered: '334ssddfrdf',
       })
       .end((error, res) => {
         if (error) done(error);
@@ -83,7 +82,7 @@ describe('Orders', () => {
       .set('Authorization',myToken)
       .send({
         carId: '',
-        offer: '',
+        priceOffered: '',
       })
       .end((error, res) => {
         if(error) done(error);

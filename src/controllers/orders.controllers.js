@@ -3,7 +3,7 @@ import pool from '../database/config';
 class OrderController {
 
   static async postOrder(req, res) {
-    const { id, } = req.user;
+    const { id } = req.user;
     const { carId, priceOffered } = req.body;
     const price = parseFloat(priceOffered).toFixed(2);
     const status = 'pending';
@@ -21,15 +21,18 @@ class OrderController {
         });
       }
 
-      const makeOrder = await pool.query('INSERT into orders(car_id, buyer_id ,amountOffered, status) VALUES($1, $2, $3, $4) RETURNING * ;', [carId, id, price, status]);
+      const createdOn = new Date().toLocaleDateString();
+
+      const makeOrder = await pool.query('INSERT into orders(car_id, buyer_id, createdon ,amount, status) VALUES($1, $2, $3, $4, $5) RETURNING * ;', [carId, id, createdOn, price, status]);
 
       return res.status(201).send({
         status: 'success',
         data: {
           id: makeOrder.rows[0].id,
           buyerId: makeOrder.rows[0].buyer_id,
-          price: carExist.rows[0].price,
-          priceOffered: makeOrder.rows[0].amountOffered,
+          createdOn: makeOrder.rows[0].createdon,
+          price: parseFloat(carExist.rows[0].price).toFixed(2),
+          priceOffered: parseFloat(makeOrder.rows[0].amountOffered).toFixed(2),
           status: makeOrder.rows[0].status,
         },
       });
@@ -41,3 +44,5 @@ class OrderController {
     }
   }
 }
+
+export default OrderController;

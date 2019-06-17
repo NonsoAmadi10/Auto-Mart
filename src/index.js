@@ -3,6 +3,7 @@ import '@babel/polyfill';
 import swaggerUi from 'swagger-ui-express';
 import userRoutes from './routes/user.route';
 import carRoutes from './routes/cars.route';
+import OrderRoutes from './routes/orders.route';
 import swaggerDocs from '../swagger.json';
 
 const app = express();
@@ -15,6 +16,7 @@ app.use('/uploads', express.static('uploads'));
 
 app.use('/api/v1', userRoutes);
 app.use('/api/v1', carRoutes);
+app.use('/api/v1', OrderRoutes);
 
 app.get('/', (req, res) => {
   res.send({
