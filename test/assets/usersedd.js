@@ -18,15 +18,17 @@ const users = {
     email: 'hovkard@gmail.com',
     password: 'suppersecurepassword',
     confirmPassword: 'suppersecurepassword',
-    adminStatus: 't'
+    adminSecret: process.env.ADMIN_SECRET
   },
   validUser: {
     id: 2,
-    name: 'James',
+    firstname: 'James',
+    lastname: 'lockwood',
+    address: '234567, gdfcvcsyh',
     email: 'daniel@james.com',
     password: 'pixel2user',
     confirmPassword: 'pixel2user',
-    adminStatus: 'f',
+    adminSecret: 'june',
   },
 };
 

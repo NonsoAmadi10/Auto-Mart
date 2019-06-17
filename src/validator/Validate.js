@@ -6,7 +6,7 @@ class Validate {
    */
   static isEmail(email) {
     const re = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/ig;
-    return re.test(email.toLowerCase());
+    return re.test(email);
   }
 
   static isValidParamsLength(param, length) {

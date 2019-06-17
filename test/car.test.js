@@ -17,7 +17,6 @@ let adminToken;
 before((done) => {
 
   createTables();
-  
   done();
 });
 
@@ -38,8 +37,9 @@ before((done) => {
 
 describe('Cars', () => {
   const { admin, validUser } = users;
-  myToken = generateValidToken({ validUser });
+  myToken = generateValidToken({ validUser })
   adminToken = generateValidToken({ admin });
+  
   it('should post a car advert', (done) => {
     const filePath = `${__dirname}/assets/asphalt-automobiles-automotive-757181.jpg`;
     chai.request(app)
@@ -58,7 +58,7 @@ describe('Cars', () => {
         console.log(res);
         expect(res).to.be.an('object');
         expect(res.status).to.equal(201);
-        expect(res.body.data).to.have.all.keys(['id', 'email', 'manufacturer', 'model', 'price', 'bodyType', 'status', 'state', 'createdOn', 'imageUrl']);
+        expect(res.body.data).to.have.all.keys(['id', 'owneremail','ownerid', 'manufacturer', 'model', 'price', 'body_type', 'status', 'state', 'createdon', 'image_url', 'flagged']);
         done();
       });
   });
