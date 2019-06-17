@@ -1,8 +1,10 @@
- /* import chai from 'chai';
+import chai from 'chai';
 
 import fs from 'fs';
 import chaihttp from 'chai-http';
 import app from '../src/index';
+import createTables from './assets/seed';
+import { users, generateValidToken } from './assets/usersedd';
 
 const { expect } = chai;
 
@@ -13,20 +15,16 @@ let myToken;
 let adminToken;
 
 before((done) => {
-  chai.request(app)
-    .post('/api/v1/auth/signin')
-    .send({
-      email: 'amadi@gmail.com',
-      password: '1234567',
-    })
-    .end((err, res) => {
-      if (err) done(err);
-      myToken = res.body.data.token;
-      done();
-    });
+
+  createTables();
+  const { admin, validUser } = users;
+
+  myToken = generateValidToken({ validUser });
+  adminToken = generateValidToken({ admin });
+  done();
 });
 
-before((done) => {
+/* before((done) => {
   chai.request(app)
     .post('/api/v1/auth/signin')
     .send({
@@ -39,6 +37,7 @@ before((done) => {
       done();
     });
 });
+*/
 
 describe('Cars', () => {
 
@@ -86,6 +85,7 @@ describe('Cars', () => {
       });
   });
 
+  /*
   it('should update the status of a Car sale advert', (done) => {
     chai.request(app)
       .patch('/api/v1/car/1/status')
@@ -333,5 +333,5 @@ describe('Cars', () => {
         done();
       });
   });
+  */
 });
-*/

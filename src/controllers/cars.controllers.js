@@ -32,6 +32,7 @@ class CarAdvertController {
           model: postCarAd.rows[0].model,
           bodyType: postCarAd.rows[0].body_type,
           price: postCarAd.rows[0].price,
+          imageUrl: postCarAd.rows[0].image_url,
         },
       });
 
