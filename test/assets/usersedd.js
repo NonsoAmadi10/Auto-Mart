@@ -15,7 +15,7 @@ const users = {
     firstname: 'Kizito',
     lastname: 'johnny',
     address: '239, ikoroduroad',
-    email: 'hovkard@gmail.com',
+    email: 'amadi@gmail.com',
     password: 'suppersecurepassword',
     confirmPassword: 'suppersecurepassword',
     adminSecret: process.env.ADMIN_SECRET
@@ -25,7 +25,7 @@ const users = {
     firstname: 'James',
     lastname: 'lockwood',
     address: '234567, gdfcvcsyh',
-    email: 'daniel@james.com',
+    email: 'amadi@james.com',
     password: 'pixel2user',
     confirmPassword: 'pixel2user',
     adminSecret: 'june',
