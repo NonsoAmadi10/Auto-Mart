@@ -1,29 +1,29 @@
-/*import chai from 'chai';
+import chai from 'chai';
+
+import fs from 'fs';
 import chaihttp from 'chai-http';
 import app from '../src/index';
+import createTables from './assets/seed';
+import { users, generateValidToken } from './assets/usersedd';
 
 const { expect } = chai;
 
 chai.use(chaihttp);
 
+
 let myToken;
 
-
 before((done) => {
-  chai.request(app)
-    .post('/api/v1/auth/signin')
-    .send({
-      email: 'amadi@gmail.com',
-      password: '1234567',
-    })
-    .end((err, res) => {
-      if (err) done(err);
-      myToken = res.body.data.token;
-      done();
-    });
+
+  createTables();
+  done();
 });
 
+
+
 describe('Orders', () => {
+  const { admin, validUser } = users;
+  myToken = generateValidToken({ validUser })
   it('should send a 201 status to post an order', (done) => {
     chai.request(app)
       .post('/api/v1/order')
@@ -91,7 +91,7 @@ describe('Orders', () => {
         done();
       })
   });
-  
+  /*
   it('should update the price of a User"s purchase order', (done) => {
     chai.request(app)
       .patch('/api/v1/order/2/price')
@@ -157,6 +157,6 @@ describe('Orders', () => {
         done();
       })
   });
+  */
   
 })
-*/

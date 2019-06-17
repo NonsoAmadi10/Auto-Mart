@@ -20,20 +20,6 @@ before((done) => {
   done();
 });
 
-/* before((done) => {
-  chai.request(app)
-    .post('/api/v1/auth/signin')
-    .send({
-      email: 'busola@gmail.com',
-      password: 'Thunder',
-    })
-    .end((err, res) => {
-      if (err) done(err);
-      adminToken = res.body.data.token;
-      done();
-    });
-});
-*/
 
 describe('Cars', () => {
   const { admin, validUser } = users;
