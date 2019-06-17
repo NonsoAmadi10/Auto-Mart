@@ -28,12 +28,12 @@ describe('Orders', () => {
       .set('Authorization', myToken)
       .send({
         carId: 1,
-        priceOffered: 3000000,
+        priceOffered: 3000000.00,
       })
       .end((error, res) => {
         if (error) done(error);
         expect(res).to.be.an('object');
-        console.log(res)
+        console.log(res.body)
         expect(res).to.have.status(201);
         expect(res.body).to.have.keys('status', 'data');
         expect(res.body.status).to.deep.equal('success');

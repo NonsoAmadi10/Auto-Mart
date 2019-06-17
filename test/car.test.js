@@ -41,7 +41,6 @@ describe('Cars', () => {
       .field('bodyType', 'sedan')
       .field('status', 'available')
       .end((err, res) => {
-        console.log(res);
         expect(res).to.be.an('object');
         expect(res.status).to.equal(201);
         expect(res.body.data).to.have.all.keys(['id', 'owneremail','ownerid', 'manufacturer', 'model', 'price', 'body_type', 'status', 'state', 'createdon', 'image_url', 'flagged']);
