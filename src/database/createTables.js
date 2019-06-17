@@ -13,7 +13,8 @@ const createUsers =
 const createCars = 
 `CREATE TABLE IF NOT EXISTS cars (
     id SERIAL PRIMARY KEY,
-    owner INTEGER REFERENCES users(id),
+    ownerId INTEGER REFERENCES users(id),
+    ownerEmail VARCHAR(50),
     createdon TIMESTAMP NOT NULL,
     state VARCHAR(50) NOT NULL,
     status VARCHAR(50) NOT NULL,

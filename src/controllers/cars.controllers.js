@@ -10,7 +10,7 @@ class CarAdvertController {
   static async postAdvert(req, res) {
 
     // Get the id of the user from the previous middleware
-    const { id } = req.user;
+    const { id, email } = req.user;
     const {
  manufacturer, model, state, price, bodyType, imageUrl 
 } = req.body;
@@ -18,13 +18,13 @@ class CarAdvertController {
     const status = 'available';
     try {
 
-      const postCarAd = await pool.query('INSERT INTO cars(owner, createdon, state, status, price, manufacturer, model, body_type, image_url, flagged) VALUES($1, $2, $3, $4, $5, $6, $7, $8 , $9, $10) RETURNING *;', [id, createdOn, state, status, price, manufacturer, model, bodyType, imageUrl, false]);
+      const postCarAd = await pool.query('INSERT INTO cars(ownerId, ownerEmail, createdon, state, status, price, manufacturer, model, body_type, image_url, flagged) VALUES($1, $2, $3, $4, $5, $6, $7, $8 , $9, $10, $11) RETURNING *;', [id, email, createdOn, state, status, price, manufacturer, model, bodyType, imageUrl, false]);
 
       return res.status(201).send({
         status: 'success',
         data: {
           id: postCarAd.rows[0].id,
-          email: req.user.email,
+          email: postCarAd.rows[0].ownerEmail
           createdOn: postCarAd.rows[0].createdon,
           state: postCarAd.rows[0].state,
           status: postCarAd.rows[0].status,
