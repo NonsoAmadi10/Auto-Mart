@@ -20,25 +20,11 @@ before((done) => {
   done();
 });
 
-/* before((done) => {
-  chai.request(app)
-    .post('/api/v1/auth/signin')
-    .send({
-      email: 'busola@gmail.com',
-      password: 'Thunder',
-    })
-    .end((err, res) => {
-      if (err) done(err);
-      adminToken = res.body.data.token;
-      done();
-    });
-});
-*/
 
 describe('Cars', () => {
   const { admin, validUser } = users;
-  myToken = generateValidToken({ validUser })
-  adminToken = generateValidToken({ admin });
+  myToken = generateValidToken(validUser)
+  adminToken = generateValidToken(admin);
   
   it('should post a car advert', (done) => {
     const filePath = `${__dirname}/assets/asphalt-automobiles-automotive-757181.jpg`;
@@ -55,7 +41,6 @@ describe('Cars', () => {
       .field('bodyType', 'sedan')
       .field('status', 'available')
       .end((err, res) => {
-        console.log(res);
         expect(res).to.be.an('object');
         expect(res.status).to.equal(201);
         expect(res.body.data).to.have.all.keys(['id', 'owneremail','ownerid', 'manufacturer', 'model', 'price', 'body_type', 'status', 'state', 'createdon', 'image_url', 'flagged']);

@@ -1,12 +1,7 @@
 import jwt from 'jsonwebtoken';
 
 function generateValidToken(userObject) {
-  return jwt.sign({
-    id: userObject.id,
-    firstname: userObject.name,
-    email: userObject.email,
-    userStatus: userObject.adminSecret === process.env.ADMIN_SECRET ? 'admin' : 'customer',
-  }, process.env.JWT_SECRET).toString();
+  return jwt.sign(userObject , process.env.JWT_SECRET).toString();
 }
 
 const users = {
@@ -18,17 +13,17 @@ const users = {
     email: 'amadi@gmail.com',
     password: 'suppersecurepassword',
     confirmPassword: 'suppersecurepassword',
-    adminSecret: process.env.ADMIN_SECRET
+    adminStatus: 't'
   },
   validUser: {
     id: 2,
-    firstname: 'James',
-    lastname: 'lockwood',
+    firstname: 'nonso',
+    lastname: 'Amadi',
     address: '234567, gdfcvcsyh',
-    email: 'amadi@james.com',
+    email: 'amadi@aol.com',
     password: 'pixel2user',
     confirmPassword: 'pixel2user',
-    adminSecret: 'june',
+    adminStatus: 'f',
   },
 };
 

@@ -1,44 +1,43 @@
-/*import chai from 'chai';
+import chai from 'chai';
 import chaihttp from 'chai-http';
 import app from '../src/index';
+import createTables from './assets/seed';
+import { users, generateValidToken } from './assets/usersedd';
 
 const { expect } = chai;
 
 chai.use(chaihttp);
 
+
 let myToken;
 
-
 before((done) => {
-  chai.request(app)
-    .post('/api/v1/auth/signin')
-    .send({
-      email: 'amadi@gmail.com',
-      password: '1234567',
-    })
-    .end((err, res) => {
-      if (err) done(err);
-      myToken = res.body.data.token;
-      done();
-    });
+
+  createTables();
+  done();
 });
 
+
+
 describe('Orders', () => {
+  const { validUser } = users;
+  myToken = generateValidToken(validUser)
   it('should send a 201 status to post an order', (done) => {
     chai.request(app)
       .post('/api/v1/order')
       .set('Authorization', myToken)
       .send({
-        carId: 2,
-        offer: 3000000,
+        carId: 1,
+        priceOffered: 3000000.00,
       })
       .end((error, res) => {
         if (error) done(error);
         expect(res).to.be.an('object');
+        console.log(res.body)
         expect(res).to.have.status(201);
         expect(res.body).to.have.keys('status', 'data');
         expect(res.body.status).to.deep.equal('success');
-        expect(res.body.data).to.have.keys('id', 'carId', 'status', 'price', 'offer', 'buyerId', 'createdOn');
+        expect(res.body.data).to.have.keys('id', 'carId', 'status', 'price', 'priceOffered', 'buyerId', 'createdOn');
         done();
       });
   });
@@ -48,7 +47,7 @@ describe('Orders', () => {
       .set('Authorization', myToken)
       .send({
         carId: 70,
-        offer: 3000000,
+        priceOffered: 3000000,
       })
       .end((error, res) => {
         if (error) done(error);
@@ -65,8 +64,8 @@ describe('Orders', () => {
       .post('/api/v1/order')
       .set('Authorization', myToken)
       .send({
-        carId: 3,
-        offer: '334ssddfrdf',
+        carId: 1,
+        priceOffered: '334ssddfrdf',
       })
       .end((error, res) => {
         if (error) done(error);
@@ -83,7 +82,7 @@ describe('Orders', () => {
       .set('Authorization',myToken)
       .send({
         carId: '',
-        offer: '',
+        priceOffered: '',
       })
       .end((error, res) => {
         if(error) done(error);
@@ -91,7 +90,7 @@ describe('Orders', () => {
         done();
       })
   });
-  
+  /*
   it('should update the price of a User"s purchase order', (done) => {
     chai.request(app)
       .patch('/api/v1/order/2/price')
@@ -157,6 +156,6 @@ describe('Orders', () => {
         done();
       })
   });
+  */
   
 })
-*/
