@@ -1,8 +1,10 @@
- /* import chai from 'chai';
+import chai from 'chai';
 
 import fs from 'fs';
 import chaihttp from 'chai-http';
 import app from '../src/index';
+import createTables from './assets/seed';
+import { users, generateValidToken } from './assets/usersedd';
 
 const { expect } = chai;
 
@@ -13,20 +15,12 @@ let myToken;
 let adminToken;
 
 before((done) => {
-  chai.request(app)
-    .post('/api/v1/auth/signin')
-    .send({
-      email: 'amadi@gmail.com',
-      password: '1234567',
-    })
-    .end((err, res) => {
-      if (err) done(err);
-      myToken = res.body.data.token;
-      done();
-    });
+
+  createTables();
+  done();
 });
 
-before((done) => {
+/* before((done) => {
   chai.request(app)
     .post('/api/v1/auth/signin')
     .send({
@@ -39,9 +33,13 @@ before((done) => {
       done();
     });
 });
+*/
 
 describe('Cars', () => {
-
+  const { admin, validUser } = users;
+  myToken = generateValidToken({ validUser })
+  adminToken = generateValidToken({ admin });
+  
   it('should post a car advert', (done) => {
     const filePath = `${__dirname}/assets/asphalt-automobiles-automotive-757181.jpg`;
     chai.request(app)
@@ -57,10 +55,10 @@ describe('Cars', () => {
       .field('bodyType', 'sedan')
       .field('status', 'available')
       .end((err, res) => {
-
+        console.log(res);
         expect(res).to.be.an('object');
         expect(res.status).to.equal(201);
-        expect(res.body.data).to.have.all.keys(['id', 'email', 'manufacturer', 'model', 'price', 'bodyType', 'status', 'state', 'createdOn', 'imageUrl']);
+        expect(res.body.data).to.have.all.keys(['id', 'owneremail','ownerid', 'manufacturer', 'model', 'price', 'body_type', 'status', 'state', 'createdon', 'image_url', 'flagged']);
         done();
       });
   });
@@ -86,6 +84,7 @@ describe('Cars', () => {
       });
   });
 
+  /*
   it('should update the status of a Car sale advert', (done) => {
     chai.request(app)
       .patch('/api/v1/car/1/status')
@@ -333,5 +332,5 @@ describe('Cars', () => {
         done();
       });
   });
+  */
 });
-*/
