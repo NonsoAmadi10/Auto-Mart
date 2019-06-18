@@ -133,7 +133,7 @@ describe('Cars', () => {
       })
       .end((err, res) => {
         expect(res.status).to.equal(200);
-        expect(res.body.data.price).to.equal(123456.00);
+        expect(res.body.data.price).to.equal(Number(123456).toFixed(2));
         done();
       });
   });
