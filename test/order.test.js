@@ -90,17 +90,17 @@ describe('Orders', () => {
         done();
       })
   });
-  /*
+  
   it('should update the price of a User"s purchase order', (done) => {
     chai.request(app)
-      .patch('/api/v1/order/2/price')
+      .patch('/api/v1/order/1/price')
       .set('Authorization', myToken)
       .send({
         newOffer: 7000000
       })
       .end((error, res) => {
         expect(res.status).to.equal(200);
-        expect(res.body.data).to.have.all.keys(['id', 'createdOn', 'buyerId','carId','oldOffer','price','newOffer','status']);
+        expect(res.body.data).to.have.all.keys(['id', 'createdOn', 'buyerId','carId','oldOffer','newOffer','status']);
         done();
       })
   });
@@ -119,7 +119,7 @@ describe('Orders', () => {
   });
   it('should not update the offer of a purchase order that has an empty input field', (done) => {
     chai.request(app)
-      .patch('/api/v1/order/2/price')
+      .patch('/api/v1/order/1/price')
       .set('Authorization', myToken)
       .send({
         newOffer: ''
@@ -132,7 +132,7 @@ describe('Orders', () => {
   });
   it('should not update the offer of a purchase order if the offer is not a number', (done) => {
     chai.request(app)
-      .patch('/api/v1/order/2/price')
+      .patch('/api/v1/order/1/price')
       .set('Authorization', myToken)
       .send({
         newOffer: '70oose7'
@@ -156,6 +156,6 @@ describe('Orders', () => {
         done();
       })
   });
-  */
+
   
 })
