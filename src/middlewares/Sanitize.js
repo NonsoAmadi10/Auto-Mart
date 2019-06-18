@@ -84,9 +84,11 @@ class Sanitize {
   static updateStatusSanitizer(req, res, next) {
     const { status } = req.body;
     const { id } = req.params;
+    
     const response = (error, code) => res.status(code).send({ status: 'error', error });
     if (Validator.checkEmpty(status)) return response('Please enter a valid status. e.g "new" or "used', 422);
     // eslint-disable-next-line no-restricted-globals
+    if (status !== 'sold') return response('You Can only update a sold car', 400);
     if (isNaN(id)) return response('Invalid URL parameter', 400);
     if (Validator.isNotNumber(status)) return response('status cannot contain number', 422);
 

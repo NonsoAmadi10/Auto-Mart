@@ -33,6 +33,37 @@ class CarAdvertController {
       });
     }
   }
+
+  static async updateCarStatusController(req, res) {
+    const { id } = req.params;
+    const { email } = req.user;
+    const { status } = req.body;
+
+    try {
+     /**
+      * check to see if the advert belongs to the user
+      */
+
+      const advertExist =  await pool.query('SELECT * FROM cars WHERE id=$1 AND ownerEmail=$2;',[id, email]);
+      if (advertExist.rowCount <= 0) {
+        res.status(404).send({
+          status: 'error',
+          error: 'Car not found'
+        })
+      }
+
+      const updateStatus = await pool.query('UPDATE cars SET status=$1 WHERE id=$2 RETURNING * ;',[status, advertExist.rows[0].id]);
+      return res.status(200).send({
+        status: 'success',
+        data: updateStatus.rows[0]
+      })
+    } catch (error) {
+      return res.status(500).send({
+        status: 'error',
+        error: error.message,
+      })
+    }
+  }
 }
 
 export default CarAdvertController;

@@ -69,10 +69,10 @@ describe('Cars', () => {
       });
   });
 
-  /*
+  
   it('should update the status of a Car sale advert', (done) => {
     chai.request(app)
-      .patch('/api/v1/car/1/status')
+      .patch('/api/v1/car/2/status')
       .set('Authorization', myToken)
       .send({
         status: 'sold',
@@ -86,7 +86,7 @@ describe('Cars', () => {
 
   it('should not update the status of an advert if it does not belong to a user', (done) => {
     chai.request(app)
-      .patch('/api/v1/car/3/status')
+      .patch('/api/v1/car/700/status')
       .set('Authorization', myToken)
       .send({
         status: 'sold',
@@ -97,20 +97,21 @@ describe('Cars', () => {
         done();
       });
   });
-  it('should only the status of a sold car', (done) => {
+  it('should only update the status of a sold car', (done) => {
     chai.request(app)
-      .patch('/api/v1/car/1/status')
+      .patch('/api/v1/car/2/status')
       .set('Authorization', myToken)
       .send({
         status: 'hello',
       })
       .end((err, res) => {
+        console.log(res.body)
         expect(res.status).to.equal(400);
         expect(res.body.error).to.equal('You Can only update a sold car');
         done();
       });
   });
-
+/*
   it('should not update the price of an advert if it does not belong to a user', (done) => {
     chai.request(app)
       .patch('/api/v1/car/3/price')
