@@ -153,9 +153,10 @@ describe('Cars', () => {
 
   it('should  get an advert on valid params id', (done) => {
     chai.request(app)
-      .get('/api/v1/car/1')
+      .get('/api/v1/car/2')
       .set('Authorization', myToken)
       .end((err, res) => {
+        console.log(res.body)
         expect(res.status).to.equal(200);
         expect(res.body.data).to.be.an('object');
         done();
