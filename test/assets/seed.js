@@ -15,7 +15,7 @@ const createTables = async () => {
 
   const createdOn = new Date().toLocaleDateString();
 
-  const makeOrder = await pool.query('INSERT into orders(car_id, buyer_id, createdon ,amountOffered, status) VALUES($1, $2, $3, $4, $5) RETURNING * ;', [car.rows[0].id, newUser2.rows[0].id, createdOn, 30000.00, 'pending']);
+  const makeOrder = await pool.query('INSERT into orders(car_id, buyer_id, createdon ,amountOffered, status) VALUES($1, $2, $3, $4, $5) RETURNING * ;', [1, 2, createdOn, 30000.00, 'pending']);
 }
 
 

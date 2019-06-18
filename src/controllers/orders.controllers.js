@@ -46,12 +46,12 @@ class OrderController {
   }
 
   static async updatePriceOrder(req, res) {
-    const { id } = req.params;
+    const orderId = req.params.id;
     const { newOffer } = req.body;
-    const userId = req.user.id;
+    const { id } = req.user;
 
     try {
-      const checkUserOrder = await pool.query('SELECT * FROM orders WHERE buyer_id=$1 AND id=$1;', [userId, id]);
+      const checkUserOrder = await pool.query('SELECT * FROM orders WHERE buyer_id=$1 AND id=$2;', [id, orderId]);
 
       if (checkUserOrder.rowCount <= 0) {
         return res.status(404).send({
@@ -60,7 +60,7 @@ class OrderController {
         });
       }
 
-      const updateOrderPrice = await pool.query('UPDATE orders SET amountoffered=$1 and status=$2 WHERE id=$3 AND buyer_id=$4 RETURNING *;', [newOffer, 'pending', id, userId]);
+      const updateOrderPrice = await pool.query('UPDATE orders SET amountoffered=$1 WHERE id=$2 RETURNING *;', [newOffer, checkUserOrder.rows[0].id]);
       return res.status(200).send({
         status: 'success',
         data: {

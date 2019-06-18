@@ -11,10 +11,10 @@ chai.use(chaihttp);
 
 let myToken;
 
-before((done) => {
-  createTables();
-  done();
-});
+//before((done) => {
+ // createTables();
+  //done();
+//});
 
 
 
@@ -100,7 +100,7 @@ describe('Orders', () => {
       .end((error, res) => {
         console.log(res.body)
         expect(res.status).to.equal(200);
-        expect(res.body.data).to.have.all.keys(['id', 'createdOn', 'buyerId','carId','oldOffer','newOffer','status']);
+        expect(res.body.data).to.have.all.keys(['id','carId','oldOffer','newOffer','status']);
         done();
       })
   });
