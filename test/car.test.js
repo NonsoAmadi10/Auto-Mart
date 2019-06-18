@@ -129,11 +129,11 @@ describe('Cars', () => {
       .patch('/api/v1/car/2/price')
       .set('Authorization', myToken)
       .send({
-        price: 123456,
+        price: 123456.00,
       })
       .end((err, res) => {
         expect(res.status).to.equal(200);
-        expect(res.body.data.price).to.equal(123456);
+        expect(res.body.data.price).to.equal(123456.00);
         done();
       });
   });
