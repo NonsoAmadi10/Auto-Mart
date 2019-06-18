@@ -12,7 +12,6 @@ chai.use(chaihttp);
 let myToken;
 
 before((done) => {
-
   createTables();
   done();
 });
@@ -99,6 +98,7 @@ describe('Orders', () => {
         newOffer: 7000000
       })
       .end((error, res) => {
+        console.log(res.body)
         expect(res.status).to.equal(200);
         expect(res.body.data).to.have.all.keys(['id', 'createdOn', 'buyerId','carId','oldOffer','newOffer','status']);
         done();
@@ -106,7 +106,7 @@ describe('Orders', () => {
   });
   it('should not update the offer of a purchase order that does not belong to user', (done) => {
     chai.request(app)
-      .patch('/api/v1/order/6/price')
+      .patch('/api/v1/order/300/price')
       .set('Authorization', myToken)
       .send({
         newOffer: 7000000
