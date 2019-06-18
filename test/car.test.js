@@ -69,7 +69,7 @@ describe('Cars', () => {
       });
   });
 
-  /*
+  
   it('should update the status of a Car sale advert', (done) => {
     chai.request(app)
       .patch('/api/v1/car/1/status')
@@ -110,7 +110,7 @@ describe('Cars', () => {
         done();
       });
   });
-
+/*
   it('should not update the price of an advert if it does not belong to a user', (done) => {
     chai.request(app)
       .patch('/api/v1/car/3/price')
