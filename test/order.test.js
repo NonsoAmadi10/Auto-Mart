@@ -32,7 +32,7 @@ describe('Orders', () => {
       .end((error, res) => {
         if (error) done(error);
         expect(res).to.be.an('object');
-        console.log(res.body)
+        
         expect(res).to.have.status(201);
         expect(res.body).to.have.keys('status', 'data');
         expect(res.body.status).to.deep.equal('success');
@@ -98,7 +98,7 @@ describe('Orders', () => {
         newOffer: 7000000
       })
       .end((error, res) => {
-        console.log(res.body)
+        
         expect(res.status).to.equal(200);
         expect(res.body.data).to.have.all.keys(['id','carId','oldOffer','newOffer','status']);
         done();

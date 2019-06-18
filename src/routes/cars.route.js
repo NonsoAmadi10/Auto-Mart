@@ -9,8 +9,8 @@ import cloudinaryUploader from '../middlewares/cloudinary'
 const router = Router();
 
 router.post('/car', authorize, upload.array('photo', 2), Sanitize.advertSanitizer, cloudinaryUploader, CarAdvertControllers.postAdvert  );
-/*router.patch('/car/:id/status', authorize, Sanitize.updateStatusSanitizer, CarsControllers.updateCarStatus );
-router.patch('/car/:id/price', authorize, Sanitize.updatePriceSanitizer, CarsControllers.updateCarPrice);
+router.patch('/car/:id/status', authorize, Sanitize.updateStatusSanitizer, CarAdvertControllers.updateCarStatusController );
+/*router.patch('/car/:id/price', authorize, Sanitize.updatePriceSanitizer, CarsControllers.updateCarPrice);
 router.get('/car/:id', authorize, Sanitize.getSpecificCar, CarsControllers.getSpecificCar);
 router.get('/car', authorize, Sanitize.querySanitizer, CarsControllers.getAll);
 router.delete('/car/:id', authorize,Sanitize.getSpecificCar, CarsControllers.deleteCarAd); */
