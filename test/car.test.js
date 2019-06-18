@@ -105,16 +105,15 @@ describe('Cars', () => {
         status: 'hello',
       })
       .end((err, res) => {
-        console.log(res.body)
         expect(res.status).to.equal(400);
         expect(res.body.error).to.equal('You Can only update a sold car');
         done();
       });
   });
-/*
+
   it('should not update the price of an advert if it does not belong to a user', (done) => {
     chai.request(app)
-      .patch('/api/v1/car/3/price')
+      .patch('/api/v1/car/3000/price')
       .set('Authorization', myToken)
       .send({
         price: 12345,
@@ -127,7 +126,7 @@ describe('Cars', () => {
   });
   it('should update the price of an advert if it d belongs to a user', (done) => {
     chai.request(app)
-      .patch('/api/v1/car/1/price')
+      .patch('/api/v1/car/2/price')
       .set('Authorization', myToken)
       .send({
         price: 123456,
@@ -140,7 +139,7 @@ describe('Cars', () => {
   });
   it('should not update the price of an advert if the request body is not a number', (done) => {
     chai.request(app)
-      .patch('/api/v1/car/1/price')
+      .patch('/api/v1/car/2/price')
       .set('Authorization', myToken)
       .send({
         price: 'sold',
@@ -151,7 +150,7 @@ describe('Cars', () => {
         done();
       });
   });
-
+/*
   it('should  get an advert on valid params id', (done) => {
     chai.request(app)
       .get('/api/v1/car/1')
