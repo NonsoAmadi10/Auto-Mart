@@ -150,7 +150,7 @@ describe('Cars', () => {
         done();
       });
   });
-/*
+
   it('should  get an advert on valid params id', (done) => {
     chai.request(app)
       .get('/api/v1/car/1')
@@ -174,6 +174,7 @@ describe('Cars', () => {
         done();
       });
   });
+  /*
 
   it('should get all unsold cars', (done) => {
     chai.request(app)

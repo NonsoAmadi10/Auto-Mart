@@ -86,6 +86,27 @@ class CarAdvertController {
       });
     }
   }
+
+  static async getSpecificCarController(req, res) {
+    const { id } = req.params;
+
+    try{
+      const getCar = await pool.query('SELECT * cars WHERE id=$1;',[id]);
+
+      if (getCar.rowCount <= 0) return res.status(404).send({status: 'error', error: 'Car not found'});
+
+      return res.status(200).send({
+        status: 'success',
+        data: getCar.rows[0];
+      })
+    } catch (error){
+      return res.status(500).send({
+        status: 'error',
+        error: error.message,
+      })
+    }
+    
+  }
 }
 
 export default CarAdvertController;
