@@ -116,9 +116,44 @@ class CarAdvertController {
     const { is_admin } = req.user;
 
     // eslint-disable-next-line camelcase
-    return is_admin === 't' ? GetHelpers.getAllCars(res):GetHelpers.getAvailableCarControllers(req, res);
+    return is_admin === 't' ? GetHelpers.getAllCars(res) : GetHelpers.getAvailableCarControllers(req, res);
 
 
+  }
+
+  static async deleteCarController(req, res) {
+    const { is_admin } = req.user;
+    const { id } = req.params;
+    if (is_admin !== 't') {
+      return res.status(403).send({
+        status: 'error',
+        error: 'you are not authorized to do this',
+      });
+    }
+
+    try {
+
+      const findCar = await pool.query('SELECT * FROM cars WHERE id=$1;', [id]);
+
+      if (findCar.rowCount <= 0) {
+        return res.status(404).send({
+          status: 'error',
+          error: 'Advert not found',
+        });
+      }
+
+      await pool.query('DELETE FROM cars WHERE id=$1;', [id]);
+
+      return res.status(200).send({
+        status: 'success',
+        data: 'Car Ad was successfully deleted',
+      });
+    } catch (error) {
+      res.status(500).send({
+        status: 'error',
+        error: error.message,
+      });
+    }
   }
 }
 
