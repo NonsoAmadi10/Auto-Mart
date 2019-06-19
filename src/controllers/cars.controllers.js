@@ -111,8 +111,14 @@ class CarAdvertController {
 
   // eslint-disable-next-line consistent-return
   static async getAvailableCarControllers(req, res) {
-    const { status } = req.query;
-    
+    const {
+ status,
+
+      min_price: minPrice = 0,
+      max_price: maxPrice = Infinity,
+
+    } = req.query;
+
 
     try {
       if (status == undefined) {
@@ -122,7 +128,7 @@ class CarAdvertController {
         })
         ;
       }
-      const getAvailableCar = await pool.query('SELECT * FROM cars WHERE status=$1;', ['available']);
+      const getAvailableCar = await pool.query('SELECT * FROM cars WHERE status=$1 AND (price >= $2 AND price <= $3);', ['available', minPrice, maxPrice]);
 
       if (getAvailableCar.rowCount <= 0) {
         res.status(404).send({

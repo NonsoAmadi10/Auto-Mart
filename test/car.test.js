@@ -191,12 +191,12 @@ describe('Cars', () => {
   });
 
   
-/*
+
   it('should get all unsold cars within a specified price range', (done) => {
     chai.request(app)
       .get('/api/v1/car')
       .set('Authorization', myToken)
-      .query({ status: 'available', min_price: 100000, max_price: 120000000 })
+      .query({ status: 'available', min_price: 0, max_price: 200000.089 })
       .end((err, res) => {
         expect(res.status).to.equal(200);
         expect(res.body.data).to.be.an('array');
@@ -240,7 +240,7 @@ describe('Cars', () => {
         done();
       });
   });
-
+/*
   it('should get all cars', (done) => {
     chai.request(app)
       .get('/api/v1/car')
