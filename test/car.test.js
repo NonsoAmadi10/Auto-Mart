@@ -175,7 +175,6 @@ describe('Cars', () => {
         done();
       });
   });
-  /*
 
   it('should get all unsold cars', (done) => {
     chai.request(app)
@@ -191,18 +190,8 @@ describe('Cars', () => {
 
   });
 
-  it('should get all unsold cars', (done) => {
-    chai.request(app)
-      .get('/api/v1/car')
-      .set('Authorization', myToken)
-      .query({ status: 'available' })
-      .end((err, res) => {
-        expect(res.status).to.equal(200);
-        expect(res.body.data).to.be.an('array');
-        done();
-      });
-  });
-
+  
+/*
   it('should get all unsold cars within a specified price range', (done) => {
     chai.request(app)
       .get('/api/v1/car')
