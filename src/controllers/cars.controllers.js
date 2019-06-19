@@ -115,7 +115,7 @@ class CarAdvertController {
  status,
 
       min_price: minPrice = 0,
-      max_price: maxPrice = Infinity,
+      max_price: maxPrice = 72000000000000,
 
     } = req.query;
 
