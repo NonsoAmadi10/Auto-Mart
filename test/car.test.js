@@ -268,7 +268,7 @@ describe('Cars', () => {
 
   it('should delete a car advert', (done) => {
     chai.request(app)
-      .delete('/api/v1/car/7')
+      .delete('/api/v1/car/2')
       .set('Authorization', adminToken)
       .end((err, res) => {
         expect(res.status).to.equal(200);
