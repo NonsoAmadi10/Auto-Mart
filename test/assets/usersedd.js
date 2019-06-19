@@ -13,7 +13,7 @@ const users = {
     email: 'amadi@gmail.com',
     password: 'suppersecurepassword',
     confirmPassword: 'suppersecurepassword',
-    adminStatus: 't'
+    is_admin: 't'
   },
   validUser: {
     id: 2,
@@ -23,7 +23,7 @@ const users = {
     email: 'amadi@aol.com',
     password: 'pixel2user',
     confirmPassword: 'pixel2user',
-    adminStatus: 'f',
+    is_admin: 'f',
   },
 };
 

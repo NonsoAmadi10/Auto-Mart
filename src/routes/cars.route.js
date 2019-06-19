@@ -12,6 +12,6 @@ router.post('/car', authorize, upload.array('photo', 2), Sanitize.advertSanitize
 router.patch('/car/:id/status', authorize, Sanitize.updateStatusSanitizer, CarAdvertControllers.updateCarStatusController );
 router.patch('/car/:id/price', authorize, Sanitize.updatePriceSanitizer, CarAdvertControllers.UpdateCarPriceController);
 router.get('/car/:id', authorize, Sanitize.getSpecificCar, CarAdvertControllers.getSpecificCarController);
-router.get('/car', authorize, Sanitize.querySanitizer, CarAdvertControllers.getAvailableCarControllers);
+router.get('/car', authorize, Sanitize.querySanitizer, CarAdvertControllers.getCarsController);
 /* router.delete('/car/:id', authorize,Sanitize.getSpecificCar, CarsControllers.deleteCarAd); */
 export default router;
