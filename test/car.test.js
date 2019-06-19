@@ -241,7 +241,7 @@ describe('Cars', () => {
         done();
       });
   });
-/*
+
   it('should get all cars', (done) => {
     chai.request(app)
       .get('/api/v1/car')
@@ -265,7 +265,7 @@ describe('Cars', () => {
 
       });
   });
-
+/*
   it('should delete a car advert', (done) => {
     chai.request(app)
       .delete('/api/v1/car/7')

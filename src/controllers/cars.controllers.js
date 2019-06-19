@@ -1,5 +1,6 @@
 
 import pool from '../database/config';
+import GetHelpers from '../middlewares/helpers';
 
 /**
  *@car advert controller- controls all endpoint concerning the car adverts going to be used by users of this application
@@ -110,43 +111,13 @@ class CarAdvertController {
 
 
   // eslint-disable-next-line consistent-return
-  static async getAvailableCarControllers(req, res) {
-    const {
- status,
+  static getCarsController(req, res) {
+    // eslint-disable-next-line camelcase
+    const { is_admin } = req.user;
 
-      min_price: minPrice = 0,
-      max_price: maxPrice = 72000000000000,
+    // eslint-disable-next-line camelcase
+    return is_admin === 't' ? GetHelpers.getAllCars(res):GetHelpers.getAvailableCarControllers(req, res);
 
-    } = req.query;
-
-
-    try {
-      if (status == undefined) {
-        return res.status(403).send({
-          status: 'error',
-          error: 'only admins can access this route',
-        })
-        ;
-      }
-      const getAvailableCar = await pool.query('SELECT * FROM cars WHERE status=$1 AND (price >= $2 AND price <= $3);', ['available', minPrice, maxPrice]);
-
-      if (getAvailableCar.rowCount <= 0) {
-        res.status(404).send({
-          status: 'error',
-          error: 'No match found',
-        });
-      }
-
-      return res.status(200).send({
-        status: 'success',
-        data: getAvailableCar.rows,
-      });
-    } catch (error) {
-      res.status(500).send({
-        status: 'error',
-        error: error.message,
-      });
-    }
 
   }
 }
