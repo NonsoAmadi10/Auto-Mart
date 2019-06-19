@@ -182,6 +182,7 @@ describe('Cars', () => {
       .query({ status: 'available' })
       .set('Authorization', myToken)
       .end((err, res) => {
+        console.log(res.body);
         expect(res.status).to.equal(200);
         expect(res.body.data).to.be.an('array');
         expect(res.body.data[0].status).to.equal('available');
