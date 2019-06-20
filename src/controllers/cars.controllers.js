@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 
 import pool from '../database/config';
 import GetHelpers from '../middlewares/helpers';
@@ -121,6 +122,7 @@ class CarAdvertController {
 
   }
 
+  // eslint-disable-next-line consistent-return
   static async deleteCarController(req, res) {
     const { is_admin } = req.user;
     const { id } = req.params;
