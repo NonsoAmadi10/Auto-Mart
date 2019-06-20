@@ -5,6 +5,6 @@ import Sanitizer from '../middlewares/Sanitize';
 
 const router = Router();
 
-router.post('/flag', authorize, Sanitizer.flagSanitizer, FlagController);
+router.post('/flag', authorize, Sanitizer.flagSanitizer, FlagController.postFlagController);
 
 export default router;

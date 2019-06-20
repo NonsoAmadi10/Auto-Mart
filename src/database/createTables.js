@@ -41,7 +41,7 @@ const createOrders =
 const createFlags =  
 ` CREATE TABLE IF NOT EXISTS flags (
  id SERIAL PRIMARY KEY,
- car_id INTEGER REFERENCES users(id),
+ car_id INTEGER NOT NULL,
  reason VARCHAR(255) NOT NULL,
  description VARCHAR(255) NOT NULL,
  createdon TIMESTAMP NOT NULL

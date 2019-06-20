@@ -1,6 +1,8 @@
 import chai from 'chai';
 import chaihttp from 'chai-http';
-/*import app from '../src/index';
+import app from '../src/index';
+import createTables from './assets/seed';
+import { users, generateValidToken } from './assets/usersedd';
 
 const { expect } = chai;
 
@@ -9,21 +11,16 @@ chai.use(chaihttp);
 
 let myToken;
 
-describe('Flags', () => {
-  before((done) => {
-    chai.request(app)
-      .post('/api/v1/auth/signin')
-      .send({
-        email: 'amadi@gmail.com',
-        password: '1234567',
-      })
-      .end((err, res) => {
-        if (err) done(err);
-        myToken = res.body.data.token;
-        done();
-      });
-  });
 
+before((done) => {
+
+  createTables();
+  done();
+});
+
+describe('Flags', () => {
+  const { validUser } = users;
+  myToken = generateValidToken(validUser);
 
   it('should report an advert as fraudulent', (done) => {
     chai.request(app)
@@ -35,9 +32,9 @@ describe('Flags', () => {
         description: 'The seller requested for 450000 naira for a vehicle in bad shape',
       })
       .end((err, res) => {
-       if (err) done(err);
+        if (err) done(err);
         expect(res.status).to.equal(201);
-        expect(res.body.data).to.have.all.keys(['id', 'carId', 'reason', 'description']);
+        expect(res.body.data).to.have.all.keys(['id', 'car_id', 'reason', 'description', 'createdon']);
         done();
       });
   });
@@ -163,4 +160,3 @@ describe('Flags', () => {
       });
   });
 });
-*/
