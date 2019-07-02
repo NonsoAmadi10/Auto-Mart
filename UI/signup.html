@@ -15,41 +15,43 @@
           <h2 class="logo">Auto-Mart <span class="icon"><i class="fas fa-car"></i></span></h2>
       </nav>
     </header>
-
+      <div class="flash-messages"></div>
     <div class="wrapper">
       <form action="" class="account" id="signup">
         <legend>Register</legend>
         <hr>
         <div class="input-labels">
-          <input type="text" name="" id="first-name" placeholder="Firstname" required>
+          <input type="text" name="firstname" id="firstname" placeholder="Firstname" required>
         </div>
         <div class="input-labels">
-            <input type="text" name="" id="last-name" placeholder="Lastname" required>
+            <input type="text" name="lastname" id="lastname" placeholder="Lastname" required>
           </div>
           <div class="input-labels">
-              <input type="email" name="" id="email" placeholder="Email" required>
+              <input type="email" name="email" id="email" placeholder="Email" required>
             </div>
             <div class="input-labels">
                 
-                <input type="text" name="" id="address" placeholder="House Address" required>
+                <input type="text" name="address" id="address" placeholder="House Address" required>
               </div>
               <div class="input-labels">
-                  <input type="password" name="" id="password" placeholder="Password" required>
+                  <input type="password" name="password" id="password" placeholder="Password" required>
                 </div>
                 <div class="input-labels">
-                    <input type="password" name="" id="password2" placeholder="Confirm Password" required>
+                    <input type="password" name="password2" id="password2" placeholder="Confirm Password" required>
                   </div>
                   <div class="input-labels">
-                      <input type="password" name=""  placeholder="Admin Secret" id="admin-secret">
+                      <input type="password" name="adminSecret"  placeholder="Admin Secret" id="adminSecret">
                     </div>
                     <div class="input-labels">
                         <button type="submit" class="btn-primary">Register</button>
                     </div>
                     <div class="others">
-                      <p>Already Have an account?? <a href="">Login Here</a> </p>
+                      <p>Already Have an account?? <a href="signin.html">Login Here</a> </p>
                     </div>
       </form>
     </div>
     <script src="js/signup.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/jwt.decode.js"></script>
 </body>
 </html>

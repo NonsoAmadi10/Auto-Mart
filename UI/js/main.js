@@ -1,10 +1,26 @@
-const modal = document.getElementById("myModal");
-const close = document.getElementsByClassName("close")[0];
+// Flash messages 
 
-const modalControl =(e)=>{ 
-  
-   modal.style.display= "block";
-   close.addEventListener('click', ()=>{
-    modal.style.display= "none";
-   })
+const flashMessages =(message, type) => {
+ const flashDiv = document.querySelector('.flash-messages');
+ flashDiv.style.display = 'block';
+
+ if (type === 'success') {
+  flashDiv.textContent = message;
+  flashDiv.classList.add('success');
+ }
+ else if (type === 'error') {
+  flashDiv.textContent = message;
+  flashDiv.classList.add('error');
+  flashDiv.classList.remove('error');
+ }
+ else {
+  flashDiv.textContent = message;
+  flashDiv.classList.add('blue');
+ }
+
+ setTimeout(() => {
+
+  flashDiv.textContent = '';
+  flashDiv.style.display = 'none';
+ }, 3000)
 }
