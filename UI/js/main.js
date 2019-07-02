@@ -11,6 +11,7 @@ const flashMessages =(message, type) => {
  else if (type === 'error') {
   flashDiv.textContent = message;
   flashDiv.classList.add('error');
+  flashDiv.classList.remove('error');
  }
  else {
   flashDiv.textContent = message;
@@ -18,7 +19,8 @@ const flashMessages =(message, type) => {
  }
 
  setTimeout(() => {
+
   flashDiv.textContent = '';
   flashDiv.style.display = 'none';
- }, 1500)
+ }, 3000)
 }

@@ -28,8 +28,8 @@ body{
     display: none;
 }
 .success {
-    background: rgb(1, 241, 1);
-    color: green;
+    background: #04cf8f;
+    color: #022902;
 }
 .error {
     background: rgb(231, 114, 114);

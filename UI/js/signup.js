@@ -30,20 +30,13 @@ const signUp = (e) => {
   })
     .then(res => res.json())
     .then((res) => {
-     console.log(res)
       if (res.status !== 'success') {
         flashMessages(res.error, 'error');
 
       }
-      const { token , is_admin} = res.data;
+      window.location = 'signin.html'
 
-      flashMessages('Creating your account...Kindly Login', 'success');
-
-      localStorage.setItem('userToken', token)
-
-      window.location = is_admin === 't' ? 'admin.html' : 'marketplace.html';
-
-      flashMessages('redirecting', 'blue');
+      flashMessages('Account Created! Kindly Login!', 'success');
     })
     .catch((error) => {
      flashMessages('Oops! Something went wrong while signing you up', 'error');
