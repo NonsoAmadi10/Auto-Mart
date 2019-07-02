@@ -18,6 +18,27 @@ body{
 }
 
 /*global*/
+.flash-messages{
+    padding:1.56rem;
+    height: 30px;
+    width: 50%;
+    margin: 10px auto;
+    line-height: 15px;
+    font-weight: bolder;
+    display: none;
+}
+.success {
+    background: rgb(1, 241, 1);
+    color: green;
+}
+.error {
+    background: rgb(231, 114, 114);
+    color: black;
+}
+.blue{
+    background: royalblue;
+    color: #ddd
+}
 
 a{
     text-decoration: none
@@ -443,6 +464,10 @@ select option {
         background: linear-gradient(to right, rgba(1, 1, 66, 0.479), rgba(1, 1, 54, 0.534), rgba(0, 0, 68, 0.554)), url('/UI/images/asphalt-auto-automobile-164634\ \(1\).jpg') no-repeat;
         height: 100vh;
         padding: 1rem;
+    }
+
+    .flash-messages{
+        width: 100%;
     }
 
     .account{
