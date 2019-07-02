@@ -34,6 +34,7 @@
     "@babel/polyfill": "^7.4.4",
     "bcryptjs": "^2.4.3",
     "cloudinary": "^1.14.0",
+    "cors": "^2.8.5",
     "crossenv": "0.0.2-security",
     "dotenv": "^6.2.0",
     "express": "^4.17.0",
