@@ -18,7 +18,7 @@ const flashMessages =(message, type) => {
  }
 
  setTimeout(() => {
-  flashDiv.style.background = 'white';
+  flashDiv.textContent = '';
   flashDiv.style.display = 'none';
  }, 1500)
 }
