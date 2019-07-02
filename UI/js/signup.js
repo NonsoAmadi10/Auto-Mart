@@ -15,6 +15,7 @@ const signUp = (e) => {
     lastname: signupForm.lastname.value,
     email: signupForm.email.value,
     password: signupForm.password.value,
+    address: signupForm.address.value,
     confirmPassword: signupForm.password2.value,
     adminSecret: signupForm.adminSecret.value,
   };
@@ -29,6 +30,7 @@ const signUp = (e) => {
   })
     .then(res => res.json())
     .then((res) => {
+     console.log(res)
       if (res.status !== 'success') {
         flashMessages(res.error, 'error');
 
