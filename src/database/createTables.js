@@ -1,8 +1,8 @@
 const createUsers = 
 `CREATE TABLE IF NOT EXISTS users (
    id SERIAL PRIMARY KEY,
-   firstname VARCHAR(50) NOT NULL,
-   lastname VARCHAR(50) NOT NULL,
+   first_name VARCHAR(50) NOT NULL,
+   last_name VARCHAR(50) NOT NULL,
    email VARCHAR(50) NOT NULL,
    password VARCHAR(255) NOT NULL,
    address VARCHAR(255) NOT NULL,
@@ -13,8 +13,8 @@ const createUsers =
 const createCars = 
 `CREATE TABLE IF NOT EXISTS cars (
     id SERIAL PRIMARY KEY,
-    ownerid INTEGER,
-    owneremail VARCHAR(50),
+    owner_id INTEGER,
+    owner_email VARCHAR(50),
     createdon TIMESTAMP NOT NULL,
     state VARCHAR(50) NOT NULL,
     status VARCHAR(50) NOT NULL,
@@ -32,8 +32,8 @@ const createOrders =
  id SERIAL PRIMARY KEY,
  car_id INTEGER ,
  buyer_id INTEGER REFERENCES users(id),
- createdon TIMESTAMP,
- amountOffered DECIMAL,
+ created_on TIMESTAMP,
+ amount DECIMAL,
  status CHAR(50)
 );
 `;
@@ -44,7 +44,7 @@ const createFlags =
  car_id INTEGER NOT NULL,
  reason VARCHAR(255) NOT NULL,
  description VARCHAR(255) NOT NULL,
- createdon TIMESTAMP NOT NULL
+ created_on TIMESTAMP NOT NULL
 );
 `;
 
