@@ -91,9 +91,10 @@ class CarAdvertController {
 
   static async getSpecificCarController(req, res) {
     const { id } = req.params;
+    const { email } = req.user;
 
     try {
-      const getCar = await pool.query('SELECT * FROM cars WHERE id=$1;', [id]);
+      const getCar = await pool.query('SELECT * FROM cars WHERE id=$1 AND owner_email=$2;', [id, email]);
 
       if (getCar.rowCount <= 0) return res.status(404).send({ status: 'error', error: 'Car not found' });
 
