@@ -43,7 +43,7 @@ describe('Cars', () => {
       .end((err, res) => {
         expect(res).to.be.an('object');
         expect(res.status).to.equal(201);
-        expect(res.body.data).to.have.all.keys(['id', 'owneremail','ownerid', 'manufacturer', 'model', 'price', 'body_type', 'status', 'state', 'createdon', 'image_url', 'flagged']);
+        expect(res.body.data).to.have.all.keys(['id', 'owner_email','owner_id', 'manufacturer', 'model', 'price', 'body_type', 'status', 'state', 'created_on', 'image_url', 'flagged']);
         done();
       });
   });
@@ -72,7 +72,7 @@ describe('Cars', () => {
   
   it('should update the status of a Car sale advert', (done) => {
     chai.request(app)
-      .patch('/api/v1/car/2/status')
+      .patch('/api/v1/car/5/status')
       .set('Authorization', myToken)
       .send({
         status: 'sold',
@@ -126,7 +126,7 @@ describe('Cars', () => {
   });
   it('should update the price of an advert if it d belongs to a user', (done) => {
     chai.request(app)
-      .patch('/api/v1/car/2/price')
+      .patch('/api/v1/car/5/price')
       .set('Authorization', myToken)
       .send({
         price: 123456.00,

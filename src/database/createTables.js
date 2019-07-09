@@ -15,7 +15,7 @@ const createCars =
     id SERIAL PRIMARY KEY,
     owner_id INTEGER,
     owner_email VARCHAR(50),
-    createdon TIMESTAMP NOT NULL,
+    created_on TIMESTAMP NOT NULL,
     state VARCHAR(50) NOT NULL,
     status VARCHAR(50) NOT NULL,
     price DECIMAL NOT NULL,

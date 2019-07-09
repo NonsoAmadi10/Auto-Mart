@@ -11,7 +11,7 @@ class FlagController {
       const carExist = await pool.query('SELECT * FROM cars WHERE id=$1;', [carId]);
 
       if (carExist.rowCount <= 0) return res.status(404).send({ status: 'error', error: 'Car not found' });
-      const reportAd = await pool.query('INSERT INTO flags(car_id, reason, description, createdon) VALUES($1, $2, $3, $4) RETURNING * ;', [carId, reason, description, createdOn]);
+      const reportAd = await pool.query('INSERT INTO flags(car_id, reason, description, created_on) VALUES($1, $2, $3, $4) RETURNING * ;', [carId, reason, description, createdOn]);
 
       return res.status(201).send({
         status: 'success',
