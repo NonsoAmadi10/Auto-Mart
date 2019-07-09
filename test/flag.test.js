@@ -34,7 +34,7 @@ describe('Flags', () => {
       .end((err, res) => {
         if (err) done(err);
         expect(res.status).to.equal(201);
-        expect(res.body.data).to.have.all.keys(['id', 'car_id', 'reason', 'description', 'createdon']);
+        expect(res.body.data).to.have.all.keys(['id', 'car_id', 'reason', 'description', 'created_on']);
         done();
       });
   });

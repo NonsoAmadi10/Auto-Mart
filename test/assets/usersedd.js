@@ -17,8 +17,8 @@ const users = {
   },
   validUser: {
     id: 2,
-    firstname: 'nonso',
-    lastname: 'Amadi',
+    first_name: 'nonso',
+    last_name: 'Amadi',
     address: '234567, gdfcvcsyh',
     email: 'amadi@aol.com',
     password: 'pixel2user',

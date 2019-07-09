@@ -27,7 +27,7 @@ describe('User Should be able to signup', () => {
 
         expect(res.body).to.be.a('object');
         expect(res.status).to.equal(201);
-        expect(res.body.data).to.have.all.keys(['token', 'id', 'firstname', 'lastname', 'email', 'address']);
+        expect(res.body.data).to.have.all.keys(['token', 'id', 'first_name', 'last_name', 'email', 'address']);
         done();
       });
   });
@@ -45,6 +45,7 @@ describe('User Should be able to signup', () => {
         address: '239, Epic towers, ikorodu road',
       })
       .end((err, res) => {
+        
         expect(res.status).to.equal(409);
         expect(res.body.error).to.equal('User exist already');
         done();
@@ -197,7 +198,7 @@ describe('User should be able to signin', () => {
       .end((err, res) => {
         
         expect(res.status).to.equal(200);
-        expect(res.body.data).to.have.all.keys(['id', 'firstname', 'lastname', 'email', 'token', 'adminStatus']);
+        expect(res.body.data).to.have.all.keys(['id', 'first_name', 'last_name', 'email', 'token', 'is_admin']);
         done();
       });
   });

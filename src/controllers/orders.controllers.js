@@ -23,17 +23,17 @@ class OrderController {
 
       const createdOn = new Date().toLocaleDateString();
 
-      const makeOrder = await pool.query('INSERT into orders(car_id, buyer_id, createdon ,amountOffered, status) VALUES($1, $2, $3, $4, $5) RETURNING * ;', [carId, id, createdOn, price, status]);
+      const makeOrder = await pool.query('INSERT into orders(car_id, buyer_id, created_on ,amount, status) VALUES($1, $2, $3, $4, $5) RETURNING * ;', [carId, id, createdOn, price, status]);
 
       return res.status(201).send({
         status: 'success',
         data: {
           id: makeOrder.rows[0].id,
-          buyerId: makeOrder.rows[0].buyer_id,
-          carId,
-          createdOn: makeOrder.rows[0].createdon,
+          buyer_id: makeOrder.rows[0].buyer_id,
+          car_id: carId,
+          created_on: makeOrder.rows[0].created_on,
           price: parseFloat(carExist.rows[0].price).toFixed(2),
-          priceOffered: makeOrder.rows[0].amountoffered,
+          price_offered: makeOrder.rows[0].amount,
           status: makeOrder.rows[0].status,
         },
       });
@@ -60,15 +60,15 @@ class OrderController {
         });
       }
 
-      const updateOrderPrice = await pool.query('UPDATE orders SET amountoffered=$1 WHERE id=$2 RETURNING *;', [newOffer, checkUserOrder.rows[0].id]);
+      const updateOrderPrice = await pool.query('UPDATE orders SET amount=$1 WHERE id=$2 RETURNING *;', [newOffer, checkUserOrder.rows[0].id]);
       return res.status(200).send({
         status: 'success',
         data: {
           id: updateOrderPrice.rows[0].id,
-          carId: updateOrderPrice.rows[0].car_id,
+          car_id: updateOrderPrice.rows[0].car_id,
           status: updateOrderPrice.rows[0].status,
-          oldOffer: checkUserOrder.rows[0].amountoffered,
-          newOffer: updateOrderPrice.rows[0].amountoffered,
+          old_offer: checkUserOrder.rows[0].amount,
+          new_offer: updateOrderPrice.rows[0].amount,
         },
       });
     } catch (error) {

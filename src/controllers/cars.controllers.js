@@ -18,7 +18,7 @@ class CarAdvertController {
     const createdOn = new Date().toLocaleString();
     const status = 'available';
     try {
-      const postCarAd = await pool.query('INSERT INTO cars(ownerId, ownerEmail, createdon, state, status, price, manufacturer, model, body_type, image_url, flagged) VALUES($1, $2, $3, $4, $5, $6, $7, $8 , $9, $10, $11) RETURNING *;', [id, email, createdOn, state, status, Floatprice, manufacturer, model, bodyType, imageUrl, false]);
+      const postCarAd = await pool.query('INSERT INTO cars(owner_id, owner_email, created_on, state, status, price, manufacturer, model, body_type, image_url, flagged) VALUES($1, $2, $3, $4, $5, $6, $7, $8 , $9, $10, $11) RETURNING *;', [id, email, createdOn, state, status, Floatprice, manufacturer, model, bodyType, imageUrl, false]);
 
       return res.status(201).send({
         status: 'success',
@@ -42,7 +42,7 @@ class CarAdvertController {
       * check to see if the advert belongs to the user
       */
 
-      const advertExist = await pool.query('SELECT * FROM cars WHERE id=$1 AND ownerEmail=$2;', [id, email]);
+      const advertExist = await pool.query('SELECT * FROM cars WHERE id=$1 AND owner_email=$2;', [id, email]);
       if (advertExist.rowCount <= 0) {
         res.status(404).send({
           status: 'error',
@@ -69,7 +69,7 @@ class CarAdvertController {
     const { price } = req.body;
 
     try {
-      const advertExist = await pool.query('SELECT * FROM cars WHERE id=$1 AND ownerEmail=$2;', [id, email]);
+      const advertExist = await pool.query('SELECT * FROM cars WHERE id=$1 AND owner_email=$2;', [id, email]);
       if (advertExist.rowCount <= 0) {
         res.status(404).send({
           status: 'error',

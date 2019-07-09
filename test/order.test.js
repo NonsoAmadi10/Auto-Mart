@@ -32,11 +32,11 @@ describe('Orders', () => {
       .end((error, res) => {
         if (error) done(error);
         expect(res).to.be.an('object');
-      
+    
         expect(res).to.have.status(201);
         expect(res.body).to.have.keys('status', 'data');
         expect(res.body.status).to.deep.equal('success');
-        expect(res.body.data).to.have.keys('id', 'carId', 'status', 'price', 'priceOffered', 'buyerId', 'createdOn');
+        expect(res.body.data).to.have.keys('id', 'car_id', 'status', 'price', 'price_offered', 'buyer_id', 'created_on');
         done();
       });
   });
@@ -92,15 +92,15 @@ describe('Orders', () => {
   
   it('should update the price of a User"s purchase order', (done) => {
     chai.request(app)
-      .patch('/api/v1/order/1/price')
+      .patch('/api/v1/order/2/price')
       .set('Authorization', myToken)
       .send({
         newOffer: 7000000
       })
       .end((error, res) => {
-        
+        console.log(res.body)
         expect(res.status).to.equal(200);
-        expect(res.body.data).to.have.all.keys(['id','carId','oldOffer','newOffer','status']);
+        expect(res.body.data).to.have.all.keys(['id','car_id','old_offer','new_offer','status']);
         done();
       })
   });

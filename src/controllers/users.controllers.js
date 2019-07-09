@@ -30,7 +30,7 @@ class AuthController {
       }
 
       const hashedPassword = bcrypt.hashSync(password, 10);
-      const registerUser = await pool.query('INSERT INTO users(firstname, lastname, email, password, address, is_admin) VALUES($1, $2, $3, $4, $5, $6) RETURNING *;', [firstname, lastname, email, hashedPassword, address, isAdmin]);
+      const registerUser = await pool.query('INSERT INTO users(first_name, last_name, email, password, address, is_admin) VALUES($1, $2, $3, $4, $5, $6) RETURNING *;', [firstname, lastname, email, hashedPassword, address, isAdmin]);
 
       return jwt.sign(registerUser.rows[0], process.env.JWT_SECRET, (err, token) => {
         if (err) console.log(err);
@@ -39,8 +39,8 @@ class AuthController {
           data: {
             token,
             id: registerUser.rows[0].id,
-            firstname: registerUser.rows[0].firstname,
-            lastname: registerUser.rows[0].lastname,
+            first_name: registerUser.rows[0].first_name,
+            last_name: registerUser.rows[0].last_name,
             email: registerUser.rows[0].email,
             address: registerUser.rows[0].address,
           },
@@ -87,9 +87,9 @@ class AuthController {
             token,
             id: userExist.rows[0].id,
             email: userExist.rows[0].email,
-            lastname: userExist.rows[0].lastname,
-            firstname: userExist.rows[0].firstname,
-            adminStatus: userExist.rows[0].is_admin,
+            last_name: userExist.rows[0].last_name,
+            first_name: userExist.rows[0].first_name,
+            is_admin: userExist.rows[0].is_admin,
           },
         });
       });
