@@ -91,6 +91,7 @@ class CarAdvertController {
 
   static async getSpecificCarController(req, res) {
     const { id } = req.params;
+    
 
     try {
       const getCar = await pool.query('SELECT * FROM cars WHERE id=$1;', [id]);
