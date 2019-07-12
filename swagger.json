@@ -2,8 +2,8 @@
   "swagger": "2.0",
   "info": {
     "version": "1.0",
-    "title": "AUTOMART API",
-    "description": "# Auto-Mart\r\nAuto Mart is an online marketplace for automobiles of diverse makes, model or body type. With Auto Mart, users can sell their cars or buy from trusted dealerships or private sellers.\r\n\r\n### Build status\r\n[![Build Status](https://travis-ci.org/NonsoAmadi10/Auto-Mart.svg?branch=develop)](https://travis-ci.org/NonsoAmadi10/Auto-Mart)\r\n[![Coverage Status](https://coveralls.io/repos/github/NonsoAmadi10/Auto-Mart/badge.svg?branch=develop)](https://coveralls.io/github/NonsoAmadi10/Auto-Mart?branch=develop)\r\n[![Maintainability](https://api.codeclimate.com/v1/badges/7cd8c9394ca4e3c2039c/maintainability)](https://codeclimate.com/github/NonsoAmadi10/Auto-Mart/maintainability)\r\n[![Test Coverage](https://api.codeclimate.com/v1/badges/7cd8c9394ca4e3c2039c/test_coverage)](https://codeclimate.com/github/NonsoAmadi10/Auto-Mart/test_coverage)\r\n\r\n\r\n### Required Features\r\n1. User can sign up.\r\n2. User can sign in.\r\n3. User (seller) can post a car sale advertisement.\r\n4. User (buyer) can make a purchase order.\r\n5. User (buyer) can update the price of his/her purchase order.\r\n6. User (seller) can mark his/her posted AD as sold.\r\n7. User (seller) can update the price of his/her posted AD.\r\n8. User can view a specific car.\r\n9. User can view all unsold cars.\r\n10. User can view all unsold cars within a price range.\r\n11. Admin can delete a posted AD record.\r\n12. Admin can view all posted ads whether sold or unsold.\r\n\r\n### Extra Feature\r\n- User can report a car advert\r\n  \r\n\r\n### Useful Links\r\n\r\n- This project is being managed with  [Pivotal Tracker](https://www.pivotaltracker.com/n/projects/2346959)\r\n- The UI templates are hosted here [Github pages](https://nonsoamadi10.github.io/Auto-Mart/)\r\n- The API URL has been succesfully deployed to heroku. It can be accessed [here](https://automart-api-2019.herokuapp.com)\r\n\r\n\r\n### Technologies \r\n- [NodeJS](https://nodejs.org) A run time environment based off Chrome's v8 Engines for writing Javascript server-side applications.\r\n \r\n- [Express](https://expressjs.com) Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.\r\n  \r\n- [ES Lint](https://eslint.org) A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease.\r\n\r\n- [Babel](https://babeljs.io) Babel is a JavaScript compiler. Babel is a toolchain that is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in current and older browsers or environments. \r\n\r\n#### Tools\r\n- [Postman](https://getpostman.com) Postman is the only complete API development environment, and flexibly integrates with the software development cycle.\r\n- [Swagger](https://swagger.io) Swagger aides in development across the entire API lifecycle, from design and documentation, to test and deployment. \r\n- **Testing**\r\n    - [Mocha](https://mochajs.org) Mocha is a feature-rich JavaScript test framework running on Node.js and in the browser, making asynchronous testing simple and fun. \r\n    - [Chai](https://chaijs.com) Chai is a BDD / TDD assertion library for [node](http://nodejs.org) and the browser that can be delightfully paired with any javascript testing framework.\r\n- [Heroku](https://heroku.com) is a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.\r\n- [Cloudinary](https://cloudinary.com) is a cloud-based image and video management solution. It enables users to upload, store, manage, manipulate and deliver images and video for websites and apps.\r\n- [Travis CI](https://travis-ci.org)  is a hosted, distributed continuous integration service used to build and test software projects hosted at GitHub.\r\n- [Coveralls](https://coveralls.io) Coveralls is a hosted analysis tool, providing statistics about your code coverage. \r\n- [CodeClimate](https://codeclimate.com) provides automated code review for test coverage, maintainability and more so that you can save time and merge with confidence.\r\n\r\n\r\n### Installations\r\n ##### Getting Started\r\n - You need to have [node](https://nodejs.org) installed on your system \r\n - You need to have a [cloudinary](https://cloudinary.com) account in order to get an API secret as well as an API key.\r\n  \r\n ##### Clone \r\n - To clone this repo, you need to open a command line terminal and run : `  git clone https://github.com/NonsoAmadi10/Auto-Mart.git `\r\n\r\n##### Install\r\n- Install all depencies used in this project by running ` npm install `\r\n\r\n- Set the following environment variables in your .env file:\r\n\r\n  - PORT - An Integer specifying the PORT your application will run on.\r\n  - JWT_SECRET - A random string used for generation authorization tokens.\r\n  - CLOUDINARY_NAME => [your name on cloudinary](https://cloudinary.com)\r\n  - CLOUDINARY_API_KEY=> [your cloudinary_ secret key](https://cloudinary.com)\r\n  - CLOUDINARY_API_SECRET=> [your cloudinary secret](https://cloudinary.com)\r\n\r\n\r\n### Starting the server locally\r\n- Run ` npm run dev-start ` to start the server\r\n\r\n#### Testing App with Postman\r\n- Open postman \r\n- Test with api endpoints found [here](https://automart-api-2019.herokuapp.com/api-docs)\r\n##### Testing with mocha and chai\r\n- ``` Run npm test ``` to see test pass locally\r\n\r\n\r\n### Author \r\n- Amadi Justice Chinonso\r\n\r\n### Acknowledgement\r\n- I learned how to use swagger using this [resource](https://itnext.io/setting-up-swagger-in-a-node-js-application-d3c4d7aa56d4)\r\n- I learned how to upload to cloudinary using this [article](https://medium.com/@joeokpus/uploading-images-to-cloudinary-using-multer-and-expressjs-f0b9a4e14c54)\r\n  \r\n",
+    "title": "automart api docs",
+    "description": "# Auto-Mart\r\nAuto Mart is an online marketplace for automobiles of diverse makes, model or body type. With Auto Mart, users can sell their cars or buy from trusted dealerships or private sellers.\r\n\r\n### Build status\r\n[![Build Status](https://travis-ci.org/NonsoAmadi10/Auto-Mart.svg?branch=develop)](https://travis-ci.org/NonsoAmadi10/Auto-Mart)\r\n[![Coverage Status](https://coveralls.io/repos/github/NonsoAmadi10/Auto-Mart/badge.svg?branch=develop)](https://coveralls.io/github/NonsoAmadi10/Auto-Mart?branch=develop)\r\n[![Maintainability](https://api.codeclimate.com/v1/badges/7cd8c9394ca4e3c2039c/maintainability)](https://codeclimate.com/github/NonsoAmadi10/Auto-Mart/maintainability)\r\n[![Test Coverage](https://api.codeclimate.com/v1/badges/7cd8c9394ca4e3c2039c/test_coverage)](https://codeclimate.com/github/NonsoAmadi10/Auto-Mart/test_coverage)\r\n\r\n\r\n### Required Features\r\n1. User can sign up.\r\n2. User can sign in.\r\n3. User (seller) can post a car sale advertisement.\r\n4. User (buyer) can make a purchase order.\r\n5. User (buyer) can update the price of his/her purchase order.\r\n6. User (seller) can mark his/her posted AD as sold.\r\n7. User (seller) can update the price of his/her posted AD.\r\n8. User can view a specific car.\r\n9. User can view all unsold cars.\r\n10. User can view all unsold cars within a price range.\r\n11. Admin can delete a posted AD record.\r\n12. Admin can view all posted ads whether sold or unsold.\r\n\r\n### Extra Feature\r\n- User can report a car advert\r\n  \r\n\r\n### Useful Links\r\n\r\n- This project is being managed with  [Pivotal Tracker](https://www.pivotaltracker.com/n/projects/2346959)\r\n- The UI templates are hosted here [Github pages](https://nonsoamadi10.github.io/Auto-Mart/)\r\n- The API URL has been succesfully deployed to heroku. It can be accessed [here](https://automart-api-2019.herokuapp.com)\r\n\r\n\r\n\r\n",
     "contact": {}
   },
   "host": "automart-api-2019.herokuapp.com",
@@ -18,297 +18,52 @@
     "application/json"
   ],
   "paths": {
-    "/car": {
+    "/auth/signup": {
       "post": {
-        "description": "TODO: Add Description",
-        "summary": "Post Car Advert",
+        "description": "Allows Users to Create an Account",
+        "summary": "/Signup",
         "tags": [
-          "Cars  Request"
+          "Auth"
         ],
-        "operationId": "CarPost",
+        "operationId": "AuthSignupPost",
         "deprecated": false,
         "produces": [
           "application/json; charset=utf-8"
         ],
-        "consumes": [
-          "application/x-www-form-urlencoded"
-        ],
         "parameters": [
           {
-            "name": "Authorization",
+            "name": "Content-Type",
             "in": "header",
             "required": true,
             "type": "string",
             "description": ""
           },
           {
-            "name": "manufacturer",
-            "in": "formData",
+            "name": "Body",
+            "in": "body",
             "required": true,
-            "type": "string",
-            "description": ""
-          },
-          {
-            "name": "photo",
-            "in": "formData",
-            "required": true,
-            "type": "string",
-            "description": ""
-          },
-          {
-            "name": "model",
-            "in": "formData",
-            "required": true,
-            "type": "string",
-            "description": ""
-          },
-          {
-            "name": "price",
-            "in": "formData",
-            "required": true,
-            "type": "number",
-            "format": "double",
-            "description": "Price must be a float"
-          },
-          {
-            "name": "bodyType",
-            "in": "formData",
-            "required": true,
-            "type": "string",
-            "description": "It Can be Car, truck or Van"
-          },
-          {
-            "name": "state",
-            "in": "formData",
-            "required": true,
-            "type": "string",
-            "description": "New Or Used"
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/~1SignupRequest"
+            }
           }
         ],
         "responses": {
           "201": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/PostCarAdvert"
+              "$ref": "#/definitions/~1Signup"
             },
             "examples": {
               "application/json; charset=utf-8": {
                 "status": "success",
                 "data": {
-                  "id": 7,
-                  "owner_id": 6,
-                  "owner_email": "Cherrpie@aol.com",
-                  "created_on": "2019-07-09T14:47:50Z",
-                  "state": "new",
-                  "status": "available",
-                  "price": "2000000.00",
-                  "manufacturer": "toyota",
-                  "model": "camry",
-                  "body_type": "car",
-                  "image_url": "http://res.cloudinary.com/nonnypy/image/upload/v1562683669/ilotemlwl4tmzsecqgyf.jpg",
-                  "flagged": false
-                }
-              }
-            },
-            "headers": {
-              "Server": {
-                "type": "string",
-                "default": "Cowboy"
-              },
-              "Connection": {
-                "type": "string",
-                "default": "keep-alive"
-              },
-              "X-Powered-By": {
-                "type": "string",
-                "default": "Express"
-              },
-              "Access-Control-Allow-Origin": {
-                "type": "string",
-                "default": "*"
-              },
-              "Content-Length": {
-                "type": "string",
-                "default": "350"
-              },
-              "Etag": {
-                "type": "string",
-                "default": "W/\"15e-Dcqv8zxRbfGSdhajyeDgGzkFt0Q\""
-              },
-              "Date": {
-                "type": "string",
-                "default": "Tue, 09 Jul 2019 14:47:51 GMT"
-              },
-              "Via": {
-                "type": "string",
-                "default": "1.1 vegur"
-              }
-            }
-          }
-        },
-        "security": []
-      }
-    },
-    "/car/7/status": {
-      "patch": {
-        "description": "TODO: Add Description",
-        "summary": "Update Car status",
-        "tags": [
-          "Cars  Request"
-        ],
-        "operationId": "Car7StatusPatch",
-        "deprecated": false,
-        "produces": [
-          "application/json; charset=utf-8"
-        ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": ""
-          },
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": ""
-          },
-          {
-            "name": "Body",
-            "in": "body",
-            "required": true,
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/UpdateCarstatusRequest"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/UpdateCarstatus"
-            },
-            "examples": {
-              "application/json; charset=utf-8": {
-                "status": "success",
-                "data": {
-                  "id": 7,
-                  "owner_id": 6,
-                  "owner_email": "Cherrpie@aol.com",
-                  "created_on": "2019-07-09T14:47:50Z",
-                  "state": "new",
-                  "status": "sold",
-                  "price": "2000000.00",
-                  "manufacturer": "toyota",
-                  "model": "camry",
-                  "body_type": "car",
-                  "image_url": "http://res.cloudinary.com/nonnypy/image/upload/v1562683669/ilotemlwl4tmzsecqgyf.jpg",
-                  "flagged": false
-                }
-              }
-            },
-            "headers": {
-              "Server": {
-                "type": "string",
-                "default": "Cowboy"
-              },
-              "Connection": {
-                "type": "string",
-                "default": "keep-alive"
-              },
-              "X-Powered-By": {
-                "type": "string",
-                "default": "Express"
-              },
-              "Access-Control-Allow-Origin": {
-                "type": "string",
-                "default": "*"
-              },
-              "Content-Length": {
-                "type": "string",
-                "default": "345"
-              },
-              "Etag": {
-                "type": "string",
-                "default": "W/\"159-ZooNLbEOWL014fYEBRcrQ6DkdDI\""
-              },
-              "Date": {
-                "type": "string",
-                "default": "Tue, 09 Jul 2019 14:51:22 GMT"
-              },
-              "Via": {
-                "type": "string",
-                "default": "1.1 vegur"
-              }
-            }
-          }
-        },
-        "security": []
-      }
-    },
-    "/car/8/price": {
-      "patch": {
-        "description": "Allows a User to exist the price of an unsold vehicle",
-        "summary": "Update Car Price",
-        "tags": [
-          "Cars  Request"
-        ],
-        "operationId": "Car8PricePatch",
-        "deprecated": false,
-        "produces": [
-          "application/json; charset=utf-8"
-        ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": ""
-          },
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": ""
-          },
-          {
-            "name": "Body",
-            "in": "body",
-            "required": true,
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/UpdateCarPriceRequest"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/UpdateCarPrice"
-            },
-            "examples": {
-              "application/json; charset=utf-8": {
-                "status": "success",
-                "data": {
+                  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZmlyc3RfbmFtZSI6IkVtbWFudWVsIiwibGFzdF9uYW1lIjoiQXdvIiwiZW1haWwiOiJhd29saXN0aWNAbm5veS5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCR5THJrZUJ2LlVUUkdhaWhTUXNkdFFldVp5TS5hdElWald3N0w0WlIueEdRdUlwRU5qMGtJaSIsImFkZHJlc3MiOiJpYmlsZSByb2FkLCBCYW5hbmEgSXNsYW5kIiwiaXNfYWRtaW4iOiJmIiwiaWF0IjoxNTYyNjg5NDkwfQ.RURjyLYiavO7T_4dHUv9q6HOk1YoI9GwYTKapbocf-E",
                   "id": 8,
-                  "owner_id": 6,
-                  "owner_email": "Cherrpie@aol.com",
-                  "created_on": "2019-07-09T14:53:08Z",
-                  "state": "new",
-                  "status": "available",
-                  "price": "700000.00",
-                  "manufacturer": "toyota",
-                  "model": "camry",
-                  "body_type": "car",
-                  "image_url": "http://res.cloudinary.com/nonnypy/image/upload/v1562683988/egwmjfljbs7wmzwcbofn.jpg",
-                  "flagged": false
+                  "first_name": "Emmanuel",
+                  "last_name": "Awo",
+                  "email": "awolistic@nnoy.com",
+                  "address": "ibile road, Banana Island"
                 }
               }
             },
@@ -331,53 +86,19 @@
               },
               "Content-Length": {
                 "type": "string",
-                "default": "349"
+                "default": "535"
               },
               "Etag": {
                 "type": "string",
-                "default": "W/\"15d-2Jma3QvcxmCo/pK/8ctJzrdxGK8\""
+                "default": "W/\"217-LhZxtRILf2DRHyUipGTYUKmaIBw\""
               },
               "Date": {
                 "type": "string",
-                "default": "Tue, 09 Jul 2019 15:04:16 GMT"
+                "default": "Tue, 09 Jul 2019 16:24:50 GMT"
               },
               "Via": {
                 "type": "string",
                 "default": "1.1 vegur"
-              }
-            }
-          }
-        },
-        "security": []
-      }
-    },
-    "/": {
-      "get": {
-        "description": "TODO: Add Description",
-        "summary": "Search for all unsold cars",
-        "tags": [
-          "Cars  Request"
-        ],
-        "operationId": "UnnammedEndpointGet",
-        "deprecated": false,
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "",
-            "headers": {}
-          },
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/Searchforallunsoldcars"
-            },
-            "examples": {
-              "application/json": {
-                "status": "error",
-                "error": "You must be logged in to use this route"
               }
             }
           }
@@ -386,10 +107,10 @@
     },
     "/auth/signin": {
       "post": {
-        "description": "User Can Create an Account",
-        "summary": "User Should be able to signin",
+        "description": "Allows a User to Signin",
+        "summary": "Signin",
         "tags": [
-          "Misc"
+          "Auth"
         ],
         "operationId": "AuthSigninPost",
         "deprecated": false,
@@ -410,7 +131,7 @@
             "required": true,
             "description": "",
             "schema": {
-              "$ref": "#/definitions/UserShouldbeabletosigninRequest"
+              "$ref": "#/definitions/SigninRequest"
             }
           }
         ],
@@ -418,17 +139,17 @@
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/UserShouldbeabletosignin"
+              "$ref": "#/definitions/Signin"
             },
             "examples": {
               "application/json; charset=utf-8": {
                 "status": "success",
                 "data": {
-                  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZmlyc3RfbmFtZSI6IkNoaW5vbnNvIiwibGFzdF9uYW1lIjoiQW1hZGkiLCJlbWFpbCI6IkNoZXJycGllQGFvbC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCRtNHd6OU4zVzhoSy5uTFVRR0JzeG9PaS5ua3dkN0Z3WEEzSWZkVUg0YkVySDJJTzhvc1pCSyIsImFkZHJlc3MiOiI3NCwgZXBpYyB0b3dlciwgQ2hpY2FnbyIsImlzX2FkbWluIjoiZiIsImlhdCI6MTU2MjY4MzAyMH0.TTJmLAX7ufN36kIRRyEL8MM5c3jEsNfNBOp6OPaum6s",
-                  "id": 6,
-                  "email": "Cherrpie@aol.com",
-                  "last_name": "Amadi",
-                  "first_name": "Chinonso",
+                  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZmlyc3RfbmFtZSI6IkVtbWFudWVsIiwibGFzdF9uYW1lIjoiQXdvIiwiZW1haWwiOiJhd29saXN0aWNAbm5veS5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCR5THJrZUJ2LlVUUkdhaWhTUXNkdFFldVp5TS5hdElWald3N0w0WlIueEdRdUlwRU5qMGtJaSIsImFkZHJlc3MiOiJpYmlsZSByb2FkLCBCYW5hbmEgSXNsYW5kIiwiaXNfYWRtaW4iOiJmIiwiaWF0IjoxNTYyNjg5NjI4fQ.R7FB9VwU0CTH7NuACX3zKUgaPPp1eBlmqN0ZgPWjdhQ",
+                  "id": 8,
+                  "email": "awolistic@nnoy.com",
+                  "last_name": "Awo",
+                  "first_name": "Emmanuel",
                   "is_admin": "f"
                 }
               }
@@ -452,15 +173,15 @@
               },
               "Content-Length": {
                 "type": "string",
-                "default": "509"
+                "default": "512"
               },
               "Etag": {
                 "type": "string",
-                "default": "W/\"1fd-zlxEvwVa6ns3vPQ8eUuVsQt1+FE\""
+                "default": "W/\"200-5ay67HEONyoE1XkkEEf60C6TuVM\""
               },
               "Date": {
                 "type": "string",
-                "default": "Tue, 09 Jul 2019 14:37:00 GMT"
+                "default": "Tue, 09 Jul 2019 16:27:08 GMT"
               },
               "Via": {
                 "type": "string",
@@ -471,17 +192,20 @@
         }
       }
     },
-    "/auth/signup": {
+    "/car": {
       "post": {
-        "description": "TODO: Add Description",
-        "summary": "User should be able to signup",
+        "description": "Creates a Car advert",
+        "summary": "Create Advert",
         "tags": [
-          "Misc"
+          "Cars"
         ],
-        "operationId": "AuthSignupPost",
+        "operationId": "CarPost",
         "deprecated": false,
         "produces": [
           "application/json; charset=utf-8"
+        ],
+        "consumes": [
+          "application/x-www-form-urlencoded"
         ],
         "parameters": [
           {
@@ -492,31 +216,78 @@
             "description": ""
           },
           {
-            "name": "Body",
-            "in": "body",
+            "name": "Authorization",
+            "in": "header",
             "required": true,
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/UsershouldbeabletosignupRequest"
-            }
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "photo",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "manufacturer",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "model",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "state",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": "It can be new or used"
+          },
+          {
+            "name": "bodyType",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": "It can be car, truck, trailer"
+          },
+          {
+            "name": "price",
+            "in": "formData",
+            "required": true,
+            "type": "number",
+            "format": "double",
+            "description": "price must be a float"
           }
         ],
         "responses": {
           "201": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/Usershouldbeabletosignup"
+              "$ref": "#/definitions/Success"
             },
             "examples": {
               "application/json; charset=utf-8": {
                 "status": "success",
                 "data": {
-                  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZmlyc3RfbmFtZSI6IkpheWNlZSIsImxhc3RfbmFtZSI6InRvbHVsb3BlIiwiZW1haWwiOiJOb25ueXB5QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJDZxS2YwU3BjcXpSeTQ5dUZ1MEU3dHVsMUZDYU1tSU9jYTlmb0FHclVUQm8xWHdtREZOQy9pIiwiYWRkcmVzcyI6IjcxLCBRdWVlbnMgUm9hZCwgT2tsYWhvbWEiLCJpc19hZG1pbiI6InQiLCJpYXQiOjE1NjI2ODMzMTd9.Gh-K6bjWU2sE52Rqfo6853RI4uQZph2-Cg5Kb7zITxo",
-                  "id": 7,
-                  "first_name": "Jaycee",
-                  "last_name": "tolulope",
-                  "email": "Nonnypy@gmail.com",
-                  "address": "71, Queens Road, Oklahoma"
+                  "id": 11,
+                  "owner_id": 8,
+                  "owner_email": "awolistic@nnoy.com",
+                  "created_on": "2019-07-09T16:34:05Z",
+                  "state": "new",
+                  "status": "available",
+                  "price": "70000.00",
+                  "manufacturer": "toyota",
+                  "model": "camry",
+                  "body_type": "car",
+                  "image_url": "http://res.cloudinary.com/nonnypy/image/upload/v1562690044/ts7bornjgufw6kkr7mav.jpg",
+                  "flagged": false
                 }
               }
             },
@@ -539,19 +310,1096 @@
               },
               "Content-Length": {
                 "type": "string",
-                "default": "539"
+                "default": "351"
               },
               "Etag": {
                 "type": "string",
-                "default": "W/\"21b-N7NlFSfwr+95l4JqjKADxsjLs9Y\""
+                "default": "W/\"15f-I4lU/OVeb9qK5fDwBYkPvdMUshY\""
               },
               "Date": {
                 "type": "string",
-                "default": "Tue, 09 Jul 2019 14:41:57 GMT"
+                "default": "Tue, 09 Jul 2019 16:34:06 GMT"
               },
               "Via": {
                 "type": "string",
                 "default": "1.1 vegur"
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "View all unsold cars within a price range",
+        "tags": [
+          "Cars"
+        ],
+        "operationId": "CarGet",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "status",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "min_price",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "max_price",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Success3"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "status": "success",
+                "data": [
+                  {
+                    "id": 1,
+                    "owner_id": 1,
+                    "owner_email": "amadi@gmail.com",
+                    "created_on": "2019-07-09T13:41:25.574Z",
+                    "state": "new",
+                    "status": "available",
+                    "price": "200000.089",
+                    "manufacturer": "bmq",
+                    "model": "ferrai",
+                    "body_type": "truck",
+                    "image_url": "https://classcar.com/car?=toyota",
+                    "flagged": false
+                  },
+                  {
+                    "id": 3,
+                    "owner_id": 3,
+                    "owner_email": "amadi@gmail.com",
+                    "created_on": "2019-07-09T13:41:27.961Z",
+                    "state": "new",
+                    "status": "available",
+                    "price": "200000.089",
+                    "manufacturer": "bmq",
+                    "model": "ferrai",
+                    "body_type": "truck",
+                    "image_url": "https://classcar.com/car?=toyota",
+                    "flagged": false
+                  },
+                  {
+                    "id": 4,
+                    "owner_id": 2,
+                    "owner_email": "amadi@aol.com",
+                    "created_on": "2019-07-09T13:41:31.244Z",
+                    "state": "new",
+                    "status": "available",
+                    "price": "200000.089",
+                    "manufacturer": "bmq",
+                    "model": "ferrai",
+                    "body_type": "truck",
+                    "image_url": "https://classcar.com/car?=toyota",
+                    "flagged": false
+                  },
+                  {
+                    "id": 6,
+                    "owner_id": 5,
+                    "owner_email": "codeplay@gmail.com",
+                    "created_on": "2019-07-09T13:04:48Z",
+                    "state": "used",
+                    "status": "available",
+                    "price": "7500.00",
+                    "manufacturer": "toyota",
+                    "model": "camry",
+                    "body_type": "car",
+                    "image_url": "http://res.cloudinary.com/nonnypy/image/upload/v1562677487/v8ati50pvs57nave5xxj.jpg",
+                    "flagged": false
+                  },
+                  {
+                    "id": 8,
+                    "owner_id": 6,
+                    "owner_email": "Cherrpie@aol.com",
+                    "created_on": "2019-07-09T14:53:08Z",
+                    "state": "new",
+                    "status": "available",
+                    "price": "700000.00",
+                    "manufacturer": "toyota",
+                    "model": "camry",
+                    "body_type": "car",
+                    "image_url": "http://res.cloudinary.com/nonnypy/image/upload/v1562683988/egwmjfljbs7wmzwcbofn.jpg",
+                    "flagged": false
+                  }
+                ]
+              }
+            },
+            "headers": {
+              "Server": {
+                "type": "string",
+                "default": "Cowboy"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "1485"
+              },
+              "Etag": {
+                "type": "string",
+                "default": "W/\"5cd-LAiFnzcIpfFtRGnvQbGLlKt8NFk\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Tue, 09 Jul 2019 16:48:39 GMT"
+              },
+              "Via": {
+                "type": "string",
+                "default": "1.1 vegur"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Ordernotfound"
+            },
+            "examples": {
+              "application/json": {
+                "status": "error",
+                "error": "You must be logged in to use this route"
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/car/12/price": {
+      "patch": {
+        "description": "Updates the price of a car advert",
+        "summary": "Update Advert Price",
+        "tags": [
+          "Cars"
+        ],
+        "operationId": "Car12PricePatch",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/UpdateAdvertPriceRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Success"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "status": "success",
+                "data": {
+                  "id": 12,
+                  "owner_id": 8,
+                  "owner_email": "awolistic@nnoy.com",
+                  "created_on": "2019-07-09T16:35:41Z",
+                  "state": "new",
+                  "status": "available",
+                  "price": "12000000.00",
+                  "manufacturer": "toyota",
+                  "model": "camry",
+                  "body_type": "car",
+                  "image_url": "http://res.cloudinary.com/nonnypy/image/upload/v1562690141/kkkrdcrrpierldfvkv2m.jpg",
+                  "flagged": false
+                }
+              }
+            },
+            "headers": {
+              "Server": {
+                "type": "string",
+                "default": "Cowboy"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "354"
+              },
+              "Etag": {
+                "type": "string",
+                "default": "W/\"162-jK7pN26HMAMh0YACYJ5vhBf/T10\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Tue, 09 Jul 2019 16:39:55 GMT"
+              },
+              "Via": {
+                "type": "string",
+                "default": "1.1 vegur"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Ordernotfound"
+            },
+            "examples": {
+              "application/json": {
+                "status": "error",
+                "error": "You must be logged in to use this route"
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "$ref": "#/definitions/Ordernotfound"
+            },
+            "examples": {
+              "application/json": {
+                "status": "error",
+                "error": "Please enter price"
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/car/11/status": {
+      "patch": {
+        "description": "This route updates the status of an advert only when the advert has been sold",
+        "summary": "Update the status of Car  Advert",
+        "tags": [
+          "Cars"
+        ],
+        "operationId": "Car11StatusPatch",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/UpdatethestatusofCarAdvertRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Success"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "status": "success",
+                "data": {
+                  "id": 11,
+                  "owner_id": 8,
+                  "owner_email": "awolistic@nnoy.com",
+                  "created_on": "2019-07-09T16:34:05Z",
+                  "state": "new",
+                  "status": "sold",
+                  "price": "70000.00",
+                  "manufacturer": "toyota",
+                  "model": "camry",
+                  "body_type": "car",
+                  "image_url": "http://res.cloudinary.com/nonnypy/image/upload/v1562690044/ts7bornjgufw6kkr7mav.jpg",
+                  "flagged": false
+                }
+              }
+            },
+            "headers": {
+              "Server": {
+                "type": "string",
+                "default": "Cowboy"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "346"
+              },
+              "Etag": {
+                "type": "string",
+                "default": "W/\"15a-G2Anf/S35d5xoO4HxBvcFuQLpWE\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Tue, 09 Jul 2019 16:43:54 GMT"
+              },
+              "Via": {
+                "type": "string",
+                "default": "1.1 vegur"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Ordernotfound"
+            },
+            "examples": {
+              "application/json": {
+                "status": "error",
+                "error": "You Can only update a sold car"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Ordernotfound"
+            },
+            "examples": {
+              "application/json": {
+                "status": "error",
+                "error": "You must be logged in to use this route"
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "$ref": "#/definitions/Ordernotfound"
+            },
+            "examples": {
+              "application/json": {
+                "status": "error",
+                "error": "Please enter a valid status. e.g \"new\" or \"used"
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/": {
+      "get": {
+        "description": "Views all cars the are available for sale",
+        "summary": "View all unsold Cars",
+        "tags": [
+          "Cars"
+        ],
+        "operationId": "UnnammedEndpointGet",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Success3"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "status": "success",
+                "data": [
+                  {
+                    "id": 1,
+                    "owner_id": 1,
+                    "owner_email": "amadi@gmail.com",
+                    "created_on": "2019-07-09T13:41:25.574Z",
+                    "state": "new",
+                    "status": "available",
+                    "price": "200000.089",
+                    "manufacturer": "bmq",
+                    "model": "ferrai",
+                    "body_type": "truck",
+                    "image_url": "https://classcar.com/car?=toyota",
+                    "flagged": false
+                  },
+                  {
+                    "id": 3,
+                    "owner_id": 3,
+                    "owner_email": "amadi@gmail.com",
+                    "created_on": "2019-07-09T13:41:27.961Z",
+                    "state": "new",
+                    "status": "available",
+                    "price": "200000.089",
+                    "manufacturer": "bmq",
+                    "model": "ferrai",
+                    "body_type": "truck",
+                    "image_url": "https://classcar.com/car?=toyota",
+                    "flagged": false
+                  },
+                  {
+                    "id": 4,
+                    "owner_id": 2,
+                    "owner_email": "amadi@aol.com",
+                    "created_on": "2019-07-09T13:41:31.244Z",
+                    "state": "new",
+                    "status": "available",
+                    "price": "200000.089",
+                    "manufacturer": "bmq",
+                    "model": "ferrai",
+                    "body_type": "truck",
+                    "image_url": "https://classcar.com/car?=toyota",
+                    "flagged": false
+                  },
+                  {
+                    "id": 6,
+                    "owner_id": 5,
+                    "owner_email": "codeplay@gmail.com",
+                    "created_on": "2019-07-09T13:04:48Z",
+                    "state": "used",
+                    "status": "available",
+                    "price": "7500.00",
+                    "manufacturer": "toyota",
+                    "model": "camry",
+                    "body_type": "car",
+                    "image_url": "http://res.cloudinary.com/nonnypy/image/upload/v1562677487/v8ati50pvs57nave5xxj.jpg",
+                    "flagged": false
+                  },
+                  {
+                    "id": 8,
+                    "owner_id": 6,
+                    "owner_email": "Cherrpie@aol.com",
+                    "created_on": "2019-07-09T14:53:08Z",
+                    "state": "new",
+                    "status": "available",
+                    "price": "700000.00",
+                    "manufacturer": "toyota",
+                    "model": "camry",
+                    "body_type": "car",
+                    "image_url": "http://res.cloudinary.com/nonnypy/image/upload/v1562683988/egwmjfljbs7wmzwcbofn.jpg",
+                    "flagged": false
+                  },
+                  {
+                    "id": 12,
+                    "owner_id": 8,
+                    "owner_email": "awolistic@nnoy.com",
+                    "created_on": "2019-07-09T16:35:41Z",
+                    "state": "new",
+                    "status": "available",
+                    "price": "12000000.00",
+                    "manufacturer": "toyota",
+                    "model": "camry",
+                    "body_type": "car",
+                    "image_url": "http://res.cloudinary.com/nonnypy/image/upload/v1562690141/kkkrdcrrpierldfvkv2m.jpg",
+                    "flagged": false
+                  }
+                ]
+              }
+            },
+            "headers": {
+              "Server": {
+                "type": "string",
+                "default": "Cowboy"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "1812"
+              },
+              "Etag": {
+                "type": "string",
+                "default": "W/\"714-1tv5Yg20jTisckCDXYgtppC/PSY\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Tue, 09 Jul 2019 16:45:43 GMT"
+              },
+              "Via": {
+                "type": "string",
+                "default": "1.1 vegur"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Ordernotfound"
+            },
+            "examples": {
+              "application/json": {
+                "status": "error",
+                "error": "You must be logged in to use this route"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/car/8": {
+      "delete": {
+        "description": "Deletes a specific car advert",
+        "summary": "Deletes a specific Advert",
+        "tags": [
+          "Cars"
+        ],
+        "operationId": "Car8Delete",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/success6"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "status": "success",
+                "data": "Car Ad was successfully deleted"
+              }
+            },
+            "headers": {
+              "Server": {
+                "type": "string",
+                "default": "Cowboy"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "61"
+              },
+              "Etag": {
+                "type": "string",
+                "default": "W/\"3d-5rztLJUhisOGSy0IDpWaCmY6HQg\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Tue, 09 Jul 2019 17:01:33 GMT"
+              },
+              "Via": {
+                "type": "string",
+                "default": "1.1 vegur"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Ordernotfound"
+            },
+            "examples": {
+              "application/json": {
+                "status": "error",
+                "error": "You must be logged in to use this route"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/car/1": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "View a Specific Car Advert",
+        "tags": [
+          "Cars"
+        ],
+        "operationId": "Car1Get",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Success"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "status": "success",
+                "data": {
+                  "id": 1,
+                  "owner_id": 1,
+                  "owner_email": "amadi@gmail.com",
+                  "created_on": "2019-07-09T13:41:25.574Z",
+                  "state": "new",
+                  "status": "available",
+                  "price": "200000.089",
+                  "manufacturer": "bmq",
+                  "model": "ferrai",
+                  "body_type": "truck",
+                  "image_url": "https://classcar.com/car?=toyota",
+                  "flagged": false
+                }
+              }
+            },
+            "headers": {
+              "Server": {
+                "type": "string",
+                "default": "Cowboy"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "298"
+              },
+              "Etag": {
+                "type": "string",
+                "default": "W/\"12a-N6VHwtJQHF0xhHyo6B5lTLjeviE\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Fri, 12 Jul 2019 12:49:31 GMT"
+              },
+              "Via": {
+                "type": "string",
+                "default": "1.1 vegur"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Ordernotfound"
+            },
+            "examples": {
+              "application/json": {
+                "status": "error",
+                "error": "You must be logged in to use this route"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/order": {
+      "post": {
+        "description": "Allows users of this application to purchase a car by placing an order",
+        "summary": "Create an advert order",
+        "tags": [
+          "Orders"
+        ],
+        "operationId": "OrderPost",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CreateanadvertorderRequest"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/successs"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "status": "success",
+                "data": {
+                  "id": 4,
+                  "buyer_id": 11,
+                  "car_id": "3",
+                  "created_on": "2019-07-12T00:00:00Z",
+                  "price": "200000.09",
+                  "price_offered": "200000.00",
+                  "status": "pending                                           "
+                }
+              }
+            },
+            "headers": {
+              "Server": {
+                "type": "string",
+                "default": "Cowboy"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "213"
+              },
+              "Etag": {
+                "type": "string",
+                "default": "W/\"d5-CYlBlBPeBev1uPUuSc5nOlov3a8\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Fri, 12 Jul 2019 12:28:26 GMT"
+              },
+              "Via": {
+                "type": "string",
+                "default": "1.1 vegur"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Ordernotfound"
+            },
+            "examples": {
+              "application/json": {
+                "status": "error",
+                "error": "You must be logged in to use this route"
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "$ref": "#/definitions/Ordernotfound"
+            },
+            "examples": {
+              "application/json": {
+                "status": "error",
+                "error": "Please enter car id"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/order/4/price": {
+      "patch": {
+        "description": "Updates the price of a purchase order",
+        "summary": "Update an Order Price",
+        "tags": [
+          "Orders"
+        ],
+        "operationId": "Order4PricePatch",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/success8"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "status": "success",
+                "data": {
+                  "id": 4,
+                  "car_id": 3,
+                  "status": "pending                                           ",
+                  "old_offer": "200000.00",
+                  "new_offer": "7000000.000"
+                }
+              }
+            },
+            "headers": {
+              "Server": {
+                "type": "string",
+                "default": "Cowboy"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "159"
+              },
+              "Etag": {
+                "type": "string",
+                "default": "W/\"9f-bElb15w3Us7wjzRTYiup4VLsr2k\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Fri, 12 Jul 2019 12:31:48 GMT"
+              },
+              "Via": {
+                "type": "string",
+                "default": "1.1 vegur"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Ordernotfound"
+            },
+            "examples": {
+              "application/json": {
+                "status": "error",
+                "error": "You must be logged in to use this route"
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/Ordernotfound"
+            },
+            "examples": {
+              "application/json": {
+                "status": "error",
+                "error": "Order not found"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/flag": {
+      "post": {
+        "description": "Reports a Car Advert as Fraudulent",
+        "summary": "Flag a Car Advert",
+        "tags": [
+          "Flag"
+        ],
+        "operationId": "FlagPost",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/FlagaCarAdvertRequest"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Success9"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "status": "success",
+                "data": {
+                  "id": 2,
+                  "car_id": 4,
+                  "reason": "Car was stolen",
+                  "description": "Car belonged to Mr Phillip Newman and Mr Newman reported this Case to the Nigerian Police Force",
+                  "created_on": "2019-07-12T00:00:00Z"
+                }
+              }
+            },
+            "headers": {
+              "Server": {
+                "type": "string",
+                "default": "Cowboy"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "225"
+              },
+              "Etag": {
+                "type": "string",
+                "default": "W/\"e1-UCRSGEKoDafMGYQmNkolFxObafw\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Fri, 12 Jul 2019 12:39:53 GMT"
+              },
+              "Via": {
+                "type": "string",
+                "default": "1.1 vegur"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Ordernotfound"
+            },
+            "examples": {
+              "application/json": {
+                "status": "error",
+                "error": "You must be logged in to use this route"
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "$ref": "#/definitions/Ordernotfound"
+            },
+            "examples": {
+              "application/json": {
+                "status": "error",
+                "error": "your reason was not specified"
               }
             }
           }
@@ -560,23 +1408,57 @@
     }
   },
   "definitions": {
-    "PostCarAdvert": {
-      "title": "PostCarAdvert",
+    "/SignupRequest": {
+      "title": "/SignupRequest",
+      "example": {
+        "firstname": "Emmanuel",
+        "lastname": "Awo",
+        "email": "awol@gmail.com",
+        "password": "jahrule",
+        "confirmPassword": "jahrule",
+        "address": "ibile road, Banana Island"
+      },
+      "type": "object",
+      "properties": {
+        "firstname": {
+          "type": "string"
+        },
+        "lastname": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "confirmPassword": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "firstname",
+        "lastname",
+        "email",
+        "password",
+        "confirmPassword",
+        "address"
+      ]
+    },
+    "/Signup": {
+      "title": "/Signup",
       "example": {
         "status": "success",
         "data": {
-          "id": 7,
-          "owner_id": 6,
-          "owner_email": "Cherrpie@aol.com",
-          "created_on": "2019-07-09T14:47:50Z",
-          "state": "new",
-          "status": "available",
-          "price": "2000000.00",
-          "manufacturer": "toyota",
-          "model": "camry",
-          "body_type": "car",
-          "image_url": "http://res.cloudinary.com/nonnypy/image/upload/v1562683669/ilotemlwl4tmzsecqgyf.jpg",
-          "flagged": false
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZmlyc3RfbmFtZSI6IkVtbWFudWVsIiwibGFzdF9uYW1lIjoiQXdvIiwiZW1haWwiOiJhd29saXN0aWNAbm5veS5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCR5THJrZUJ2LlVUUkdhaWhTUXNkdFFldVp5TS5hdElWald3N0w0WlIueEdRdUlwRU5qMGtJaSIsImFkZHJlc3MiOiJpYmlsZSByb2FkLCBCYW5hbmEgSXNsYW5kIiwiaXNfYWRtaW4iOiJmIiwiaWF0IjoxNTYyNjg5NDkwfQ.RURjyLYiavO7T_4dHUv9q6HOk1YoI9GwYTKapbocf-E",
+          "id": 8,
+          "first_name": "Emmanuel",
+          "last_name": "Awo",
+          "email": "awolistic@nnoy.com",
+          "address": "ibile road, Banana Island"
         }
       },
       "type": "object",
@@ -596,17 +1478,179 @@
     "Data": {
       "title": "Data",
       "example": {
-        "id": 7,
-        "owner_id": 6,
-        "owner_email": "Cherrpie@aol.com",
-        "created_on": "2019-07-09T14:47:50Z",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZmlyc3RfbmFtZSI6IkVtbWFudWVsIiwibGFzdF9uYW1lIjoiQXdvIiwiZW1haWwiOiJhd29saXN0aWNAbm5veS5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCR5THJrZUJ2LlVUUkdhaWhTUXNkdFFldVp5TS5hdElWald3N0w0WlIueEdRdUlwRU5qMGtJaSIsImFkZHJlc3MiOiJpYmlsZSByb2FkLCBCYW5hbmEgSXNsYW5kIiwiaXNfYWRtaW4iOiJmIiwiaWF0IjoxNTYyNjg5NDkwfQ.RURjyLYiavO7T_4dHUv9q6HOk1YoI9GwYTKapbocf-E",
+        "id": 8,
+        "first_name": "Emmanuel",
+        "last_name": "Awo",
+        "email": "awolistic@nnoy.com",
+        "address": "ibile road, Banana Island"
+      },
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "token",
+        "id",
+        "first_name",
+        "last_name",
+        "email",
+        "address"
+      ]
+    },
+    "SigninRequest": {
+      "title": "SigninRequest",
+      "example": {
+        "email": "awol@gmail.com",
+        "password": "jahrule"
+      },
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "email",
+        "password"
+      ]
+    },
+    "Signin": {
+      "title": "Signin",
+      "example": {
+        "status": "success",
+        "data": {
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZmlyc3RfbmFtZSI6IkVtbWFudWVsIiwibGFzdF9uYW1lIjoiQXdvIiwiZW1haWwiOiJhd29saXN0aWNAbm5veS5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCR5THJrZUJ2LlVUUkdhaWhTUXNkdFFldVp5TS5hdElWald3N0w0WlIueEdRdUlwRU5qMGtJaSIsImFkZHJlc3MiOiJpYmlsZSByb2FkLCBCYW5hbmEgSXNsYW5kIiwiaXNfYWRtaW4iOiJmIiwiaWF0IjoxNTYyNjg5NjI4fQ.R7FB9VwU0CTH7NuACX3zKUgaPPp1eBlmqN0ZgPWjdhQ",
+          "id": 8,
+          "email": "awolistic@nnoy.com",
+          "last_name": "Awo",
+          "first_name": "Emmanuel",
+          "is_admin": "f"
+        }
+      },
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/Data1"
+        }
+      },
+      "required": [
+        "status",
+        "data"
+      ]
+    },
+    "Data1": {
+      "title": "Data1",
+      "example": {
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZmlyc3RfbmFtZSI6IkVtbWFudWVsIiwibGFzdF9uYW1lIjoiQXdvIiwiZW1haWwiOiJhd29saXN0aWNAbm5veS5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCR5THJrZUJ2LlVUUkdhaWhTUXNkdFFldVp5TS5hdElWald3N0w0WlIueEdRdUlwRU5qMGtJaSIsImFkZHJlc3MiOiJpYmlsZSByb2FkLCBCYW5hbmEgSXNsYW5kIiwiaXNfYWRtaW4iOiJmIiwiaWF0IjoxNTYyNjg5NjI4fQ.R7FB9VwU0CTH7NuACX3zKUgaPPp1eBlmqN0ZgPWjdhQ",
+        "id": 8,
+        "email": "awolistic@nnoy.com",
+        "last_name": "Awo",
+        "first_name": "Emmanuel",
+        "is_admin": "f"
+      },
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "email": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "is_admin": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "token",
+        "id",
+        "email",
+        "last_name",
+        "first_name",
+        "is_admin"
+      ]
+    },
+    "Success": {
+      "title": "Success",
+      "example": {
+        "status": "success",
+        "data": {
+          "id": 11,
+          "owner_id": 8,
+          "owner_email": "awolistic@nnoy.com",
+          "created_on": "2019-07-09T16:34:05Z",
+          "state": "new",
+          "status": "available",
+          "price": "70000.00",
+          "manufacturer": "toyota",
+          "model": "camry",
+          "body_type": "car",
+          "image_url": "http://res.cloudinary.com/nonnypy/image/upload/v1562690044/ts7bornjgufw6kkr7mav.jpg",
+          "flagged": false
+        }
+      },
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/Data2"
+        }
+      },
+      "required": [
+        "status",
+        "data"
+      ]
+    },
+    "Data2": {
+      "title": "Data2",
+      "example": {
+        "id": 11,
+        "owner_id": 8,
+        "owner_email": "awolistic@nnoy.com",
+        "created_on": "2019-07-09T16:34:05Z",
         "state": "new",
         "status": "available",
-        "price": "2000000.00",
+        "price": "70000.00",
         "manufacturer": "toyota",
         "model": "camry",
         "body_type": "car",
-        "image_url": "http://res.cloudinary.com/nonnypy/image/upload/v1562683669/ilotemlwl4tmzsecqgyf.jpg",
+        "image_url": "http://res.cloudinary.com/nonnypy/image/upload/v1562690044/ts7bornjgufw6kkr7mav.jpg",
         "flagged": false
       },
       "type": "object",
@@ -665,8 +1709,24 @@
         "flagged"
       ]
     },
-    "UpdateCarstatusRequest": {
-      "title": "UpdateCarstatusRequest",
+    "UpdateAdvertPriceRequest": {
+      "title": "UpdateAdvertPriceRequest",
+      "example": {
+        "price": 12000000
+      },
+      "type": "object",
+      "properties": {
+        "price": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "price"
+      ]
+    },
+    "UpdatethestatusofCarAdvertRequest": {
+      "title": "UpdatethestatusofCarAdvertRequest",
       "example": {
         "status": "sold"
       },
@@ -680,23 +1740,166 @@
         "status"
       ]
     },
-    "UpdateCarstatus": {
-      "title": "UpdateCarstatus",
+    "Success3": {
+      "title": "Success3",
+      "example": {
+        "status": "success",
+        "data": [
+          {
+            "id": 1,
+            "owner_id": 1,
+            "owner_email": "amadi@gmail.com",
+            "created_on": "2019-07-09T13:41:25.574Z",
+            "state": "new",
+            "status": "available",
+            "price": "200000.089",
+            "manufacturer": "bmq",
+            "model": "ferrai",
+            "body_type": "truck",
+            "image_url": "https://classcar.com/car?=toyota",
+            "flagged": false
+          },
+          {
+            "id": 3,
+            "owner_id": 3,
+            "owner_email": "amadi@gmail.com",
+            "created_on": "2019-07-09T13:41:27.961Z",
+            "state": "new",
+            "status": "available",
+            "price": "200000.089",
+            "manufacturer": "bmq",
+            "model": "ferrai",
+            "body_type": "truck",
+            "image_url": "https://classcar.com/car?=toyota",
+            "flagged": false
+          },
+          {
+            "id": 4,
+            "owner_id": 2,
+            "owner_email": "amadi@aol.com",
+            "created_on": "2019-07-09T13:41:31.244Z",
+            "state": "new",
+            "status": "available",
+            "price": "200000.089",
+            "manufacturer": "bmq",
+            "model": "ferrai",
+            "body_type": "truck",
+            "image_url": "https://classcar.com/car?=toyota",
+            "flagged": false
+          },
+          {
+            "id": 6,
+            "owner_id": 5,
+            "owner_email": "codeplay@gmail.com",
+            "created_on": "2019-07-09T13:04:48Z",
+            "state": "used",
+            "status": "available",
+            "price": "7500.00",
+            "manufacturer": "toyota",
+            "model": "camry",
+            "body_type": "car",
+            "image_url": "http://res.cloudinary.com/nonnypy/image/upload/v1562677487/v8ati50pvs57nave5xxj.jpg",
+            "flagged": false
+          },
+          {
+            "id": 8,
+            "owner_id": 6,
+            "owner_email": "Cherrpie@aol.com",
+            "created_on": "2019-07-09T14:53:08Z",
+            "state": "new",
+            "status": "available",
+            "price": "700000.00",
+            "manufacturer": "toyota",
+            "model": "camry",
+            "body_type": "car",
+            "image_url": "http://res.cloudinary.com/nonnypy/image/upload/v1562683988/egwmjfljbs7wmzwcbofn.jpg",
+            "flagged": false
+          },
+          {
+            "id": 12,
+            "owner_id": 8,
+            "owner_email": "awolistic@nnoy.com",
+            "created_on": "2019-07-09T16:35:41Z",
+            "state": "new",
+            "status": "available",
+            "price": "12000000.00",
+            "manufacturer": "toyota",
+            "model": "camry",
+            "body_type": "car",
+            "image_url": "http://res.cloudinary.com/nonnypy/image/upload/v1562690141/kkkrdcrrpierldfvkv2m.jpg",
+            "flagged": false
+          }
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Data2"
+          }
+        }
+      },
+      "required": [
+        "status",
+        "data"
+      ]
+    },
+    "success6": {
+      "title": "success6",
+      "example": {
+        "status": "success",
+        "data": "Car Ad was successfully deleted"
+      },
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "data": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "data"
+      ]
+    },
+    "CreateanadvertorderRequest": {
+      "title": "CreateanadvertorderRequest",
+      "example": {
+        "carId": "",
+        "priceOffered": ""
+      },
+      "type": "object",
+      "properties": {
+        "carId": {
+          "type": "string"
+        },
+        "priceOffered": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "carId",
+        "priceOffered"
+      ]
+    },
+    "successs": {
+      "title": "successs",
       "example": {
         "status": "success",
         "data": {
-          "id": 7,
-          "owner_id": 6,
-          "owner_email": "Cherrpie@aol.com",
-          "created_on": "2019-07-09T14:47:50Z",
-          "state": "new",
-          "status": "sold",
-          "price": "2000000.00",
-          "manufacturer": "toyota",
-          "model": "camry",
-          "body_type": "car",
-          "image_url": "http://res.cloudinary.com/nonnypy/image/upload/v1562683669/ilotemlwl4tmzsecqgyf.jpg",
-          "flagged": false
+          "id": 4,
+          "buyer_id": 11,
+          "car_id": "3",
+          "created_on": "2019-07-12T00:00:00Z",
+          "price": "200000.09",
+          "price_offered": "200000.00",
+          "status": "pending                                           "
         }
       },
       "type": "object",
@@ -705,7 +1908,7 @@
           "type": "string"
         },
         "data": {
-          "$ref": "#/definitions/Data"
+          "$ref": "#/definitions/Data9"
         }
       },
       "required": [
@@ -713,39 +1916,63 @@
         "data"
       ]
     },
-    "UpdateCarPriceRequest": {
-      "title": "UpdateCarPriceRequest",
+    "Data9": {
+      "title": "Data9",
       "example": {
-        "price": 700000.0
+        "id": 4,
+        "buyer_id": 11,
+        "car_id": "3",
+        "created_on": "2019-07-12T00:00:00Z",
+        "price": "200000.09",
+        "price_offered": "200000.00",
+        "status": "pending                                           "
       },
       "type": "object",
       "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "buyer_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "car_id": {
+          "type": "string"
+        },
+        "created_on": {
+          "type": "string"
+        },
         "price": {
-          "type": "number",
-          "format": "double"
+          "type": "string"
+        },
+        "price_offered": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
         }
       },
       "required": [
-        "price"
+        "id",
+        "buyer_id",
+        "car_id",
+        "created_on",
+        "price",
+        "price_offered",
+        "status"
       ]
     },
-    "UpdateCarPrice": {
-      "title": "UpdateCarPrice",
+    "success8": {
+      "title": "success8",
       "example": {
         "status": "success",
         "data": {
-          "id": 8,
-          "owner_id": 6,
-          "owner_email": "Cherrpie@aol.com",
-          "created_on": "2019-07-09T14:53:08Z",
-          "state": "new",
-          "status": "available",
-          "price": "700000.00",
-          "manufacturer": "toyota",
-          "model": "camry",
-          "body_type": "car",
-          "image_url": "http://res.cloudinary.com/nonnypy/image/upload/v1562683988/egwmjfljbs7wmzwcbofn.jpg",
-          "flagged": false
+          "id": 4,
+          "car_id": 3,
+          "status": "pending                                           ",
+          "old_offer": "200000.00",
+          "new_offer": "7000000.000"
         }
       },
       "type": "object",
@@ -754,7 +1981,7 @@
           "type": "string"
         },
         "data": {
-          "$ref": "#/definitions/Data"
+          "$ref": "#/definitions/Data10"
         }
       },
       "required": [
@@ -762,11 +1989,48 @@
         "data"
       ]
     },
-    "Searchforallunsoldcars": {
-      "title": "Searchforallunsoldcars",
+    "Data10": {
+      "title": "Data10",
+      "example": {
+        "id": 4,
+        "car_id": 3,
+        "status": "pending                                           ",
+        "old_offer": "200000.00",
+        "new_offer": "7000000.000"
+      },
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "car_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "status": {
+          "type": "string"
+        },
+        "old_offer": {
+          "type": "string"
+        },
+        "new_offer": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "car_id",
+        "status",
+        "old_offer",
+        "new_offer"
+      ]
+    },
+    "Ordernotfound": {
+      "title": "Ordernotfound",
       "example": {
         "status": "error",
-        "error": "You must be logged in to use this route"
+        "error": "Order not found"
       },
       "type": "object",
       "properties": {
@@ -782,37 +2046,41 @@
         "error"
       ]
     },
-    "UserShouldbeabletosigninRequest": {
-      "title": "UserShouldbeabletosigninRequest",
+    "FlagaCarAdvertRequest": {
+      "title": "FlagaCarAdvertRequest",
       "example": {
-        "email": "Cherrpie@aol.com",
-        "password": "Jonbellion"
+        "carId": "",
+        "reason": "",
+        "description": ""
       },
       "type": "object",
       "properties": {
-        "email": {
+        "carId": {
           "type": "string"
         },
-        "password": {
+        "reason": {
+          "type": "string"
+        },
+        "description": {
           "type": "string"
         }
       },
       "required": [
-        "email",
-        "password"
+        "carId",
+        "reason",
+        "description"
       ]
     },
-    "UserShouldbeabletosignin": {
-      "title": "UserShouldbeabletosignin",
+    "Success9": {
+      "title": "Success9",
       "example": {
         "status": "success",
         "data": {
-          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZmlyc3RfbmFtZSI6IkNoaW5vbnNvIiwibGFzdF9uYW1lIjoiQW1hZGkiLCJlbWFpbCI6IkNoZXJycGllQGFvbC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCRtNHd6OU4zVzhoSy5uTFVRR0JzeG9PaS5ua3dkN0Z3WEEzSWZkVUg0YkVySDJJTzhvc1pCSyIsImFkZHJlc3MiOiI3NCwgZXBpYyB0b3dlciwgQ2hpY2FnbyIsImlzX2FkbWluIjoiZiIsImlhdCI6MTU2MjY4MzAyMH0.TTJmLAX7ufN36kIRRyEL8MM5c3jEsNfNBOp6OPaum6s",
-          "id": 6,
-          "email": "Cherrpie@aol.com",
-          "last_name": "Amadi",
-          "first_name": "Chinonso",
-          "is_admin": "f"
+          "id": 2,
+          "car_id": 4,
+          "reason": "Car was stolen",
+          "description": "Car belonged to Mr Phillip Newman and Mr Newman reported this Case to the Nigerian Police Force",
+          "created_on": "2019-07-12T00:00:00Z"
         }
       },
       "type": "object",
@@ -821,7 +2089,7 @@
           "type": "string"
         },
         "data": {
-          "$ref": "#/definitions/Data3"
+          "$ref": "#/definitions/Data11"
         }
       },
       "required": [
@@ -829,168 +2097,58 @@
         "data"
       ]
     },
-    "Data3": {
-      "title": "Data3",
+    "Data11": {
+      "title": "Data11",
       "example": {
-        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZmlyc3RfbmFtZSI6IkNoaW5vbnNvIiwibGFzdF9uYW1lIjoiQW1hZGkiLCJlbWFpbCI6IkNoZXJycGllQGFvbC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCRtNHd6OU4zVzhoSy5uTFVRR0JzeG9PaS5ua3dkN0Z3WEEzSWZkVUg0YkVySDJJTzhvc1pCSyIsImFkZHJlc3MiOiI3NCwgZXBpYyB0b3dlciwgQ2hpY2FnbyIsImlzX2FkbWluIjoiZiIsImlhdCI6MTU2MjY4MzAyMH0.TTJmLAX7ufN36kIRRyEL8MM5c3jEsNfNBOp6OPaum6s",
-        "id": 6,
-        "email": "Cherrpie@aol.com",
-        "last_name": "Amadi",
-        "first_name": "Chinonso",
-        "is_admin": "f"
+        "id": 2,
+        "car_id": 4,
+        "reason": "Car was stolen",
+        "description": "Car belonged to Mr Phillip Newman and Mr Newman reported this Case to the Nigerian Police Force",
+        "created_on": "2019-07-12T00:00:00Z"
       },
       "type": "object",
       "properties": {
-        "token": {
-          "type": "string"
-        },
         "id": {
           "type": "integer",
           "format": "int32"
         },
-        "email": {
-          "type": "string"
-        },
-        "last_name": {
-          "type": "string"
-        },
-        "first_name": {
-          "type": "string"
-        },
-        "is_admin": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "token",
-        "id",
-        "email",
-        "last_name",
-        "first_name",
-        "is_admin"
-      ]
-    },
-    "UsershouldbeabletosignupRequest": {
-      "title": "UsershouldbeabletosignupRequest",
-      "example": {
-        "firstname": "Jaycee",
-        "lastname": "tolulope",
-        "email": "Nonnypy@gmail.com",
-        "address": "71, Queens Road, Oklahoma",
-        "password": "245,nayusabi",
-        "confirmPassword": "245,nayusabi",
-        "adminSecret": "andela"
-      },
-      "type": "object",
-      "properties": {
-        "firstname": {
-          "type": "string"
-        },
-        "lastname": {
-          "type": "string"
-        },
-        "email": {
-          "type": "string"
-        },
-        "address": {
-          "type": "string"
-        },
-        "password": {
-          "type": "string"
-        },
-        "confirmPassword": {
-          "type": "string"
-        },
-        "adminSecret": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "firstname",
-        "lastname",
-        "email",
-        "address",
-        "password",
-        "confirmPassword",
-        "adminSecret"
-      ]
-    },
-    "Usershouldbeabletosignup": {
-      "title": "Usershouldbeabletosignup",
-      "example": {
-        "status": "success",
-        "data": {
-          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZmlyc3RfbmFtZSI6IkpheWNlZSIsImxhc3RfbmFtZSI6InRvbHVsb3BlIiwiZW1haWwiOiJOb25ueXB5QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJDZxS2YwU3BjcXpSeTQ5dUZ1MEU3dHVsMUZDYU1tSU9jYTlmb0FHclVUQm8xWHdtREZOQy9pIiwiYWRkcmVzcyI6IjcxLCBRdWVlbnMgUm9hZCwgT2tsYWhvbWEiLCJpc19hZG1pbiI6InQiLCJpYXQiOjE1NjI2ODMzMTd9.Gh-K6bjWU2sE52Rqfo6853RI4uQZph2-Cg5Kb7zITxo",
-          "id": 7,
-          "first_name": "Jaycee",
-          "last_name": "tolulope",
-          "email": "Nonnypy@gmail.com",
-          "address": "71, Queens Road, Oklahoma"
-        }
-      },
-      "type": "object",
-      "properties": {
-        "status": {
-          "type": "string"
-        },
-        "data": {
-          "$ref": "#/definitions/Data4"
-        }
-      },
-      "required": [
-        "status",
-        "data"
-      ]
-    },
-    "Data4": {
-      "title": "Data4",
-      "example": {
-        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZmlyc3RfbmFtZSI6IkpheWNlZSIsImxhc3RfbmFtZSI6InRvbHVsb3BlIiwiZW1haWwiOiJOb25ueXB5QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJDZxS2YwU3BjcXpSeTQ5dUZ1MEU3dHVsMUZDYU1tSU9jYTlmb0FHclVUQm8xWHdtREZOQy9pIiwiYWRkcmVzcyI6IjcxLCBRdWVlbnMgUm9hZCwgT2tsYWhvbWEiLCJpc19hZG1pbiI6InQiLCJpYXQiOjE1NjI2ODMzMTd9.Gh-K6bjWU2sE52Rqfo6853RI4uQZph2-Cg5Kb7zITxo",
-        "id": 7,
-        "first_name": "Jaycee",
-        "last_name": "tolulope",
-        "email": "Nonnypy@gmail.com",
-        "address": "71, Queens Road, Oklahoma"
-      },
-      "type": "object",
-      "properties": {
-        "token": {
-          "type": "string"
-        },
-        "id": {
+        "car_id": {
           "type": "integer",
           "format": "int32"
         },
-        "first_name": {
+        "reason": {
           "type": "string"
         },
-        "last_name": {
+        "description": {
           "type": "string"
         },
-        "email": {
-          "type": "string"
-        },
-        "address": {
+        "created_on": {
           "type": "string"
         }
       },
       "required": [
-        "token",
         "id",
-        "first_name",
-        "last_name",
-        "email",
-        "address"
+        "car_id",
+        "reason",
+        "description",
+        "created_on"
       ]
     }
   },
   "tags": [
     {
-      "name": "Cars  Request"
+      "name": "Auth"
     },
     {
-      "name": "Misc",
-      "description": ""
+      "name": "Cars",
+      "description": "Handles all routes related to car adverts"
+    },
+    {
+      "name": "Orders",
+      "description": "handles Orders route"
+    },
+    {
+      "name": "Flag"
     }
   ]
 }
