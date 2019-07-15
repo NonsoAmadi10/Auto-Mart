@@ -12,8 +12,10 @@ class CarAdvertController {
     // Get the id of the user from the previous middleware
     const { id, email } = req.user;
     const {
-      manufacturer, model, state, price, body_type, imageUrl,
+      manufacturer, model, state, price, body_type,
     } = req.body;
+
+    const imageUrl = 'https://cloudinary.com/bbcusdbcudbuebcub.jpg'
     const Floatprice = parseFloat(price).toFixed(2);
     const createdOn = new Date().toLocaleString();
     const status = 'available';
