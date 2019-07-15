@@ -30,7 +30,7 @@ class OrderController {
         data: {
           id: makeOrder.rows[0].id,
           buyer_id: makeOrder.rows[0].buyer_id,
-          car_id, 
+          car_id: makeOrder.rows[0].car_id,
           created_on: makeOrder.rows[0].created_on,
           price: parseFloat(carExist.rows[0].price).toFixed(2),
           price_offered: makeOrder.rows[0].amount,
