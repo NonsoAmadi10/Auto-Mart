@@ -51,7 +51,7 @@ class Sanitize {
     if (Validator.checkEmpty(body_type)) return response('Please enter a body type', 422);
     if (Validator.checkEmpty(price)) return response('Please enter price', 422);
     if (Validator.checkEmpty(state)) return response('Please enter car state! e.g used or new', 422);
-    if (!Validator.validImage(req.files[0].originalname)) return response('Only image files are allowed', 422);
+    //if (!Validator.validImage(req.files[0].originalname)) return response('Only image files are allowed', 422);
     return next();
   }
 
