@@ -57,6 +57,7 @@ class Sanitize {
 
   static OrderSanitizer(req, res, next) {
     const { car_id, amount } = req.body;
+    console.log(req.body)
     const response = (error, code) => res.status(code).send({ status: 'error', error });
     if (Validator.checkEmpty(car_id)) return response('Please enter car id', 422);
     if (Validator.checkEmpty(amount)) return response('Please enter an offer', 422);
@@ -68,6 +69,7 @@ class Sanitize {
   static updateOrderSanitizer(req, res, next) {
     const { price } = req.body;
     const { id } = req.params;
+    console.log(req.body);
     const response = (error, code) => res.status(code).send({ status: 'error', error });
     if (Validator.checkEmpty(price)) return response('Please enter a new Offer', 422);
     if (isNaN(price)) return response('Please enter a valid Offer', 422);

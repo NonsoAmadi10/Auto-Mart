@@ -24,7 +24,7 @@ class OrderController {
       const createdOn = new Date().toLocaleDateString();
 
       const makeOrder = await pool.query('INSERT into orders(car_id, buyer_id, created_on ,amount, status) VALUES($1, $2, $3, $4, $5) RETURNING * ;', [carId, id, createdOn, price, status]);
-
+       console.log(makeOrder);
       return res.status(201).send({
         status: 'success',
         data: {
@@ -38,6 +38,7 @@ class OrderController {
         },
       });
     } catch (error) {
+      console.log(error.message)
       return res.status(400).send({
         status: 'error',
         error: error.message,
