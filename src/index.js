@@ -23,10 +23,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use('/uploads', express.static('uploads'));
 
-app.use('/api', userRoutes);
-app.use('/api', carRoutes);
-app.use('/api', OrderRoutes);
-app.use('/api', FlagRoutes);
+app.use('/auth', userRoutes);
+app.use('/car', carRoutes);
+app.use('/order', OrderRoutes);
+app.use('/flag', FlagRoutes);
 
 app.get('/', (req, res) => {
   res.send({
