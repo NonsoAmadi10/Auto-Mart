@@ -58,7 +58,7 @@ class CarAdvertController {
         data: updateStatus.rows[0],
       });
     } catch (error) {
-      console.log(error.message)
+      
       return res.status(500).send({
         status: 'error',
         error: error.message,
@@ -85,7 +85,7 @@ class CarAdvertController {
         data: updatePrice.rows[0],
       });
     } catch (error) {
-      console.log(error.message)
+  
       return res.status(500).send({
         status: 'error',
         error: error.message,
