@@ -103,7 +103,18 @@ class CarAdvertController {
 
       return res.status(200).send({
         status: 'success',
-        data: getCar.rows[0],
+        data: {
+          id: getCar.rows[0].id,
+          owner: getCar.rows[0].owner_email,
+          created_on: getCar.rows[0].created_on,
+          state: getCar.rows[0].state,
+          status: getCar.rows[0].status,
+          price: getCar.rows[0].price,
+          manufacturer: getCar.rows[0].manufacturer,
+          model: getCar.rows[0].model,
+          body_type: getCar.rows[0].body_type,
+          image_url: getCar.rows[0].image_url,
+        }
       });
     } catch (error) {
       return res.status(500).send({
