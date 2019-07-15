@@ -13,13 +13,7 @@ class GetHelpers {
 
 
     try {
-      if (status == undefined) {
-        return res.status(403).send({
-          status: 'error',
-          error: 'only admins can access this route',
-        })
-        ;
-      }
+     
 
       if (status !== 'available') return res.status(422).send({
         status: 'error',

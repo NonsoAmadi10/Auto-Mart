@@ -4,15 +4,15 @@ class OrderController {
 
   static async postOrder(req, res) {
     const { id } = req.user;
-    const { carId, priceOffered } = req.body;
-    const price = Number(priceOffered).toFixed(2);
+    const  { car_id, amount } = req.body;
+    const price = Number(amount).toFixed(2);
     const status = 'pending';
     try {
       /**
     * search if the car exist
     */
 
-      const carExist = await pool.query('SELECT id, price FROM cars WHERE id=$1; ', [carId]);
+      const carExist = await pool.query('SELECT id, price FROM cars WHERE id=$1; ', [car_id]);
 
       if (carExist.rowCount <= 0) {
         return res.status(404).send({
@@ -30,7 +30,7 @@ class OrderController {
         data: {
           id: makeOrder.rows[0].id,
           buyer_id: makeOrder.rows[0].buyer_id,
-          car_id: carId,
+          car_id, 
           created_on: makeOrder.rows[0].created_on,
           price: parseFloat(carExist.rows[0].price).toFixed(2),
           price_offered: makeOrder.rows[0].amount,
@@ -47,7 +47,7 @@ class OrderController {
 
   static async updatePriceOrder(req, res) {
     const orderId = req.params.id;
-    const { newOffer } = req.body;
+    const { price } = req.body;
     const { id } = req.user;
 
     try {
@@ -60,7 +60,7 @@ class OrderController {
         });
       }
 
-      const updateOrderPrice = await pool.query('UPDATE orders SET amount=$1 WHERE id=$2 RETURNING *;', [newOffer, checkUserOrder.rows[0].id]);
+      const updateOrderPrice = await pool.query('UPDATE orders SET amount=$1 WHERE id=$2 RETURNING *;', [price, checkUserOrder.rows[0].id]);
       return res.status(200).send({
         status: 'success',
         data: {

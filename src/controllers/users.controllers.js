@@ -12,9 +12,10 @@ class AuthController {
 
   static async signupController(req, res) {
     const {
-      firstname, lastname, email, password, address, adminSecret,
+      first_name, last_name, email, password, address
     } = req.body;
-    const isAdmin = adminSecret === process.env.ADMIN_SECRET ? 't' : 'f';
+    //const isAdmin = adminSecret === process.env.ADMIN_SECRET ? 't' : 'f';
+    const isAdmin = 'f';
 
     try {
       /**
@@ -30,7 +31,7 @@ class AuthController {
       }
 
       const hashedPassword = bcrypt.hashSync(password, 10);
-      const registerUser = await pool.query('INSERT INTO users(first_name, last_name, email, password, address, is_admin) VALUES($1, $2, $3, $4, $5, $6) RETURNING *;', [firstname, lastname, email, hashedPassword, address, isAdmin]);
+      const registerUser = await pool.query('INSERT INTO users(first_name, last_name, email, password, address, is_admin) VALUES($1, $2, $3, $4, $5, $6) RETURNING *;', [first_name, last_name, email, hashedPassword, address, isAdmin]);
 
       return jwt.sign(registerUser.rows[0], process.env.JWT_SECRET, (err, token) => {
         if (err) console.log(err);

@@ -115,24 +115,24 @@ class CarAdvertController {
   // eslint-disable-next-line consistent-return
   static getCarsController(req, res) {
     // eslint-disable-next-line camelcase
-    const { is_admin } = req.user;
+    const { status } = req.query;
 
     // eslint-disable-next-line camelcase
-    return is_admin === 't' ? GetHelpers.getAllCars(res) : GetHelpers.getAvailableCarControllers(req, res);
+    return !status ? GetHelpers.getAllCars(res) : GetHelpers.getAvailableCarControllers(req, res);
 
 
   }
 
   // eslint-disable-next-line consistent-return
   static async deleteCarController(req, res) {
-    const { is_admin } = req.user;
+    //const { is_admin } = req.user;
     const { id } = req.params;
-    if (is_admin !== 't') {
+    /*if (is_admin !== 't') {
       return res.status(403).send({
         status: 'error',
         error: 'you are not authorized to do this',
       });
-    }
+    } */
 
     try {
 
