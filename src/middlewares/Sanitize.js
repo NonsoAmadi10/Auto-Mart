@@ -101,7 +101,7 @@ class Sanitize {
     const response = (error, code) => res.status(code).send({ status: 'error', error });
     if (Validator.checkEmpty(price)) return response('Please enter price', 422);
     // eslint-disable-next-line no-restricted-globals
-    //if (isNaN(id)) return response('Invalid URL parameter', 400);
+    if (isNaN(id)) return response('Invalid URL parameter', 400);
     //if (isNaN(price)) return response('Enter a valid price number', 422);
 
     return next();
