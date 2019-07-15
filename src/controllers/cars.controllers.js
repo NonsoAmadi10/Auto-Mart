@@ -115,10 +115,10 @@ class CarAdvertController {
   // eslint-disable-next-line consistent-return
   static getCarsController(req, res) {
     // eslint-disable-next-line camelcase
-    const { status } = req.query;
+    
 
     // eslint-disable-next-line camelcase
-    return !status ? GetHelpers.getAllCars(res) : GetHelpers.getAvailableCarControllers(req, res);
+    return GetHelpers.getAllCars(res)
 
 
   }
