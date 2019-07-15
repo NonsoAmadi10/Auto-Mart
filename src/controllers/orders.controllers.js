@@ -69,7 +69,7 @@ class OrderController {
           car_id: updateOrderPrice.rows[0].car_id,
           status: updateOrderPrice.rows[0].status,
           old_offer: checkUserOrder.rows[0].amount,
-          new_price_offer: updateOrderPrice.rows[0].amount,
+          new_price_offered: updateOrderPrice.rows[0].amount,
         },
       });
     } catch (error) {
