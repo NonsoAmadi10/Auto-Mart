@@ -5,6 +5,6 @@ import Sanitize from '../middlewares/Sanitize';
 
 const router = Router();
 
-router.post('/order',authorize, Sanitize.OrderSanitizer, OrderControllers.postOrder);
-router.patch('/order/:id/price', authorize, Sanitize.updateOrderSanitizer, OrderControllers.updatePriceOrder);
+router.post('/',authorize, Sanitize.OrderSanitizer, OrderControllers.postOrder);
+router.patch('/:id/price', authorize, Sanitize.updateOrderSanitizer, OrderControllers.updatePriceOrder);
 export default router;
