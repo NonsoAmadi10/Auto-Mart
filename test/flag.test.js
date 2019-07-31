@@ -25,7 +25,7 @@ describe('Flags', () => {
   it('should report an advert as fraudulent', (done) => {
     chai.request(app)
       .post('/api/v1/flag')
-      .set('Authorization', myToken)
+      .set('Authorization', `Bearer ${myToken}`)
       .send({
         carId: 1,
         reason: 'abnormal demands',
@@ -56,7 +56,7 @@ describe('Flags', () => {
   it('should return a 404 if car does not exist', (done) => {
     chai.request(app)
       .post('/api/v1/flag')
-      .set('Authorization', myToken)
+      .set('Authorization', `Bearer ${myToken}`)
       .send({
         carId: 700000000,
         reason: 'faulty engine',
@@ -72,7 +72,7 @@ describe('Flags', () => {
   it('should not post a flag if the car id is not specified', (done) => {
     chai.request(app)
       .post('/api/v1/flag')
-      .set('Authorization', myToken)
+      .set('Authorization', `Bearer ${myToken}`)
       .send({
         reason: 'abnormal demand',
         description: 'Lorem ipsum',
@@ -86,7 +86,7 @@ describe('Flags', () => {
   it('should not post a flag if the car reason is not specified', (done) => {
     chai.request(app)
       .post('/api/v1/flag')
-      .set('Authorization', myToken)
+      .set('Authorization', `Bearer ${myToken}`)
       .send({
         carId: 2,
         description: 'Lorem ipsum',
@@ -101,7 +101,7 @@ describe('Flags', () => {
   it('should not post a flag if the description is not specified', (done) => {
     chai.request(app)
       .post('/api/v1/flag')
-      .set('Authorization', myToken)
+      .set('Authorization', `Bearer ${myToken}`)
       .send({
         reason: 'abnormal demand',
         carId: 3,
@@ -115,7 +115,7 @@ describe('Flags', () => {
   it('should not post a flag if the car id is not an integer', (done) => {
     chai.request(app)
       .post('/api/v1/flag')
-      .set('Authorization', myToken)
+      .set('Authorization', `Bearer ${myToken}`)
       .send({
         carId: 'sayGoodbye',
         reason: 'abnormal demand',
@@ -131,7 +131,7 @@ describe('Flags', () => {
   it('should not post a flag if the reason is an integer', (done) => {
     chai.request(app)
       .post('/api/v1/flag')
-      .set('Authorization', myToken)
+      .set('Authorization', `Bearer ${myToken}`)
       .send({
         carId: 2,
         reason: 419,
@@ -147,7 +147,7 @@ describe('Flags', () => {
   it('should not post a flag if the description is an integer', (done) => {
     chai.request(app)
       .post('/api/v1/flag')
-      .set('Authorization', myToken)
+      .set('Authorization', `Bearer ${myToken}`)
       .send({
         carId: 2,
         reason: 'abnormal demand',

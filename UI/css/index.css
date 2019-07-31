@@ -434,7 +434,6 @@ select option {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    box-shadow: 1px 1px 3px #333;
 }
 .products p {
     font-weight: bolder;
