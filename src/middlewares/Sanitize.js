@@ -20,8 +20,8 @@ class Sanitize {
     if (Validator.isValidParamsLength(firstname, 2)) return response('firstname must be atleast two characters long', 422);
     if (Validator.isValidParamsLength(lastname, 2)) return response('lastname must be atleast two characters long', 422);
     if (Validator.isValidParamsLength(password, 5)) return response('password must be greater than five characters', 422);
-    if (Validator.isNotNumber(firstname)) return response('firstname cannot  contain number', 422);
-    if (Validator.isNotNumber(lastname)) return response('lastname cannot contain numbers', 422);
+    if (Validator.containsNumber(firstname)) return response('firstname cannot  contain number', 422);
+    if (Validator.containsNumber(lastname)) return response('lastname cannot contain numbers', 422);
 
 
     return next();
@@ -90,7 +90,7 @@ class Sanitize {
     // eslint-disable-next-line no-restricted-globals
     if (status !== 'sold') return response('You Can only update a sold car', 400);
     if (isNaN(id)) return response('Invalid URL parameter', 400);
-    if (Validator.isNotNumber(status)) return response('status cannot contain number', 422);
+    if (Validator.containsNumber(status)) return response('status cannot contain number', 422);
 
     return next();
   }
