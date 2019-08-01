@@ -86,7 +86,11 @@ input[type="file"]::-webkit-file-upload-button{
 
 /*navbar */
 header{
-    background: rgba(0, 0, 22, 0.87);
+    background: #fff;
+    padding: 0;
+    box-shadow: 0px 0px 2px rgb(0, 0, 22);
+    width: 100%;
+
 }
 .sidebar {
     height: 100%; /* 100% Full-height */
@@ -120,6 +124,13 @@ header{
     color: #f1f1f1;
   }
   
+  .logo .material-icons
+  {
+      color: rgb(150, 174, 199);
+      font-size: 1.3rem;
+      margin:0;
+      padding:0;
+  }
   
   /* Position and style the close button (top right corner) */
   .sidebar .closebtn {
@@ -148,11 +159,12 @@ header{
   
   /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
   #main {
-    transition: margin-left .5s; /* If you want a transition effect */
-    padding: 20px;
+    transition: margin-right .5s; /* If you want a transition effect */
+    padding: 8px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    color: rgb(0, 0, 22);
   }
   
 .sidebar .active{
@@ -160,6 +172,49 @@ header{
     border-bottom: 1px solid dodgerblue;
 }
 
+.contain {
+    display: inline-block;
+    cursor: pointer;
+    margin: 1rem;
+    margin-right: 1.5rem;
+   }
+   
+   .bar1, .bar2, .bar3 {
+    width: 25px;
+    height: 3px;
+    background-color: rgb(0, 0, 22);
+    margin: 6px 7px;
+    transition: 0.4s;
+    font-size: 1rem;
+   }
+   
+   /* Rotate first bar */
+   .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-8px, 6px) ;
+    transform: rotate(-45deg) translate(-8px, 6px) ;
+   }
+   
+   /* Fade out the second bar */
+   .change .bar2 {
+    opacity: 0;
+   }
+   
+   /* Rotate last bar */
+   .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+   }
+
+   .open 
+   {
+     display: block;
+     width: 30%;
+   }
+ 
+   .add-margin
+   {
+     margin-right: 30%;
+   }
 
 /*landing page */
 .header{
@@ -171,8 +226,8 @@ header{
 }
 .logo{
     font-size: 2rem;
-    margin: 0 0 8px 8px;
-    color: #ddd;
+    margin: 0.4rem;
+    color: rgb(0, 0, 22);
     
 }
 /*Big-text*/
@@ -342,8 +397,7 @@ select option {
     
 }
 .small-img {
-    width: 300px;
-    margin: 0px auto;
+    width: 100%;
 }
 
 /* All modal*/
@@ -379,25 +433,78 @@ select option {
   cursor: pointer;
 }
 
-/*filter bar*/
-.row{
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0.7rem;
-    flex-direction: row;
-    justify-content:center;
-    background: rgb(1, 1, 49);
-    height: auto;
+.divide 
+{
     width: 100%;
-    color: #ddd
+    display: flex;
+    flex-direction: row;
 }
-.filter-options{
-    background:rgb(1, 1, 49);
-    border: none;
-    border-bottom: 1px solid dodgerblue;
-    outline: none;
-    padding: 0;
+
+/*filter bar*/
+
+.searchbar
+{
+    width: 40%;
+    padding: 2rem;
+    height: 30%;
+
 }
+#filter
+{
+background: rgb(0, 0, 22);
+color: #fff;
+padding: 3rem;
+width: 100%;
+box-shadow: 0px 0px 3px rgb(0, 0, 22);
+}
+#filter * {
+    box-sizing: border-box;
+    margin: 10px auto;
+    padding: 1rem;
+    width: auto;
+}
+ #filter .btn-default 
+ {
+     color: #fff;
+ }
+#filter input 
+{
+    width: 80%;
+    padding: 0.7rem;
+}
+ .adverts
+ {
+     padding: 1rem;
+     width: 60%;
+     margin:10px auto;
+     display: flex;
+     flex-direction: column;
+ }
+ .products
+ {
+     display: flex;
+     flex-direction: row;
+     margin: 1.7rem;
+
+ }
+ 
+ .ad-details
+ {
+     padding: 0.8rem;
+     width: 50%;
+     display:flex;
+     flex-direction: column;
+     box-shadow: 0px 0px 3px rgb(0, 0, 22);
+ }
+ .image-div
+ {
+     width: 50%;
+     padding: 0.3rem;
+ }
+ .ad-details * {
+     width: 100%;
+ }
+
 .option input{
     padding: 0.7rem;
     background: inherit;
@@ -406,41 +513,11 @@ select option {
     outline: none
 }
 
-.row .btn-default{
-    color: #fff;
-    width: 70px;
-}
 
-.row *{
-    margin: 0.5rem 0.3rem;
-}
 
 /* MarketPlace */
 
-.marketplace{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin: 0.5rem;
-    padding: 0.3rem;
-}
-.products {
-    width: 400px;
-    margin: 0.3rem;
-    padding: 1rem;
-    height: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-.products p {
-    font-weight: bolder;
-}
-.products .btn-primary, .products .btn-default{
-    text-align: center;
-}
+
 
 #report{
     width: 100px;
@@ -450,9 +527,26 @@ select option {
     background: dodgerblue;
     color: rgba(0, 0, 22, 0.87);
 }
+.title
+{
+    text-align: center;
+}
 
+.order {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+}
 .orders{
     height: auto;
+    padding: 1.4rem;
+    border: 1px solid rgba(0, 0, 22, 0.87);
+    margin: 1rem;
+}
+
+.orders .btn-primary
+{
+    width: 100%;
 }
 
 
@@ -469,6 +563,30 @@ select option {
         width: 100%;
     }
 
+    .post-ad
+    {
+        width: 80%;
+    }
+
+    .post-ad input, .post-ad ::selection
+    {
+        width: 100%;
+    }
+    .open 
+    {
+      display: block;
+      width: 200px;
+    }
+    .sidebar 
+    {
+        left:0;
+        top:0;
+    }
+  
+    .add-margin
+    {
+      margin-left: 25%;
+    }
     .account{
         width: auto
     }
@@ -479,9 +597,38 @@ select option {
     .modal .post-ad{
         width: auto
     }
+
+    .divide, .products
+    {
+        flex-direction: column;
+        width: 100%;
+    }
+    .divide * , .products * {
+        width: 100%;
+        margin: 10px auto;
+    }
+    .searchbar, #filter 
+    {
+        width: 100%;
+        margin: 10px auto;
+    }
+
+    
+    
+    .products
+    {
+        box-shadow: 0 0 0;
+        border: 1px solid rgb(0, 0, 22);
+        padding: 3rem;
+    }
+    .ad-details
+    {
+        box-shadow: 0px 0px 0px;
+    }
+    
 }
 
-@media (max-width: 360px){
+@media (max-width: 420px){
     .big-text{
         height: 50vh;
     }
@@ -535,6 +682,11 @@ select option {
     }
     .row{
         justify-content: left;
+    }
+
+    .order
+    {
+        flex-direction: column;
     }
 }
 

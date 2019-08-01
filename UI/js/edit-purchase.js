@@ -4,7 +4,7 @@ const allbtn = document.querySelectorAll('#edit-purchase');
 const openDiv =(e)=>{
 let header = document.querySelector('.ed-header');
   modal.style.display= "block";
-console.log(header)
+console.log(e.target.parentElement)
  if(e.target.innerHTML !== 'Edit Purchase'){
   header.innerHTML = 'Make a New Offer'
  }
