@@ -30,7 +30,7 @@ describe('Cars', () => {
     const filePath = `${__dirname}/assets/asphalt-automobiles-automotive-757181.jpg`;
     chai.request(app)
       .post('/api/v1/car')
-      .set('authorization', myToken)
+      .set('authorization', `Bearer ${myToken}`)
       .type('form')
       .set('enctype', 'multipart/formdata')
       .attach('photo', fs.readFileSync(filePath), 'asphalt-automobiles-automotive-757181.jpg')
@@ -52,7 +52,7 @@ describe('Cars', () => {
     const filePath = `${__dirname}/assets/meeting.ics`;
     chai.request(app)
       .post('/api/v1/car')
-      .set('authorization', myToken)
+      .set('authorization', `Bearer ${myToken}`)
       .type('form')
       .set('enctype', 'multipart/formdata')
       .attach('photo', fs.readFileSync(filePath), 'asphalt-automobiles-automotive-757181.ics')
@@ -72,8 +72,8 @@ describe('Cars', () => {
   
   it('should update the status of a Car sale advert', (done) => {
     chai.request(app)
-      .patch('/api/v1/car/5/status')
-      .set('Authorization', myToken)
+      .patch('/api/v1/car/2/status')
+      .set('Authorization', `Bearer ${myToken}`)
       .send({
         status: 'sold',
       })
@@ -87,7 +87,7 @@ describe('Cars', () => {
   it('should not update the status of an advert if it does not belong to a user', (done) => {
     chai.request(app)
       .patch('/api/v1/car/700/status')
-      .set('Authorization', myToken)
+      .set('Authorization', `Bearer ${myToken}`)
       .send({
         status: 'sold',
       })
@@ -100,7 +100,7 @@ describe('Cars', () => {
   it('should only update the status of a sold car', (done) => {
     chai.request(app)
       .patch('/api/v1/car/2/status')
-      .set('Authorization', myToken)
+      .set('Authorization', `Bearer ${myToken}`)
       .send({
         status: 'hello',
       })
@@ -114,7 +114,7 @@ describe('Cars', () => {
   it('should not update the price of an advert if it does not belong to a user', (done) => {
     chai.request(app)
       .patch('/api/v1/car/3000/price')
-      .set('Authorization', myToken)
+      .set('Authorization', `Bearer ${myToken}`)
       .send({
         price: 12345,
       })
@@ -126,8 +126,8 @@ describe('Cars', () => {
   });
   it('should update the price of an advert if it d belongs to a user', (done) => {
     chai.request(app)
-      .patch('/api/v1/car/5/price')
-      .set('Authorization', myToken)
+      .patch('/api/v1/car/2/price')
+      .set('Authorization', `Bearer ${myToken}`)
       .send({
         price: 123456.00,
       })
@@ -140,7 +140,7 @@ describe('Cars', () => {
   it('should not update the price of an advert if the request body is not a number', (done) => {
     chai.request(app)
       .patch('/api/v1/car/2/price')
-      .set('Authorization', myToken)
+      .set('Authorization', `Bearer ${myToken}`)
       .send({
         price: 'sold',
       })
@@ -154,7 +154,7 @@ describe('Cars', () => {
   it('should  get an advert on valid params id', (done) => {
     chai.request(app)
       .get('/api/v1/car/2')
-      .set('Authorization', myToken)
+      .set('Authorization', `Bearer ${myToken}`)
       .end((err, res) => {
         console.log(res.body)
         expect(res.status).to.equal(200);
@@ -168,7 +168,7 @@ describe('Cars', () => {
   it('should not get an advert on invalid params id', (done) => {
     chai.request(app)
       .get('/api/v1/car/b')
-      .set('Authorization', myToken)
+      .set('Authorization', `Bearer ${myToken}`)
       .end((err, res) => {
         expect(res.status).to.equal(400);
         expect(res.body.error).to.equal('Invalid URL parameter');
@@ -180,7 +180,7 @@ describe('Cars', () => {
     chai.request(app)
       .get('/api/v1/car')
       .query({ status: 'available' })
-      .set('Authorization', myToken)
+      .set('Authorization', `Bearer ${myToken}`)
       .end((err, res) => {
         console.log(res.body);
         expect(res.status).to.equal(200);
@@ -196,7 +196,7 @@ describe('Cars', () => {
   it('should get all unsold cars within a specified price range', (done) => {
     chai.request(app)
       .get('/api/v1/car')
-      .set('Authorization', myToken)
+      .set('Authorization', `Bearer ${myToken}`)
       .query({ status: 'available', min_price: 0, max_price: 200000.089 })
       .end((err, res) => {
         expect(res.status).to.equal(200);
@@ -208,7 +208,7 @@ describe('Cars', () => {
   it('should return a 404 if there was no car found within the price range', (done) => {
     chai.request(app)
       .get('/api/v1/car')
-      .set('Authorization', myToken)
+      .set('Authorization', `Bearer ${myToken}`)
       .query({ status: 'available', min_price: 10000000000000, max_price: 2000000000000000 })
       .end((err, res) => {
         expect(res.status).to.equal(404);
@@ -220,7 +220,7 @@ describe('Cars', () => {
   it('should return a 422 if the minimum price is not a number', (done) => {
     chai.request(app)
       .get('/api/v1/car')
-      .set('Authorization', myToken)
+      .set('Authorization', `Bearer ${myToken}`)
       .query({ status: 'available', min_price: 'chimdi', max_price: 20000000 })
       .end((err, res) => {
         expect(res.status).to.equal(422);
@@ -233,7 +233,7 @@ describe('Cars', () => {
   it('should return a 422 if the maximum price is not a number', (done) => {
     chai.request(app)
       .get('/api/v1/car')
-      .set('Authorization', myToken)
+      .set('Authorization', `Bearer ${myToken}`)
       .query({ status: 'available', min_price: 4000000, max_price: 'charlies' })
       .end((err, res) => {
         expect(res.status).to.equal(422);
@@ -245,7 +245,7 @@ describe('Cars', () => {
   it('should get all cars', (done) => {
     chai.request(app)
       .get('/api/v1/car')
-      .set('Authorization', adminToken)
+      .set('Authorization', `Bearer ${adminToken}`)
       .end((err, res) => {
         expect(res.status).to.equal(200);
         expect(res.body.data).to.be.an('array');
@@ -257,7 +257,7 @@ describe('Cars', () => {
   it('should not allow a user who is not an admin access this route', (done) => {
     chai.request(app)
       .get('/api/v1/car')
-      .set('Authorization', myToken)
+      .set('Authorization', `Bearer ${myToken}`)
       .end((err, res) => {
         expect(res.status).to.equal(403);
         expect(res.body.error).to.equal('only admins can access this route');
@@ -269,7 +269,7 @@ describe('Cars', () => {
   it('should delete a car advert', (done) => {
     chai.request(app)
       .delete('/api/v1/car/2')
-      .set('Authorization', adminToken)
+      .set('Authorization', `Bearer ${adminToken}`)
       .end((err, res) => {
         expect(res.status).to.equal(200);
         expect(res.body.data).to.equal('Car Ad was successfully deleted');
@@ -280,7 +280,7 @@ describe('Cars', () => {
   it('should not allow a user who is not admin delete a car advert', (done) => {
     chai.request(app)
       .delete('/api/v1/car/7')
-      .set('Authorization', myToken)
+      .set('Authorization', `Bearer ${myToken}`)
       .end((err, res) => {
         expect(res.status).to.equal(403);
         expect(res.body.error).to.equal('you are not authorized to do this');
@@ -291,7 +291,7 @@ describe('Cars', () => {
   it('should send a 404 if the id is not available', (done) => {
     chai.request(app)
       .delete('/api/v1/car/5000')
-      .set('Authorization', adminToken)
+      .set('Authorization', `Bearer ${adminToken}`)
       .end((err, res) => {
         expect(res.status).to.equal(404);
         expect(res.body.error).to.equal('Advert not found');
@@ -302,7 +302,7 @@ describe('Cars', () => {
   it('should throw an error on invalid params', (done) => {
     chai.request(app)
       .delete('/api/v1/car/g')
-      .set('Authorization', adminToken)
+      .set('Authorization', `Bearer ${adminToken}`)
       .end((err, res) => {
         expect(res.status).to.equal(400);
         expect(res.body.error).to.equal('Invalid URL parameter');

@@ -14,24 +14,37 @@
   
 
     <div class="sidebar" id="sidebar">
-      <a href="#" class="closebtn">&times;</a>
-      
+        
       <a href="marketplace.html"><i class="fas fa-shopping-cart"></i> MarketPlace</a>
-      <a href="myads.html"><i class="fas fa-ad"></i>  My Adverts</a>
-      <a href="post.html"><i class="fas fa-plus-circle"></i>  Post an Ad</a>
-      <a href="orders.html" class="active"><i class="far fa-calendar"></i>  My Orders</a>
-      <a href="login.html"><i class="fas fa-sign-out-alt"></i>  Logout</a>
+            <a href="myads.html"><i class="fas fa-ad"></i>  My Adverts</a>
+            <a href="post.html" class="active"><i class="fas fa-plus-circle"></i>  Post an Ad</a>
+            <a href="orders.html"><i class="far fa-calendar"></i>  My Orders</a>
+            <a href="signin.html"><i class="fas fa-sign-out-alt"></i>  Logout</a>
+     
+       </div>
+       <div id="main">
+           <h2 class="logo">Aut<span class="logo"><i class="material-icons">
+            local_shipping
+            </i></span>Mart</h2>
+           <div class="contain" onclick="mySwitch()">
+             <div class="bar1"></div>
+             <div class="bar2"></div>
+             <div class="bar3"></div>
+           </div>
+         
+           
+           </div>
+       </div>
+       
+       </div>
+    </header>
+    <div class="title">
+        <h2>My Orders </h2>
+        <hr>
     </div>
-    <div id="main">
-        <h1 class="logo">Auto-Mart <span class="icon"><i class="fas fa-car"></i></span></h1>
-      <button class="openmenu">&#9776; Menu</button> 
-      
-    </div>
-    
-</header>
-  <div class="marketplace">
-   <div class="products orders">
-    <p class="manufacturer">Aston Martin</p>
+  <div class="order">
+   <div class=" orders">
+    <p class="manufacturer"> <strong> Aston Martin </strong></p>
     <p class="model">Model: 4G TURBO GRINDER</p>
    <img src="images/action-asphalt-auto-977003.jpg" alt="cars" class="small-img">
    <p class="owner">Sold By: ChiBest Auto dealer </p>
@@ -42,7 +55,7 @@
    <button class="btn-primary" id="edit-purchase"> New Offer</button>
   </div>
 
-  <div class="products orders">
+  <div class=" orders">
    <p class="manufacturer">Mercedes Benz</p>
    <p class="model">Model: E350</p>
   <img src="images/automobile-automotive-car-112460.jpg" alt="cars" class="small-img">
@@ -53,7 +66,7 @@
   <p class="btn-default" id="my-amount">Your Offer: NGN 250000.00</p>
   <button class="btn-primary" id="edit-purchase">Edit Purchase</button>
  </div>
- <div class="products orders">
+ <div class=" orders">
   <p class="manufacturer">Mercedes Benz</p>
   <p class="model">Model: E350</p>
  <img src="images/automobile-automotive-car-112460.jpg" alt="cars" class="small-img">

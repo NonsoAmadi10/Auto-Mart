@@ -1,55 +1,62 @@
-const filterOptions = document.getElementById('filter-options');
+
 const filter = document.getElementById('filter')
-const option = document.querySelector('.option');
+const option = document.querySelector('.adverts');
 
-
-const changeOption =()=>{
- if(filterOptions.value == "price"){
-  option.innerHTML = ` <input type="text" placeholder="min-price" id="min-price" required> <input type="text" placeholder="max-price" id="max-price" required> `
- }
- if(filterOptions.value == "status"){
-  option.innerHTML = `<select name="" id="filter-status" class="filter-options">
-  <option value="-1">Select a Car Status</option>
-  <option value="new">New</option>
-  <option value="used">Used</option>
- </select>`
- }
-
- if(filterOptions.value =="manufacturer"){
-  option.innerHTML = `<select name="" id="filter-manufacturer">
-  <option selected value="0">Select Manufacturer</option>
-  <option value="Audi">Audi</option>
-  <option value="BMW">BMW</option>
-  <option value="Citroen">Citroen</option>
- <option value="Ford">Ford</option>
- <option value="Honda">Honda</option>
- <option value="Jaguar">Jaguar</option>
- <option value="LandRover">Land Rover</option>
- <option value="Mercedes">Mercedes</option>
- <option value="Mini">Mini</option>
- <option value="Nissan">Nissan</option>
- <option value="Toyota">Toyota</option>
- <option value="Volvo">Volvo</option>
- </select>`
- }
- if(filterOptions.value == '-1'){
- option.innerHTML = 'Please select a filter option'
- }
-}
-
-
-
-
-
-filterOptions.addEventListener('change', changeOption)
 
 
 const filterSearch =(e)=>{
 e.preventDefault();
-modalControl();
-setTimeout(()=>{
- window.location = 'admin.html'
-}, 1800)
+option.innerHTML = "Loading..."
+
+setTimeout(() =>{
+ const price = e.target["max_price"].value
+
+const randomPrice =  Math.floor(Math.random() * Number(price));
+console.log(randomPrice)
+option.innerHTML=` <h2>Available Cars </h2>
+<div class="products">
+  <div class="image-div"><img src="./images/asphalt-auto-automobile-170811.jpg" alt="" class="small-img"></div>
+  <div class="ad-details">
+    <h3>BMW SEDAN</h3>
+    <hr>
+
+    <p>Sold By: COSCHARIS MOTORS</p>
+    <p class="btn-default"> ${randomPrice} </p>
+    <button class="btn-primary">View AD </button>
+    
+  </div>
+  
+</div>
+<div class="products">
+    <div class="image-div"><img src="./images/automobile-automotive-car-116675.jpg" alt="" class="small-img"></div>
+    <div class="ad-details">
+      <h3>LAND ROVER</h3>
+      <hr>
+
+      <p>Sold By: COSCHARIS MOTORS</p>
+      <p class="btn-default"> ${randomPrice} </p>
+      <button class="btn-primary">View AD </button>
+      
+    </div>
+</div>
+
+<div class="products">
+  <div class="image-div"><img src="./images/benz.jpg" alt="" class="small-img"></div>
+  <div class="ad-details">
+    <h3>Mercedes</h3>
+    <hr>
+
+    <p>Sold By: BabaJerryMotors</p>
+    <p class="btn-default"> ${randomPrice} </p>
+    <button class="btn-primary">View AD </button>
+    
+  </div>
+</div>
+
+`
+}, 1000)
+
+ 
 
 }
 filter.addEventListener('submit', filterSearch)

@@ -21,7 +21,7 @@ class Validate {
     return testBody;
   }
 
-  static isNotNumber(name) {
+  static containsNumber(name) {
     const re = /[0-9]/g;
     const testName = re.test(name);
     return testName;

@@ -24,7 +24,7 @@ describe('Orders', () => {
   it('should send a 201 status to post an order', (done) => {
     chai.request(app)
       .post('/api/v1/order')
-      .set('Authorization', myToken)
+      .set('Authorization', `Bearer ${myToken}`)
       .send({
         carId: 1,
         priceOffered: 3000000.00,
@@ -43,7 +43,7 @@ describe('Orders', () => {
   it('should not purchase a Car if it does not exist', (done) => {
     chai.request(app)
       .post('/api/v1/order')
-      .set('Authorization', myToken)
+      .set('Authorization', `Bearer ${myToken}`)
       .send({
         carId: 70,
         priceOffered: 3000000,
@@ -61,7 +61,7 @@ describe('Orders', () => {
   it('should not purchase a Car if the offer is not a number', (done) => {
     chai.request(app)
       .post('/api/v1/order')
-      .set('Authorization', myToken)
+      .set('Authorization', `Bearer ${myToken}`)
       .send({
         carId: 1,
         priceOffered: '334ssddfrdf',
@@ -78,7 +78,7 @@ describe('Orders', () => {
   it('should not accept empty input bodies',(done) =>{
     chai.request(app)
       .post('/api/v1/order')
-      .set('Authorization',myToken)
+      .set('Authorization',`Bearer ${myToken}`)
       .send({
         carId: '',
         priceOffered: '',
@@ -93,7 +93,7 @@ describe('Orders', () => {
   it('should update the price of a User"s purchase order', (done) => {
     chai.request(app)
       .patch('/api/v1/order/2/price')
-      .set('Authorization', myToken)
+      .set('Authorization', `Bearer ${myToken}`)
       .send({
         newOffer: 7000000
       })
@@ -107,7 +107,7 @@ describe('Orders', () => {
   it('should not update the offer of a purchase order that does not belong to user', (done) => {
     chai.request(app)
       .patch('/api/v1/order/300/price')
-      .set('Authorization', myToken)
+      .set('Authorization', `Bearer ${myToken}`)
       .send({
         newOffer: 7000000
       })
@@ -120,7 +120,7 @@ describe('Orders', () => {
   it('should not update the offer of a purchase order that has an empty input field', (done) => {
     chai.request(app)
       .patch('/api/v1/order/1/price')
-      .set('Authorization', myToken)
+      .set('Authorization', `Bearer ${myToken}`)
       .send({
         newOffer: ''
       })
@@ -133,7 +133,7 @@ describe('Orders', () => {
   it('should not update the offer of a purchase order if the offer is not a number', (done) => {
     chai.request(app)
       .patch('/api/v1/order/1/price')
-      .set('Authorization', myToken)
+      .set('Authorization', `Bearer ${myToken}`)
       .send({
         newOffer: '70oose7'
       })
@@ -146,7 +146,7 @@ describe('Orders', () => {
   it('should not accept an invalid URL', (done) => {
     chai.request(app)
       .patch('/api/v1/order/a/price')
-      .set('Authorization', myToken)
+      .set('Authorization', `Bearer ${myToken}`)
       .send({
         newOffer: 7000000
       })
